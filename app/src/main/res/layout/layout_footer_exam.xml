@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/cmn_white"
+    android:layout_height="@dimen/btn_height">
+
+    <ImageButton
+        android:id="@+id/btn_previous_question"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_action_previous"
+        android:background="@color/cmn_transparent"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:id="@+id/btn_submit_answer"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:text="@string/cmn_btn_submit"
+        android:textSize="@dimen/text_small"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+
+    <ImageButton
+        android:id="@+id/btn_next_question"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_action_next"
+        android:background="@color/cmn_transparent"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

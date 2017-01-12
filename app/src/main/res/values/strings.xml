@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">Bang Gia Xe</string>
+    <string name="noNetwork">Không có kết nối internet</string>
+    <string name="message_open_network_setting">Không có kết nối internet. Bạn có muốn thiết lập ？</string>
+    <string name="loading">Đang tải dữ liệu</string>
+    <string name="cmn_yes">Có</string>
+    <string name="cmn_ok">OK</string>
+    <string name="cmn_no">Không</string>
+    <string name="cmn_done">Hoàn thành</string>
+    <string name="cmn_cancel">Bỏ qua</string>
+    <string name="cmn_internet_connection_lost">Lỗi kết nối tới máy chủ.Xin vui lòng thử lại</string>
+    <string name="cmn_timeout">Timeout </string>
+    <string name="cmn_no_response">Không có dữ liệu hồi đáp</string>
+    <string name="msg_confirm_quit_app">Bạn có chắc chắn muốn thoát khỏi ứng dụng？</string>
+    <string name="cmn_brand">Hãng </string>
+    <string name="cmn_price">Giá niêm yết (triệu)</string>
+    <string name="cmn_deviation_price">Giá thị trường (triệu)</string>
+    <string name="cmn_search_title">Nhập tên xe</string>tiết
+    <string name="cmn_detail_information">Thông tin chi tiết</string>
+    <string name="cmn_registration_fee">Phí trước bạ </string>
+    <string name="cmn_road_tolls">Phí đường bộ (1 năm)</string>
+    <string name="cmn_insurance">Bảo hiểm trách nhiệm dân sự (1 năm)</string>
+    <string name="cmn_number_plate">Phí làm biển số</string>
+
+    <!-- Title detail -->
+    <string name="cmn_vehical_size">Dài x rộng x cao (mm)</string>
+    <string name="cmn_fuel_capacity">Dung tích bình xăng (lít)</string>
+    <string name="cmn_displacement">Động cơ (phân khối)</string>
+    <string name="cmn_output_capacity">Công suất (mã lực)</string>
+    <string name="cmn_torque_power">Mô-men xoắn (Nm)</string>
+    <string name="cmn_gross_weight">Trọng lượng khô (kg)</string>
+    <string name="cmn_origin">Nguồn gốc</string>
+    <string name="cmn_type_of_vehical">Loại xe</string>
+    <string name="cmn_number_of_gears">Hộp số</string>
+    <string name="cmn_inspection_fee">Phí đăng kiểm</string>
+    <string name="cmn_total_cost">Tổng chi phí</string>
+    <string name="cmn_btn_submit">Chấm bài</string>
+
+    <string name="cmn_moto_title">Bảng giá xe máy</string>
+    <string name="cmn_oto_title">Bảng giá oto</string>
+    <string name="cmn_a1_certificate">Thi lý thuyết bằng A1</string>
+    <string name="cmn_b2_certificate">Thi lý thuyết bằng B2</string>
+
+    <array name="brand_array">
+        <item>Tất cả</item>
+        <item>BMW</item>
+        <item>Honda</item>
+        <item>Piaggio</item>
+        <item>SYM</item>
+        <item>Suzuki</item>
+        <item>Vespa</item>
+        <item>Yamaha</item>
+    </array>
+
+
+    <array name="price_array">
+        <item> Tất cả</item>
+        <item> 0-20</item>
+        <item> 20-30</item>
+        <item> 30-40</item>
+        <item> 40-50</item>
+        <item> 60-80</item>
+        <item> > 80</item>
+    </array>
+
+    <array name="car_brand_array">
+        <item>Tất cả</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Chevrolet</item>
+        <item>Ford</item>
+        <item>Honda</item>
+        <item>Hyundai</item>
+        <item>Infiniti</item>
+        <item>Isuzu</item>
+        <item>Kia</item>
+        <item>Lamborghini</item>
+        <item>Lexus</item>
+        <item>Maserati</item>
+        <item>Mazda</item>
+        <item>Mercedes</item>
+        <item>Mitsubishi</item>
+        <item>Nissan</item>
+        <item>Peugeot</item>
+        <item>Porsche</item>
+        <item>Renault</item>
+        <item>Rolls-Royce</item>
+        <item>Subaru</item>
+        <item>Suzuki</item>
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Volvo</item>
+    </array>
+
+    <array name="car_price_array">
+        <item>Tất cả</item>
+        <item>300-500</item>
+        <item>500-800</item>
+        <item>800-1200</item>
+        <item>1200-1500</item>
+        <item>1500-2000</item>
+        <item>2000-2500</item>
+        <item>2500-3000</item>
+        <item>3000-4000</item>
+        <item>4000-7000</item>
+        <item>> 7.000</item>
+    </array>
+    
+    <array name="month_array">
+        <item>T1</item>
+        <item>T2</item>
+        <item>T3</item>
+        <item>T4</item>
+        <item>T5</item>
+        <item>T6</item>
+        <item>T7</item>
+        <item>T8</item>
+        <item>T9</item>
+        <item>T10</item>
+        <item>T11</item>
+        <item>T12</item>
+    </array>
+
+    <array name="car_type_array">
+        <item>Sedan</item>
+        <item>Hatchback</item>
+        <item>MPV</item>
+        <item>SUV</item>
+        <item>SUV-Coupe</item>
+        <item>SUV-Wagon</item>
+        <item>Pick-up</item>
+        <item>Coupe</item>
+        <item>Coupe 2 cửa</item>
+        <item>Coupe 4 cửa</item>
+        <item>Convertible</item>
+        <item>Roadster</item>
+        <item>Siêu xe</item>
+        <item>Station Wagon</item>
+    </array>
+    
+    <array name="registration_fee_array">
+        <item> 5% </item>
+        <item> 10% </item>
+        <item> 12% </item>
+    </array>
+
+    <array name="area_array">
+        <item>Khu vực 1</item>
+        <item>Khu vực 2</item>
+        <item>Khu vực 3</item>
+    </array>
+
+    <array name="area_content_array">
+        <item>Bao gồm Hà Nội và TPHCM</item>
+        <item>Các thành phố trực thuộc Trung ương khác, các thành phố trực thuộc tỉnh và các thị xã, nơi các UBND tỉnh đóng trụ sở</item>
+        <item>Các khu vực ngoài khu vực 1 và 2</item>
+    </array>
+
+</resources>

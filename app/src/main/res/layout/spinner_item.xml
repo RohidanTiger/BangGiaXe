@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<com.andexert.library.RippleView-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/ripple"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--rv_centered="true">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/lbl_spinner_text"-->
+        <!--style="@style/Text.Normal.Dark"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/cmn_transparent"-->
+        <!--android:paddingBottom="@dimen/padding_normal"-->
+        <!--android:paddingLeft="@dimen/padding_normal"-->
+        <!--android:paddingTop="@dimen/padding_small_bigger"-->
+        <!--android:textColor="@color/cmn_text_gray"-->
+        <!--android:maxLines="1" />-->
+<!--</com.andexert.library.RippleView>-->
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lbl_spinner_text"
+    style="@style/Text.Normal.Dark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cmn_transparent"
+    android:maxLines="1"
+    android:paddingBottom="@dimen/padding_smaller"
+    android:paddingLeft="@dimen/padding_smaller"
+    android:paddingTop="@dimen/padding_smaller"
+    android:textSize="@dimen/text_small"
+    android:textColor="@color/cmn_text_gray" />

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.andexert.library.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    rv_centered="true"
+    android:id="@+id/ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/list_row_selector">
+
+        <ImageView
+            android:id="@+id/imgVehical"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/bg_captcha"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:id="@+id/txtName"
+            style="@style/Text.FillWidth"
+            android:layout_alignTop="@+id/imgVehical"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtBrandTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:text="@string/cmn_brand"
+            android:textSize="@dimen/text_normal" />
+
+        <TextView
+            android:id="@+id/txtBrand"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/txtBrandTitle"
+            android:textSize="@dimen/text_normal" />
+
+        <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+            android:id="@+id/txtPriceTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtBrand"
+            android:layout_marginTop="1dip"
+            android:text="@string/cmn_price"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:textSize="@dimen/text_normal"
+            app:ratio="0.8"
+            app:suffix_length="7"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtBrand"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/txtPriceTitle"
+            android:textColor="@color/cmn_price1"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+        <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+            android:id="@+id/txtDeviationPriceTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPrice"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:text="@string/cmn_deviation_price"
+            android:textColor="@color/genre"
+            android:textSize="@dimen/text_normal"
+            app:ratio="0.8"
+            app:suffix_length="7"/>
+
+        <TextView
+            android:id="@+id/txtDeviationPrice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPrice"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/txtDeviationPriceTitle"
+            android:textColor="@color/cmn_price2"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/txtDeviationPrice"
+            android:background="@color/list_divider" />
+
+    </RelativeLayout>
+</com.andexert.library.RippleView>

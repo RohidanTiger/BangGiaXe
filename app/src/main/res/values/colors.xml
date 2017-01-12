@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_mainapp">#467CC3</color>
+    <color name="cmn_yellow">#fdef4b</color>
+    <color name="cmn_blue">#3BA0CB</color>
+    <color name="cmn_transparent">#ffffffff</color>
+    <color name="cmn_black">#000000</color>
+    <color name="cmn_gray">#EEEEEE</color>
+    <color name="cmn_dark">#181818</color>
+    <color name="cmn_white">#ffffff</color>
+    <color name="cmn_orange">#f57c13</color>
+    <color name="cmn_divider_gray">#CABBBBBB</color>
+    <color name="cmn_gray_header_bg">#ececec</color>
+    <color name="cmn_gray_search_bg">#e1e4e9</color>
+    <color name="cmn_gray_divider">#cccccc</color>
+    <color name="cmn_gray_light">#EFEFEF</color>
+    <color name="cmn_text">#4c4c4c</color>
+    <color name="cmn_text_gray">#888</color>
+    <color name="genre">#666666</color>
+    <color name="year">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+    <color name="cmn_name_bg">#ECECEC</color>
+    <color name="cmn_name_color">#3D6CA1</color>
+    <color name="cmn_price2">#539408</color>
+    <color name="cmn_price1">#81233C</color>
+</resources>

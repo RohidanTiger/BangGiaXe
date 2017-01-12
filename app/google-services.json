@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "444998536257",
+    "firebase_url": "https://importdb-518da.firebaseio.com",
+    "project_id": "importdb-518da",
+    "storage_bucket": "importdb-518da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444998536257:android:0c44d3c3974809e4",
+        "android_client_info": {
+          "package_name": "tigerstyle.social.com.banggiaxe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444998536257-nu33vgqjvqperbu16soi9k8vdfj8e4rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1uWXpuMPTd7LYFsVtBa7LptXdp8tD6UU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

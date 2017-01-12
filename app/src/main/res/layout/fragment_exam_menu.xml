@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/cmn_gray"
+    style="@style/Layout.FillWidthHeight">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_exam_menu"
+        android:layout_margin="@dimen/padding_smaller"
+        style="@style/Layout.FillWidth">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconButton">
+        <attr name="iconPadding" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="Pixelate">
+        <attr name="density" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SuffixTextView">
+        <attr name="ratio" format="float"/>
+        <attr name="suffix_length" format="integer"/>
+    </declare-styleable>
+</resources>

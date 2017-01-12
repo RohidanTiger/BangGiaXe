@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl"
+    style="@style/Layout.FillWidthHeight"
+    tools:context=".MainActivity"
+    android:background="#ffffff">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout_menu_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/textview_brand"
+            app:layout_widthPercent="30%"
+            android:layout_height="match_parent"
+            android:text="Hãng"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding_normal"
+            android:textSize="@dimen/text_small"/>
+
+        <TextView
+            android:id="@+id/textview_price"
+            app:layout_widthPercent="35%"
+            android:layout_height="match_parent"
+            android:text="Giá niêm yết(triệu)"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/textview_brand"
+            android:paddingLeft="@dimen/padding_normal"
+            android:textSize="@dimen/text_small"/>
+
+
+        <TextView
+            android:id="@+id/textview_deviation_price"
+            app:layout_widthPercent="35%"
+            android:layout_height="match_parent"
+            android:text="Giá đàm phán(triệu)"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/textview_price"
+            android:paddingLeft="@dimen/padding_normal"
+            android:textSize="@dimen/text_small"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout_menu"
+        style="@style/Layout.FillWidth"
+        android:background="@color/cmn_gray"
+        android:layout_below="@+id/layout_menu_title">
+
+        <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+            android:id="@+id/spiner_brand"
+            app:layout_widthPercent="50%"
+            style="@style/spinner_common"
+            android:layout_margin="@dimen/padding_smaller"
+            android:entries="@array/car_brand_array"/>
+
+        <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+            android:id="@+id/spiner_price"
+            app:layout_widthPercent="50%"
+            style="@style/spinner_common"
+            android:layout_margin="@dimen/padding_smaller"
+            android:layout_toRightOf="@id/spiner_brand"
+            android:entries="@array/car_price_array"/>
+
+        <!--<tigerstyle.social.com.banggiaxe.customize.CustomSpinner-->
+            <!--android:id="@+id/spiner_deviation_price"-->
+            <!--app:layout_widthPercent="35%"-->
+            <!--android:layout_toRightOf="@id/spiner_price"-->
+            <!--style="@style/spinner_common"-->
+            <!--android:layout_margin="@dimen/padding_smaller"-->
+            <!--android:entries="@array/price_array"/>-->
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_menu"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

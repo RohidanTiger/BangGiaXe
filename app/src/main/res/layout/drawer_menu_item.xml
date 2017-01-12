@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.andexert.library.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    rv_centered="true"
+    android:id="@+id/ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- android:background="@drawable/list_row_selector"-->
+
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/list_row_selector">
+
+        <ImageView
+            android:id="@+id/imgVehical"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_sportcar"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:id="@+id/txtNameMenu"
+            style="@style/Text.FillWidth"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:layout_marginLeft="@dimen/padding_medium"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+</com.andexert.library.RippleView>
