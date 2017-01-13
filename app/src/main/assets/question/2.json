@@ -1,0 +1,184 @@
+{
+  "de2" : {
+    "cau1" : {
+      "answers" : "Là một phần của đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.--Là một phần của đường được chia theo chiều ngang của đường, có bề rộng đủ cho xe đỗ an toàn.--Cả 2 ý trên.",
+      "image" : "none",
+      "question" : "Khái niệm “làn đường” được hiểu như thế nào là đúng ?",
+      "result" : "1"
+    },
+    "cau10" : {
+      "answers" : "Giữ vững tay lái cho xe đi đúng vệt bánh xe đi trước, sử dụng số thấp đi chậm, giữ đều ga, đánh lái ngoặt và phanh gấp khi cần thiết.--Giữ vững tay lái cho xe đi đúng vệt bánh xe đi trước, sử dụng số thấp đi chậm, giữ đều ga, không lấy nhiều lái, không đánh lái ngoặt và phanh gấp.",
+      "image" : "none",
+      "question" : "Khi điều khiển xe ôtô trên đường trơn cần chú ý những điểm gì?",
+      "result" : "2"
+    },
+    "cau11" : {
+      "answers" : "Bật đèn chiếu gần và đèn vàng, điều khiển gạt nước, điều khiển ôtô đi với tốc độ chậm để có thể quan sát được.--Tìm chỗ an toàn dừng xe, bật đèn dừng khẩn cấp báo hiệu cho các xe khác biết.--Bật đèn chiếu xa và đèn vàng, điều khiển gạt nước, tăng tốc độ điều khiển ôtô qua khỏi khu vực mưa hoặc sương mù.",
+      "image" : "none",
+      "question" : "Khi điều khiển ôtô gặp mưa to hoặc sương mù, người lái xe phải làm gì?",
+      "result" : "1-2"
+    },
+    "cau12" : {
+      "answers" : "Đua xe, cổ vũ đua xe, tổ chức đua xe trái phép.--Lạng lách, đánh võng.",
+      "image" : "none",
+      "question" : "Những hành vi nào ghi ở dưới dây bị nghiêm cấm?",
+      "result" : "1-2"
+    },
+    "cau13" : {
+      "answers" : "Bị nghiêm cấm.--Không bị nghiêm cấm.",
+      "image" : "none",
+      "question" : "Người điểu khiển phương tiện giao thông đường bộ mà trong cơ thể có chất ma tuý có bị nghiêm cấm hay không?",
+      "result" : "1"
+    },
+    "cau14" : {
+      "answers" : "Lắp đặt, sử dụng còi, đèn không đúng thiết kế của nhà sản xuất đối với từng loại xe cơ giới.--Sử dụng thiết bị âm thanh gây mất trật tự an toàn giao thông, trật tự công cộng.",
+      "image" : "none",
+      "question" : "Các hành vi nào sau đây bị nghiêm cấm?",
+      "result" : "1-2"
+    },
+    "cau15" : {
+      "answers" : "Người điều khiển, người sử dụng phương tiện tham gia giao thông đường bộ.--Người điều khiển, dẫn dắt súc vật; người đi bộ trên đường bộ.",
+      "image" : "none",
+      "question" : "“Người tham gia giao thông đường bộ” gồm những đối tượng nào?",
+      "result" : "1-2"
+    },
+    "cau16" : {
+      "answers" : "Vận chuyển hàng cấm lưu thông.--Vận chuyển trái phép hoặc không thực hiện đầy đủ các quy định về vận chuyển hàng nguy hiểm, động vật hoang dã.",
+      "image" : "none",
+      "question" : "Trong hoạt động vận tải đường bộ, các hành vi nào sau đây bị nghiêm cấm?",
+      "result" : "1-2"
+    },
+    "cau17" : {
+      "answers" : "Đe dọa, xúc phạm, tranh giành, lôi kéo hành khách; bắt ép hành khách sử dụng dịch vụ ngoài ý muốn.--Chuyển tải, xuống khách hoặc các hành vi khác nhằm trốn tránh phát hiện xe chở quá tải, quá số người quy định.",
+      "image" : "none",
+      "question" : "Trong hoạt động vận tải khách, những hành vi nào ghi ở dưới đây bị cấm?",
+      "result" : "1-2"
+    },
+    "cau18" : {
+      "answers" : "Đáp án 1--Đáp án 2--Đáp án 3",
+      "image" : "218",
+      "question" : "Biển nào báo hiệu giao nhau với đường hai chiều?",
+      "result" : "1"
+    },
+    "cau19" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "219",
+      "question" : "Biển nào báo hiệu đường hai chiều?",
+      "result" : "3"
+    },
+    "cau2" : {
+      "answers" : "Là khoảng trống có kích thước giới hạn về chiều rộng của đường, cầu, bến phà, hầm trên đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn.--Là khoảng trống có kích thước giới hạn về chiều cao, chiều rộng của đường, cầu, bến phà, hầm đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn.--Là khoảng trống có kích thước giới hạn về chiều cao của cầu, bến phà, hầm trên đường bộ để các xe đi qua được an toàn.",
+      "image" : "none",
+      "question" : "Khái niệm “khổ giới hạn của đường bộ” được hiểu như thế nào là đúng?",
+      "result" : "2"
+    },
+    "cau20" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+      "image" : "220",
+      "question" : "Biển nào chỉ dẫn tên đường trên các tuyến đường đối ngoại?",
+      "result" : "3"
+    },
+    "cau21" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "221",
+      "question" : "Biển nào báo hiệu cầu vượt liên thông?",
+      "result" : "1"
+    },
+    "cau22" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+      "image" : "222",
+      "question" : "Biển số 3 có ý nghĩa gì? ",
+      "result" : "3"
+    },
+    "cau23" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "223",
+      "question" : "Biển nào báo hiệu đường có làn đường dành cho ôtô khách?",
+      "result" : "2"
+    },
+    "cau24" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "224",
+      "question" : "Biển số 1 có ý nghĩa gì?",
+      "result" : "3"
+    },
+    "cau25" : {
+      "answers" : "Đáp án 1.--Đáp án 2.",
+      "image" : "225",
+      "question" : "Xe nào phải nhường đường trong trường hợp này?",
+      "result" : "2"
+    },
+    "cau26" : {
+      "answers" : "Đáp án 1.--Đáp án 2.",
+      "image" : "226",
+      "question" : "Bạn xử lý như thế nào khi vượt qua đoàn người đi xe đạp có tổ chức?",
+      "result" : "2"
+    },
+    "cau27" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "227",
+      "question" : "Phía trước có một xe đang lùi vào chỗ đỗ, xe con phía trước chuyển làn sang đường bên trái, bạn xử lý thế nào?",
+      "result" : "1-2"
+    },
+    "cau28" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "228",
+      "question" : "Bạn xử lý thế nào khi xe phía trước đang lùi khỏi nơi đỗ?",
+      "result" : "3"
+    },
+    "cau29" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "229",
+      "question" : "Phía trước có một xe màu xanh đang vượt xe màu vàng trên làn đường của bạn, bạn xử lý như thế nào trong trường hợp này?",
+      "result" : "1"
+    },
+    "cau3" : {
+      "answers" : "Khi vượt xe khác.--Khi cho xe chạy sau vượt.--Cả hai ý nêu trên.",
+      "image" : "none",
+      "question" : "Người lái xe phải giảm tốc độ thấp hơn tốc độ tối đa cho phép đến mức không nguy hiểm trong các trường hợp nào dưới dây?",
+      "result" : "2"
+    },
+    "cau30" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "230",
+      "question" : "Xe tải phía trước có tín hiệu xin chuyển làn đường, bạn xử lý như thế nào trong trường hợp này?",
+      "result" : "2"
+    },
+    "cau4" : {
+      "answers" : "Cơ quan cảnh sát giao thông có thẩm quyền.--Cơ quan quản lý giao thông có thẩm quyền.--Ủy ban nhân dân tỉnh.",
+      "image" : "none",
+      "question" : "Trong trường hợp đặc biệt, xe quá tải trọng, quá khổ giới hạn của đường bộ, xe bánh xích có thể lưu hành trên đường nhưng phải xin phép cơ quan nào?",
+      "result" : "2"
+    },
+    "cau5" : {
+      "answers" : "Không quá 8 giờ và không được lái xe liên tục quá 5 giờ.--Không quá 10 giờ và không được lái xe liên tục quá 4 giờ.--Không quá 8 giờ và không được lái xe liên tục quá 3 giờ.",
+      "image" : "none",
+      "question" : "Thời gian làm việc trong một ngày của người lái xe được quy định là bao nhiêu?",
+      "result" : "2"
+    },
+    "cau6" : {
+      "answers" : "Phải được che phủ kín để không để rơi, vãi trên đường phố; trường hợp để rơi, vãi thì người vận tải phải chịu trách nhiệm thu dọn ngay.--Chỉ được hoạt động vận tải trong thời gian phù hợp trong ngày.",
+      "image" : "none",
+      "question" : "Xe vệ sinh môi trường, ôtô chở phế thải, vật liệu rời khi hoạt động vận tải trong đô thị phải thực hiện những quy định gì ghi ở dưới đây?",
+      "result" : "1-2"
+    },
+    "cau7" : {
+      "answers" : "Đặt nạn nhân nằm ngửa, khai thông đường thở của nạn nhân.--Thực hiện các biện pháp hô hấp nhân tạo; thực hiện các biện pháp xoa bóp tim.",
+      "image" : "none",
+      "question" : "Khi sơ cứu ban đầu cho người bị tai nạn giao thông đường bộ không còn hô hấp, người lái xe và người có mặt tại hiện trường vụ tai nạn phải thực hiện các công việc gì?",
+      "result" : "1-2"
+    },
+    "cau8" : {
+      "answers" : "Tăng lên số cao, tăng ga và giữ vững tay lái để ôtô vượt qua đoạn đường ngập nước.--Đạp ly hợp hết hành trình, tăng ga và giữ vững tay lái để ôtô vượt qua đoạn đường ngập nước.--Về số một (1), giữ đều ga và giữ vững tay lái để ôtô vượt qua đoạn đường ngập nước.",
+      "image" : "none",
+      "question" : "Khi điều khiển ôtô qua đoạn đường ngập nước, người lái xe cần thực hiện các thao tác nào?",
+      "result" : "3"
+    },
+    "cau9" : {
+      "answers" : "Chuyển từ đèn chiếu xa sang đèn chiếu gần; không nhìn thẳng vào đèn của xe chạy ngược chiều mà nhìn chếch sang phía phải theo chiều chuyển động của xe mình.--Chuyển từ đèn chiếu gần sang đèn chiếu xa; không nhìn thẳng vào đèn của xe chạy ngược chiều mà nhìn chếch sang phía phải theo chiều chuyển động của xe mình.--Chuyển từ đèn chiếu xa sang đèn chiếu gần; nhìn thẳng vào đèn của xe chạy ngược chiều để tránh xe đảm bảo an toàn.",
+      "image" : "none",
+      "question" : "Khi điều khiển ôtô tới gần xe chạy ngược chiều vào ban đêm, người lái xe cần thực hiện các thao tác nào?",
+      "result" : "1"
+    }
+  }
+}

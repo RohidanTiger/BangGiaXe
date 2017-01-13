@@ -125,7 +125,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     }case 2:{
                         clearAllPreviousFragment();
-                        pushFragments(new ExamMenuFragment(), false, true);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_A1_TYPE);
+                        pushFragments(new ExamMenuFragment(), bundle, false, true);
+                        break;
+                    }case 3:{
+                        clearAllPreviousFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_B2_TYPE);
+                        pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
                     }
                 }

@@ -1,0 +1,184 @@
+{
+  "de4" : {
+    "cau1" : {
+      "answers" : "Người điều khiển ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn vượt quá 50 miligam/100 mililít máu hoặc 0,25 miligam/1 lít khí thở.--Người điều khiển ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn vượt quá 80 miligam/100 mililít máu hoặc 40 miligam/1 lít khí thở.--Người điều khiển xe ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu hoặc hơi thở có nồng độ cồn.",
+      "image" : "none",
+      "question" : "Người điều khiển ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu hoặc hơi thở có nồng độ cồn vượt quá bao nhiêu thì bị cấm?",
+      "result" : "3"
+    },
+    "cau10" : {
+      "answers" : "50 m.--60 m.--70 m.--80 m.",
+      "image" : "none",
+      "question" : "Trên đường cao tốc, trừ khi nhập làn và tách làn, với điều kiện mặt đường khô ráo, xe cơ giới đang chạy với tốc độ trên 80 km/h đến 100 km/h, người lái xe phải duy trì khoảng cách an toàn với xe đang chạy phía trước tối thiểu là bao nhiêu?",
+      "result" : "3"
+    },
+    "cau11" : {
+      "answers" : "Là xe có tổng trọng lượng vượt quá khả năng chịu tải của cầu hoặc có tải trọng trục xe vượt quá khả năng chịu tải của đường.--Là xe có trọng lượng hàng hóa vượt quá khả năng chịu tải của cầu hoặc có tải trọng trục xe vượt quá khả năng chịu tải của đường.--Cả hai ý nêu trên.",
+      "image" : "none",
+      "question" : "Khái niệm xe quá tải trọng của đường bộ được hiểu như thế nào là đúng?",
+      "result" : "1"
+    },
+    "cau12" : {
+      "answers" : "Hình 1.--Hình 2.",
+      "image" : "312",
+      "question" : "Hình nào dưới đây biểu hiện hàng chuyên chở dễ vỡ phải cẩn thận?",
+      "result" : "1"
+    },
+    "cau13" : {
+      "answers" : "Có giấy phép lái xe phù hợp với loại xe được phép điều khiển; xe cơ giới đảm bảo các quy định về chất lượng, an toàn kỹ thuật và bảo vệ môi trường.--Có giấy chứng nhận bảo hiểm trách nhiệm dân sự của chủ xe cơ giới còn hiệu lực; nộp phí sử dụng đường bộ theo quy định. ",
+      "image" : "none",
+      "question" : "Người có văn hóa giao thông khi điều khiển xe cơ giới tham gia giao thông đường bộ phải đảm bảo các điều kiện gì?",
+      "result" : "1-2"
+    },
+    "cau14" : {
+      "answers" : "Quan sát cẩn thận các chướng ngại vật và báo hiệu bằng còi, đèn; giảm tốc độ tới mức cần thiết, về số thấp và thực hiện quay vòng với tốc độ phù hợp với bán kính đường vòng.--Quan sát cẩn thận các chướng ngại vật và báo hiệu bằng còi, đèn; tăng tốc để nhanh chóng qua đường vòng, đạp ly hợp và giảm tốc độ sau khi qua đường vòng.--Cả hai ý nêu trên.",
+      "image" : "none",
+      "question" : "Khi điều khiển xe trên đường vòng người lái xe cần phải làm gì?",
+      "result" : "1"
+    },
+    "cau15" : {
+      "answers" : "Có tín hiệu rẽ phải; quan sát an toàn phía sau; điều khiển xe sang làn đường bên trái; giảm tốc độ và quan sát an toàn phía bên phải để điều khiển xe qua chỗ đường giao nhau.--Cách chỗ rẽ khoảng 30 m có tín hiệu rẽ phải; quan sát an toàn phía sau; điều khiển xe bám sát vào phía phải đường; giảm tốc độ và quan sát an toàn phía bên phải để điều khiển xe qua chỗ đường giao nhau.--Cách chỗ rẽ khoảng 30 m có tín hiệu rẽ phải; quan sát an toàn phía sau; điều khiển xe bám sát vào phía phải đường; tăng tốc độ và quan sát an toàn phía bên trái để điều khiển xe qua chỗ đường giao nhau.",
+      "image" : "none",
+      "question" : "Khi điều khiển xe ôtô rẽ phải ở chỗ đường giao nhau, người lái xe cần thực hiện các thao tác nào?",
+      "result" : "2"
+    },
+    "cau16" : {
+      "answers" : "Cách chỗ rẽ khoảng 30 m giảm tốc độ, có tín hiệu rẽ trái xin đổi làn đường; quan sát an toàn xung quanh đặc biệt là bên trái; đổi sang làn đường bên trái; cho xe chạy chậm tới phía trong của tâm đường giao nhau mới rẽ trái để điều khiển xe qua chỗ đường giao nhau.--Cách chỗ rẽ khoảng 30m có tín hiệu rẽ trái, tăng tốc độ để xe nhanh chóng qua chỗ đường giao nhau.--Có tín hiệu xin đổi làn; quan sát an toàn xung quanh đặc biệt là bên trái; đổi làn đường sang phải để mở rộng vòng cua.--Cả ba ý nêu trên.",
+      "image" : "none",
+      "question" : "Khi điều khiển xe ôtô rẽ trái ở chỗ đường giao nhau, người lái xe cần thực hiện các thao tác nào?",
+      "result" : "1"
+    },
+    "cau17" : {
+      "answers" : "Giảm tốc độ, nếu cần thiết có thể dừng lại.--Bật đèn pha chiếu xa và giữ nguyên tốc độ.--Cả hai ý nêu trên.",
+      "image" : "none",
+      "question" : "Khi đèn pha của xe ngược chiều gây chói mắt, làm giảm khả năng quan sát trên đường, người lái xe xử lý như thế nào?",
+      "result" : "1"
+    },
+    "cau18" : {
+      "answers" : "Đáp án 1--Đáp án 2",
+      "image" : "418",
+      "question" : "Chiều dài đoạn đường 500 m từ nơi đặt biển báo này, người lái xe có được phép bấm còi không?",
+      "result" : "2"
+    },
+    "cau19" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "419",
+      "question" : "Biển này có ý nghĩa gì?",
+      "result" : "2"
+    },
+    "cau2" : {
+      "answers" : "Nồng độ cồn vượt quá 50 miligam/100 mililít máu.--Nồng độ cồn vượt quá 40 miligam/100 mililít máu.--Nồng độ cồn vượt quá 30 mililigam/100 mililít máu.",
+      "image" : "none",
+      "question" : "Người điều khiển xe môtô, xe gắn máy trên đường mà trong máu có nồng độ cồn vượt quá bao nhiêu thì bị cấm?",
+      "result" : "1"
+    },
+    "cau20" : {
+      "answers" : "Đáp án 1.--Đáp án 2.",
+      "image" : "420",
+      "question" : "Theo hướng bên phải có được phép đỗ xe, dừng xe không?",
+      "result" : "1"
+    },
+    "cau21" : {
+      "answers" : "Đáp án 1.--Đáp án 2.",
+      "image" : "421",
+      "question" : "Gặp biển này, xe ôtô sơ-mi rơ-moóc có tổng chiều dài lớn hơn trị số ghi trên biển có được phép đi vào không?",
+      "result" : "1"
+    },
+    "cau22" : {
+      "answers" : "Đáp án 1.--Đáp án 2.",
+      "image" : "422",
+      "question" : "Ô tô chở hàng vượt quá phía trước và phía sau thùng xe, mỗi phía quá 10% chiều dài toàn bộ thân xe, tổng chiều dài xe (cả hàng) từ trước đến sau nhỏ hơn trị số ghi trên biển thì có được phép đi vào không?",
+      "result" : "1"
+    },
+    "cau23" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "423",
+      "question" : "Biển nào cấm xe đạp đi vào?",
+      "result" : "3"
+    },
+    "cau24" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "424",
+      "question" : "Biển báo nào báo hiệu đường dành cho xe thô sơ?",
+      "result" : "1"
+    },
+    "cau25" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+      "image" : "425",
+      "question" : "Bạn được dừng xe ở vị trí nào trong hình này?",
+      "result" : "4"
+    },
+    "cau26" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "426",
+      "question" : "Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?",
+      "result" : "1-2"
+    },
+    "cau27" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "427",
+      "question" : "Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?",
+      "result" : "2"
+    },
+    "cau28" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+      "image" : "428",
+      "question" : "Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?",
+      "result" : "3"
+    },
+    "cau29" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+      "image" : "429",
+      "question" : "Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?",
+      "result" : "2"
+    },
+    "cau3" : {
+      "answers" : "Bóp còi, rú ga để cắt qua đoàn người, đoàn xe.--Không được cắt ngang qua đoàn người, đoàn xe.--Báo hiệu từ từ cho xe đi qua để bảo đảm an toàn.",
+      "image" : "none",
+      "question" : "Khi gặp một đoàn xe, một đoàn xe tang hay gặp một đoàn người có tổ chức theo đội ngũ, người lái xe phải xử lý như thế nào?",
+      "result" : "2"
+    },
+    "cau30" : {
+      "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.---Đáp án 4.",
+      "image" : "430",
+      "question" : "Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?",
+      "result" : "1"
+    },
+    "cau4" : {
+      "answers" : "19 tuổi.--21 tuổi.--20 tuổi.",
+      "image" : "none",
+      "question" : "Người đủ bao nhiêu tuổi trở lên thì được điều khiển xe ôtô tải, máy kéo có trọng tải từ 3,5 tấn trở lên; xe hạng B2 kéo rơ-moóc (FB2)?",
+      "result" : "2"
+    },
+    "cau5" : {
+      "answers" : "16 tuổi.--18 tuổi.--17 tuổi.",
+      "image" : "none",
+      "question" : "Người đủ bao nhiêu tuổi trở lên thì được điều khiển xe môtô hai bánh, xe môtô ba bánh có dung tích xi-lanh từ 50 cm3 trở lên và các loại xe có kết cấu tương tự; ôtô tải, máy kéo có trọng tải dưới 3,5 tấn; xe ôtô chở người đến 9 chỗ ngồi?",
+      "result" : "2"
+    },
+    "cau6" : {
+      "answers" : "Nhường đường cho xe đi trên đường nhánh từ bất kỳ hướng nào tới. Nhường đường cho người đi bộ đang đi trên phần đường dành cho người đi bộ sang đường.  Nhường đường cho xe đi trên đường ưu tiên, đường chính từ bất kỳ hướng nào tới, nhường đường cho xe ưu tiên, nhường đường cho xe đi từ bên phải đến.",
+      "image" : "none",
+      "question" : "Tại ngã ba hoặc ngã tư không có đảo an toàn, người lái xe phải nhường đường như thế nào là đúng trong các trường hợp dưới đây?",
+      "result" : "2-3"
+    },
+    "cau7" : {
+      "answers" : "23 tuổi.--24 tuổi.--27 tuổi. ",
+      "image" : "none",
+      "question" : "Người lái ôtô chở người trên 30 chỗ ngồi (hạng E), lái xe hạng D kéo rơ-moóc (FD) phải đủ bao nhiêu tuổi trở lên?",
+      "result" : "3"
+    },
+    "cau8" : {
+      "answers" : "55 tuổi đối với nam và 50 tuổi đối với nữ.--55 tuổi đối với nam và nữ.--60 tuổi đối với nam và 55 tuổi đối với nữ.",
+      "image" : "none",
+      "question" : "Tuổi tối đa của người lái ôtô chở người trên 30 chỗ (hạng E) là bao nhiêu tuổi?",
+      "result" : "1"
+    },
+    "cau9" : {
+      "answers" : "23 tuổi.--24 tuổi.--22 tuổi.",
+      "image" : "none",
+      "question" : "Người lái xe chở người từ 10 đến 30 chỗ (hạng D), lái xe hạng C kéo rơ-moóc (FC) phải đủ bao nhiêu tuổi trở lên?",
+      "result" : "2"
+    }
+  }
+}

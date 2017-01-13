@@ -5,14 +5,6 @@
     android:background="@color/cmn_white"
     android:layout_height="@dimen/btn_height">
 
-    <ImageButton
-        android:id="@+id/btn_previous_question"
-        android:layout_width="45dp"
-        android:layout_height="35dp"
-        android:src="@drawable/ic_action_previous"
-        android:background="@color/cmn_transparent"
-        android:layout_centerVertical="true"/>
-
     <Button
         android:id="@+id/btn_submit_answer"
         android:layout_width="100dp"
@@ -22,13 +14,33 @@
         android:gravity="center"
         android:layout_centerInParent="true"/>
 
-    <ImageButton
+    <RelativeLayout
+        android:id="@+id/btn_previous_question"
+        style="@style/Layout.FillWidthHeight"
+        android:duplicateParentState="true"
+        android:layout_toLeftOf="@id/btn_submit_answer">
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:duplicateParentState="true"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:background="@drawable/selector_previous"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/btn_next_question"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_action_next"
-        android:background="@color/cmn_transparent"
-        android:layout_centerVertical="true"/>
+        style="@style/Layout.FillWidthHeight"
+        android:duplicateParentState="true"
+        android:layout_toRightOf="@id/btn_submit_answer">
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:duplicateParentState="true"
+            android:layout_marginRight="@dimen/padding_small"
+            android:background="@drawable/selector_next"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
 
 </RelativeLayout>

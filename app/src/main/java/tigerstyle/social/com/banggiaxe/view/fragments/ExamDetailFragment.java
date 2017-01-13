@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,7 +27,6 @@ import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
-import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 
 /**
@@ -38,8 +36,8 @@ import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 public class ExamDetailFragment extends BaseFragment {
 
     private ArrayList<Question> listQuestion;
-    private ImageButton mBtnPrevious;
-    private ImageButton mBtnNext;
+    private RelativeLayout mBtnPrevious;
+    private RelativeLayout mBtnNext;
     private Button mBtnSubmit;
     private TextView mTxtQuestion;
     private ImageView mImageDetail;
@@ -66,8 +64,8 @@ public class ExamDetailFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_exam_detail, null);
-        mBtnPrevious = (ImageButton) rootView.findViewById(R.id.btn_previous_question);
-        mBtnNext = (ImageButton) rootView.findViewById(R.id.btn_next_question);
+        mBtnPrevious = (RelativeLayout) rootView.findViewById(R.id.btn_previous_question);
+        mBtnNext = (RelativeLayout) rootView.findViewById(R.id.btn_next_question);
         mBtnSubmit = (Button) rootView.findViewById(R.id.btn_submit_answer);
         mTxtQuestion = (TextView) rootView.findViewById(R.id.txt_question);
         mImageDetail = (ImageView) rootView.findViewById(R.id.img_question);
@@ -129,19 +127,6 @@ public class ExamDetailFragment extends BaseFragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     final Question question = postSnapshot.getValue(Question.class);
-                    Target mTarget = new Target() {
-                        @Override
-                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                            question.setmResoure(bitmap);
-                        }
-                        @Override
-                        public void onBitmapFailed(Drawable errorDrawable) {
-                        }
-                        @Override
-                        public void onPrepareLoad(Drawable placeHolderDrawable) {
-                        }
-                    };
-                    Picasso.with(context).load(question.getImage()).into(mTarget);
                     lisQues.add(question);
                 }
                 listener.onDataChange(lisQues);
@@ -160,9 +145,8 @@ public class ExamDetailFragment extends BaseFragment {
         mTxtQuestion.setText(question.getQuestion());
         if(!question.getImage().equals("none")){
             mImageDetail.setVisibility(View.VISIBLE);
-//            PicassoLoader.getInstance(context).load(question.getImage()).placeholder(R.drawable.bg_captcha).
-//                    error(R.drawable.bg_captcha).into(mImageDetail);
-            mImageDetail.setImageBitmap(question.getmResoure());
+            PicassoLoader.getInstance(context).load(question.getImage()).placeholder(R.drawable.bg_captcha).
+                    error(R.drawable.bg_captcha).into(mImageDetail);
         }else{
             mImageDetail.setVisibility(View.GONE);
         }
