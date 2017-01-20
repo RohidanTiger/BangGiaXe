@@ -1,0 +1,182 @@
+{
+  "cau1" : {
+    "answers" : "Vạch kẻ đường là vạch chỉ sự phân chia làn đường, vị trí hoặc hướng đi, vị trí dừng lại.--Vạch kẻ đường là vạch chỉ sự phân biệt vị trí dừng, đỗ trên đường.--Tất cả các ý nêu trên.",
+    "image" : "none",
+    "question" : "“Vạch kẻ đường” được hiểu thế nào là đúng?",
+    "result" : "3"
+  },
+  "cau10" : {
+    "answers" : "Xe thô sơ phải đi trên làn đường bên trái trong cùng, xe cơ giới, xe máy chuyên dùng đi trên làn đường bên phải.--Xe thô sơ phải đi trên làn đường bên phải trong cùng; xe cơ giới, xe máy chuyên dùng đi trên làn đường bên trái.--Xe thô sơ đi trên làn đường phù hợp không gây cản trở giao thông, xe cơ giới, xe máy chuyên dùng đi trên làn đường bên phải.",
+    "image" : "none",
+    "question" : "Trên đường một chiều có vạch kẻ phân làn đường, xe thô sơ và xe cơ giới phải đi như thế nào là đúng quy tắc giao thông?",
+    "result" : "2"
+  },
+  "cau11" : {
+    "answers" : "Ôtô chở người trên 30 chỗ ngồi, ôtô tải có trọng tải từ 3500 kg trở lên, ôtô sơ mi rơ moóc, ôtô kéo rơ moóc, ôtô kéo xe khác, ôtô chuyên dùng, xe môtô, xe gắn máy.--Ôtô chở người đến 30 chỗ ngồi, ôtô tải có trọng tải dưới 3.500 kg.--Xe máy kéo, xe công nông, xe lam, xe lôi máy, xe xích lô máy, xe ba gác máy, xe máy chuyên dùng và các loại xe tương tự (loại đang được phép hoạt động).",
+    "image" : "none",
+    "question" : "Trên đường bộ trong khu vực đông dân cư, loại xe nào tham gia giao thông với tốc độ tối đa cho phép là 40 km/h?",
+    "result" : "1"
+  },
+  "cau12" : {
+    "answers" : "Nhận và kiểm tra hàng hóa nhận được theo giấy vận chuyển hoặc chứng từ tương đương khác; yêu cầu người kinh doanh vận tải thanh toán chi phí phát sinh do giao hàng hóa chậm.--Yêu cầu hoặc thông báo cho người thuê vận tải để yêu cầu người kinh doanh vận tải bồi thường thiệt hại do mất mát, hư hỏng hàng hóa, yêu cầu giám định hàng hóa khi cần thiết.--Nhận hàng hóa không theo giấy vận chuyển hoặc chứng từ tương đương khác.",
+    "image" : "none",
+    "question" : "Người nhận hàng có các quyền gì được ghi ở dưới đây?",
+    "result" : "1-2"
+  },
+  "cau13" : {
+    "answers" : "Kiểm tra các điều kiện bảo đảm an toàn của xe trước khi khởi hành; có thái độ văn minh, lịch sự, hướng dẫn hành khách ngồi đúng nơi quy định; kiểm tra việc sắp xếp, chằng buộc hành lý, bảo đảm an toàn.--Có biện pháp bảo vệ tính mạng, sức khỏe, tài sản của hành khách đi xe, giữ gìn trật tự, vệ sinh trong xe; đóng cửa lên xuống của xe trước và trong khi xe chạy.",
+    "image" : "none",
+    "question" : "Người lái xe và nhân viên phục vụ trên xe ôtô vận tải hành khách phải có những trách nhiệm gì theo quy định được ghi ở dưới đây?",
+    "result" : "1-2"
+  },
+  "cau14" : {
+    "answers" : "Thực hiên cầm máu trực tiếp.--Thực hiện cầm máu không trực tiếp (chặn động mạch).--Thực hiện cầm máu bằng garo.",
+    "image" : "none",
+    "question" : "Khi sơ cứu người bị tai nạn giao thông đường bộ, có vết thương chảy máu ngoài đỏ sẫm trào đều trên mặt vết thương, máu chảy ra số lượng ít bạn phải làm gì?",
+    "result" : "1"
+  },
+  "cau15" : {
+    "answers" : "Thiếu dầu phanh, phanh tay đang hãm.--Hệ thống túi khí an toàn gặp sự cố.--Lái xe và người ngồi ghế trước chưa cài dây an toàn.--Cửa đóng chưa chặt, có cửa chưa đóng.",
+    "image" : "1215",
+    "question" : "Khi động cơ ôtô đã khởi động, bảng đồng hồ xuất hiện ký hiệu như hình vẽ dưới dây, báo hiệu tình trạng như thế nào của xe ôtô?",
+    "result" : "3"
+  },
+  "cau16" : {
+    "answers" : "Bảo dưỡng thường xuyên làm cho ôtô luôn luôn có tính năng kỹ thuật tốt, giảm cường độ hao mòn của các chi tiết.--Ngăn ngừa và phát hiện kịp thời các hư hỏng và sai lệch kỹ thuật để khắc phục, giữ gìn được hình thức bên ngoài.",
+    "image" : "none",
+    "question" : "Mục đích bảo dưỡng thường xuyên đối với ôtô có tác dụng gì?",
+    "result" : "1-2"
+  },
+  "cau17" : {
+    "answers" : "Không nhỏ hơn 90 dB (A), không lớn hơn 115 dB (A).--Không nhỏ hơn 80 dB (A), không lớn hơn 105 dB (A).--Không nhỏ hơn 70 dB (A), không lớn hơn 90 dB (A).",
+    "image" : "none",
+    "question" : "Âm lượng của còi điện lắp cho ôtô (đo ở độ cao 1,2 m với khoảng cách 2 m tính từ đầu xe) là bao nhiêu?",
+    "result" : "1"
+  },
+  "cau18" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+    "image" : "1218",
+    "question" : "Biển nào báo hiệu giao nhau với đường ưu tiên?",
+    "result" : "2"
+  },
+  "cau19" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1219",
+    "question" : "Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?",
+    "result" : "1"
+  },
+  "cau2" : {
+    "answers" : "Đường chính là đường quốc lộ được đặt tên, số hiệu do cơ quan có thẩm quyền phân loại và quyết định.--Đường chính là đường bảo đảm giao thông chủ yếu trong khu vực.--Đường chính là đường trong đô thị hoặc đường tỉnh.",
+    "image" : "none",
+    "question" : "Khái niệm “đường chính” được hiểu như thế nào là đúng?",
+    "result" : "2"
+  },
+  "cau20" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1220",
+    "question" : "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+    "result" : "2"
+  },
+  "cau21" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1221",
+    "question" : "Biển nào báo hiệu đường hai chiều?",
+    "result" : "1"
+  },
+  "cau22" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1222",
+    "question" : "Biển nào báo hiệu phải giảm tốc độ, nhường đường cho xe cơ giới đi ngược chiều qua đường hẹp?",
+    "result" : "2"
+  },
+  "cau23" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+    "image" : "1223",
+    "question" : "Biển nào chỉ dẫn được ưu tiên qua đường hẹp?",
+    "result" : "3"
+  },
+  "cau24" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+    "image" : "1224",
+    "question" : "Xe nào đỗ vi phạm quy tắc giao thông?",
+    "result" : "1"
+  },
+  "cau25" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+    "image" : "1225",
+    "question" : "Xe nào đỗ vi phạm quy tắc giao thông?",
+    "result" : "3"
+  },
+  "cau26" : {
+    "answers" : "Đáp án 1.--Đáp án 2.",
+    "image" : "1226",
+    "question" : "Xe tải kéo môtô ba bánh như hình này có đúng quy tắc giao thông không?",
+    "result" : "2"
+  },
+  "cau27" : {
+    "answers" : "Đáp án 1.--Đáp án 2.",
+    "image" : "1227",
+    "question" : "Theo hướng mũi tên, hướng nào xe không được phép đi?",
+    "result" : "2"
+  },
+  "cau28" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.--Đáp án 4.",
+    "image" : "1228",
+    "question" : "Theo hướng mũi tên, những hướng nào ôtô không được phép đi?",
+    "result" : "4"
+  },
+  "cau29" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1229",
+    "question" : "Xe nào vượt đúng quy tắc giao thông?",
+    "result" : "2-3"
+  },
+  "cau3" : {
+    "answers" : "Phải cho xe dừng lại trước vạch dừng, trừ trường hợp đã đi quá vạch dừng thì được đi tiếp; trong trường hợp tín hiệu vàng nhấp nháy là được đi nhưng phải giảm tốc độ, chú ý quan sát, nhường đường cho người đi bộ qua đường.--Phải cho xe nhanh chóng vượt qua vạch dừng để đi qua đường giao nhau và chú ý đảm bảo an toàn; khi đèn tín hiệu vàng nhấp nháy là được đi nhưng phải giảm tốc độ, chú ý quan sát người đi bộ để bảo đảm an toàn.--Cả hai ý nêu trên.",
+    "image" : "none",
+    "question" : "Tại nơi đường giao nhau, khi đèn điều khiển giao thông có tín hiệu vàng, người điều khiển phương tiện phải thực hiện như thế nào?",
+    "result" : "1"
+  },
+  "cau30" : {
+    "answers" : "Đáp án 1.--Đáp án 2.--Đáp án 3.",
+    "image" : "1230",
+    "question" : "Theo hướng mũi tên, gặp biển hướng đi phải theo đặt trước ngã tư, những hướng nào được phép đi?",
+    "result" : "1"
+  },
+  "cau4" : {
+    "answers" : "Người tham gia giao thông ở phía trước và ở phía sau người điều khiển giao thông phải dừng lại; người tham gia giao thông ở phía bên phải và bên trái người điều khiển được đi.--Người tham gia giao thông ở phía trước và ở phía sau người điều khiển giao thông được đi thẳng; người tham gia giao thông ở phía bên phải và bên trái người điều khiển được đi thẳng và rẽ phải.",
+    "image" : "none",
+    "question" : "Tại nơi đường giao nhau, khi người điều khiển giao thông ra hiệu lệnh bằng hai tay hoặc một tay giang ngang để báo hiệu thì người tham gia giao thông phải đi như thế nào là đúng quy tắc giao thông?",
+    "result" : "1"
+  },
+  "cau5" : {
+    "answers" : "Người tham gia giao thông ở phía trước và ở phía sau người điều khiển giao thông phải dừng lại; người tham gia giao thông ở phía bên phải và bên trái người điều khiển được đi.--Người tham gia giao thông ở các hướng phải dừng lại.--Tất cả các trường hợp trên.",
+    "image" : "none",
+    "question" : "Tại nơi đường giao nhau, khi người điều khiển giao thông ra hiệu lệnh tay giơ thẳng đứng để báo hiệu thì người tham gia giao thông phải đi như thế nào?",
+    "result" : "2"
+  },
+  "cau6" : {
+    "answers" : "Người tham gia giao thông ở phía sau người điều khiển phải dừng lại; người ở phía trước người điều khiển được rẽ trái; người ở phía bên trái người điều khiển được rẽ trái; người đi bộ qua đường phải dừng lại sau lưng người điều khiển giao thông.--Người tham gia giao thông ở phía sau và bên phải người điều khiển phải dừng lại; người ở phía trước người điều khiển được rẽ phải; người ở phía bên trái người điều khiển giao thông được đi tất cả các hướng; người đi bộ qua đường phải đi sau lưng người điều khiển giao thông.",
+    "image" : "none",
+    "question" : "Tại nơi đường giao nhau, khi người điều khiển giao thông ra hiệu lệnh bằng tay phải giơ về phía trước để báo hiệu thì người tham gia giao thông phải đi như thế nào?",
+    "result" : "2"
+  },
+  "cau7" : {
+    "answers" : "Là trách nhiệm của ngành Giao thông vận tải và ngành Công an.--Là trách nhiệm của cơ quan, tổ chức, cá nhân.--Là trách nhiệm của cảnh sát giao thông.",
+    "image" : "none",
+    "question" : "Bảo đảm trật tự, an toàn giao thông đường bộ là trách nhiệm của ai?",
+    "result" : "2"
+  },
+  "cau8" : {
+    "answers" : "Biển báo hiệu cố định.--Biển báo hiệu tạm thời.",
+    "image" : "none",
+    "question" : "Tại nơi có biển hiệu cố định lại có báo hiệu tạm thời thì người tham gia giao thông phải chấp hành hiệu lệnh của báo hiệu nào?",
+    "result" : "2"
+  },
+  "cau9" : {
+    "answers" : "Cho xe đi trên bất kỳ làn đường nào; khi cần thiết phải chuyển làn đường, người lái xe phải có đèn tín hiệu báo trước và phải bảo đảm an toàn.--Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo đảm an toàn.--Phải cho xe đi trong một làn đường, khi chuyển làn đường phải có tín hiệu báo trước, chú ý quan sát để bảo đảm an toàn.",
+    "image" : "none",
+    "question" : "Trên đường có nhiều làn đường cho xe đi cùng chiều được phân biệt bằng vạch kẻ phân làn đường, người điều khiển phương tiện phải cho xe đi như thế nào?",
+    "result" : "2"
+  }
+}

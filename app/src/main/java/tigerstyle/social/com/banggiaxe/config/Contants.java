@@ -31,6 +31,10 @@ public class Contants {
 
     public static final int IMAGE_SIZE_SEARCH = 300;
 
+    public static final int NUMBER_QUESTION = 30;
+
+    public static final int EXAM_TIME = 20 * 60 * 1000;
+
     // TAB IDENTIFY CONFIG
     public static final String TAB_HOME = "TAB_HOME";
     // Image Size

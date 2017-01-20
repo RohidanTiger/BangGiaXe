@@ -1,5 +1,4 @@
 {
-  "de2" : {
     "cau1" : {
       "answers" : "Là một phần của đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.--Là một phần của đường được chia theo chiều ngang của đường, có bề rộng đủ cho xe đỗ an toàn.--Cả 2 ý trên.",
       "image" : "none",
@@ -180,5 +179,4 @@
       "question" : "Khi điều khiển ôtô tới gần xe chạy ngược chiều vào ban đêm, người lái xe cần thực hiện các thao tác nào?",
       "result" : "1"
     }
-  }
 }

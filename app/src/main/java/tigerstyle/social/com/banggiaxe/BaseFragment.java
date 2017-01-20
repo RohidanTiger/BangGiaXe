@@ -27,7 +27,7 @@ public class BaseFragment extends Fragment {
     public MainActivity context;
     public String TAG = null;
     public View rootView;
-    private static ImageLoader mImageLoader;
+    public static ImageLoader mImageLoader;
     protected Typeface mTfLight;
     public FirebaseDatabase mFirebaseInstance;
 

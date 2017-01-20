@@ -1,5 +1,4 @@
 {
-  "de3" : {
     "cau1" : {
       "answers" : "Đường, cầu đường bộ.--Hầm đường bộ, bến phà đường bộ.--Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
       "image" : "none",
@@ -180,5 +179,4 @@
       "question" : "Trên đường một chiều, trước khi đến vạch người đi bộ qua đường có một xe tải đang dừng trước làn đường bên phải, người lái xe phải làm gì nếu xe của mình đang đi trên làn đường bên trái?",
       "result" : "2"
     }
-  }
 }

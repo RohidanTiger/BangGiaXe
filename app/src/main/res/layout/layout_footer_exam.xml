@@ -5,39 +5,40 @@
     android:background="@color/cmn_white"
     android:layout_height="@dimen/btn_height">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cmn_gray_search_bg"/>
+
     <Button
         android:id="@+id/btn_submit_answer"
         android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:text="@string/cmn_btn_submit"
         android:textSize="@dimen/text_small"
         android:gravity="center"
         android:layout_centerInParent="true"/>
 
     <RelativeLayout
-        android:id="@+id/btn_previous_question"
         style="@style/Layout.FillWidthHeight"
-        android:duplicateParentState="true"
         android:layout_toLeftOf="@id/btn_submit_answer">
         <Button
+            android:id="@+id/btn_previous_question"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:duplicateParentState="true"
-            android:layout_marginLeft="@dimen/padding_small"
+            android:layout_marginLeft="@dimen/padding_medium"
             android:background="@drawable/selector_previous"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/btn_next_question"
         style="@style/Layout.FillWidthHeight"
-        android:duplicateParentState="true"
         android:layout_toRightOf="@id/btn_submit_answer">
         <Button
+            android:id="@+id/btn_next_question"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:duplicateParentState="true"
-            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_medium"
             android:background="@drawable/selector_next"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>

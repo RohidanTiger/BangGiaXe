@@ -36,8 +36,8 @@ import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 public class ExamDetailFragment extends BaseFragment {
 
     private ArrayList<Question> listQuestion;
-    private RelativeLayout mBtnPrevious;
-    private RelativeLayout mBtnNext;
+    private Button mBtnPrevious;
+    private Button mBtnNext;
     private Button mBtnSubmit;
     private TextView mTxtQuestion;
     private ImageView mImageDetail;
@@ -64,8 +64,8 @@ public class ExamDetailFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_exam_detail, null);
-        mBtnPrevious = (RelativeLayout) rootView.findViewById(R.id.btn_previous_question);
-        mBtnNext = (RelativeLayout) rootView.findViewById(R.id.btn_next_question);
+        mBtnPrevious = (Button) rootView.findViewById(R.id.btn_previous_question);
+        mBtnNext = (Button) rootView.findViewById(R.id.btn_next_question);
         mBtnSubmit = (Button) rootView.findViewById(R.id.btn_submit_answer);
         mTxtQuestion = (TextView) rootView.findViewById(R.id.txt_question);
         mImageDetail = (ImageView) rootView.findViewById(R.id.img_question);

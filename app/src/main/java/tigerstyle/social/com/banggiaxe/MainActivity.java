@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -384,7 +385,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
             case android.R.id.home:{
-
                 if (currentStackSize > 1 && !currentFragment.canPressBack()) {
                    popFragments();
                 }else{

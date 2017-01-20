@@ -1,5 +1,4 @@
 {
-  "de4" : {
     "cau1" : {
       "answers" : "Người điều khiển ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn vượt quá 50 miligam/100 mililít máu hoặc 0,25 miligam/1 lít khí thở.--Người điều khiển ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn vượt quá 80 miligam/100 mililít máu hoặc 40 miligam/1 lít khí thở.--Người điều khiển xe ôtô, máy kéo, xe máy chuyên dùng trên đường mà trong máu hoặc hơi thở có nồng độ cồn.",
       "image" : "none",
@@ -180,5 +179,4 @@
       "question" : "Người lái xe chở người từ 10 đến 30 chỗ (hạng D), lái xe hạng C kéo rơ-moóc (FC) phải đủ bao nhiêu tuổi trở lên?",
       "result" : "2"
     }
-  }
 }
