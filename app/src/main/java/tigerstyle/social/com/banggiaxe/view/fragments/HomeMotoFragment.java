@@ -137,7 +137,6 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
             hideLoading();
         }
         mAdapter.notifyDataSetChanged();
-        Log.d("Number Of Data",motobikeBrands.size()+"");
     }
 
 
@@ -210,11 +209,10 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
                 }
             }
         }else{
-            listResult = motobikeBrands;
+            listResult = new ArrayList<>(motobikeBrands);
         }
         Iterator iterator = listResult.iterator();
         switch (priceSelect){
-
             case 0:{
                 break;
             }

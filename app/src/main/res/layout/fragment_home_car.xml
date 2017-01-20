@@ -37,10 +37,10 @@
             android:id="@+id/textview_deviation_price"
             app:layout_widthPercent="35%"
             android:layout_height="match_parent"
-            android:text="Giá đàm phán(triệu)"
+            android:text="@string/cmn_vehical_type"
             android:gravity="center_vertical"
             android:layout_toRightOf="@+id/textview_price"
-            android:paddingLeft="@dimen/padding_normal"
+            android:paddingLeft="@dimen/padding_medium"
             android:textSize="@dimen/text_small"/>
 
     </android.support.percent.PercentRelativeLayout>
@@ -53,26 +53,26 @@
 
         <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
             android:id="@+id/spiner_brand"
-            app:layout_widthPercent="50%"
+            app:layout_widthPercent="30%"
             style="@style/spinner_common"
             android:layout_margin="@dimen/padding_smaller"
             android:entries="@array/car_brand_array"/>
 
         <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
             android:id="@+id/spiner_price"
-            app:layout_widthPercent="50%"
+            app:layout_widthPercent="35%"
             style="@style/spinner_common"
             android:layout_margin="@dimen/padding_smaller"
             android:layout_toRightOf="@id/spiner_brand"
             android:entries="@array/car_price_array"/>
 
-        <!--<tigerstyle.social.com.banggiaxe.customize.CustomSpinner-->
-            <!--android:id="@+id/spiner_deviation_price"-->
-            <!--app:layout_widthPercent="35%"-->
-            <!--android:layout_toRightOf="@id/spiner_price"-->
-            <!--style="@style/spinner_common"-->
-            <!--android:layout_margin="@dimen/padding_smaller"-->
-            <!--android:entries="@array/price_array"/>-->
+        <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+            android:id="@+id/spiner_car_type"
+            app:layout_widthPercent="35%"
+            android:layout_toRightOf="@id/spiner_price"
+            style="@style/spinner_common"
+            android:layout_margin="@dimen/padding_smaller"
+            android:entries="@array/car_type_array"/>
 
     </android.support.percent.PercentRelativeLayout>
 

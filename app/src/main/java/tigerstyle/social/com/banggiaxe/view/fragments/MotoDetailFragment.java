@@ -154,9 +154,9 @@ public class MotoDetailFragment extends BaseFragment{
                     mTxtRegistrationTitle.setText("Phí trước bạ (5%)");
                     registrationFee[0] = (long) (deviationPrice * 5 / 100 * ONE_MILLION);
                     mTxtRegistrationFee.setText(NumberFormater.longFormat(registrationFee[0]));
-                    if(deviationPrice <= 15000000){
+                    if(deviationPrice* ONE_MILLION <= 15000000){
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE1_1;
-                    }else if(deviationPrice > 15000000 && deviationPrice <= 40000000){
+                    }else if(deviationPrice* ONE_MILLION > 15000000 && deviationPrice* ONE_MILLION <= 40000000){
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE1_2;
                     }else {
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE1_3;
@@ -168,15 +168,15 @@ public class MotoDetailFragment extends BaseFragment{
                     mTxtRegistrationTitle.setText("Phí trước bạ (2%)");
                     registrationFee[0] = (long) (deviationPrice * 2 / 100 * ONE_MILLION);
                     mTxtRegistrationFee.setText(NumberFormater.longFormat(registrationFee[0]));
-                    if(deviationPrice <= 15000000){
+                    if(deviationPrice * ONE_MILLION <= 15000000){
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE2_1;
-                    }else if(deviationPrice > 15000000 && deviationPrice <= 40000000){
+                    }else if(deviationPrice * ONE_MILLION > 15000000 && deviationPrice* ONE_MILLION <= 40000000){
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE2_2;
                     }else {
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE2_3;
                     }
                     mTxtPlateNumberValue.setText(NumberFormater.longFormat(numberPateFee[0]));
-                    long totalCost = (long) (deviationPrice*ONE_MILLION + MOTO_INSURANCE + registrationFee[0] + numberPateFee[0]);
+                    long totalCost = (long) (deviationPrice* ONE_MILLION*ONE_MILLION + MOTO_INSURANCE + registrationFee[0] + numberPateFee[0]);
                     mTxtTotalPrice.setText(NumberFormater.longFormat(totalCost).concat("đ"));
                 }else{
                     mTxtRegistrationTitle.setText("Phí trước bạ (2%)");
