@@ -255,10 +255,35 @@
                     android:textStyle="bold"/>
 
                 <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                    android:id="@+id/txt_gross_weight_title"
+                    android:id="@+id/txt_ground_clearance_title"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txt_torque_power_title"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:text="@string/cmn_ground_clearance"
+                    android:textColor="@color/genre"
+                    android:textSize="@dimen/text_normal"
+                    app:suffix_length="4"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_ground_clearance_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_torque_power_title"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:layout_toRightOf="@+id/txt_torque_power_title"
+                    android:textColor="@color/genre"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold"/>
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_gross_weight_title"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_ground_clearance_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:text="@string/cmn_gross_weight"
@@ -271,7 +296,7 @@
                     android:id="@+id/txt_gross_weight_value"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_torque_power_value"
+                    android:layout_below="@id/txt_ground_clearance_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:layout_toRightOf="@+id/txt_gross_weight_title"
@@ -279,33 +304,12 @@
                     android:textSize="@dimen/text_normal"
                     android:textStyle="bold"/>
 
-                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                    android:id="@+id/txt_origin_title"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_gross_weight_title"
-                    android:layout_marginTop="3dp"
-                    android:paddingTop="@dimen/padding_normal"
-                    android:text="@string/cmn_origin"
-                    android:textColor="@color/genre"
-                    android:textSize="@dimen/text_normal" />
-
-                <TextView
-                    android:id="@+id/txt_origin_value"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_gross_weight_value"
-                    android:layout_marginTop="3dp"
-                    android:paddingTop="@dimen/padding_normal"
-                    android:layout_toRightOf="@+id/txt_origin_title"
-                    android:textColor="@color/genre"
-                    android:textSize="@dimen/text_normal" />
 
                 <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                     android:id="@+id/txt_type_of_vehical"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_origin_value"
+                    android:layout_below="@id/txt_gross_weight_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:text="@string/cmn_type_of_vehical"
@@ -316,7 +320,7 @@
                     android:id="@+id/txt_type_of_vehical_value"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_origin_value"
+                    android:layout_below="@id/txt_gross_weight_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:layout_toRightOf="@+id/txt_type_of_vehical"
@@ -325,10 +329,32 @@
                     android:textStyle="bold"/>
 
                 <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                    android:id="@+id/txt_number_of_gears"
+                    android:id="@+id/txt_origin_title"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txt_type_of_vehical"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:text="@string/cmn_origin"
+                    android:textColor="@color/genre"
+                    android:textSize="@dimen/text_normal" />
+                <TextView
+                    android:id="@+id/txt_origin_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_type_of_vehical"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:layout_toRightOf="@+id/txt_origin_title"
+                    android:textColor="@color/genre"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold"/>
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_number_of_gears"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_origin_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:text="@string/cmn_number_of_gears"
@@ -339,7 +365,7 @@
                     android:id="@+id/txt_number_of_gears_value"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_type_of_vehical_value"
+                    android:layout_below="@id/txt_origin_title"
                     android:layout_marginTop="3dp"
                     android:paddingTop="@dimen/padding_normal"
                     android:layout_toRightOf="@+id/txt_number_of_gears"

@@ -18,6 +18,7 @@ import okhttp3.Response;
 import tigerstyle.social.com.banggiaxe.MainActivity;
 import tigerstyle.social.com.banggiaxe.config.Contants;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 
 /**
  * Created by billymobile on 12/29/16.
@@ -31,7 +32,10 @@ public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
     }
     @Override
     public void onStartLoading() {
-        mContext.showLoading();
+        if (takeContentChanged()) {
+            forceLoad();
+            mContext.showLoading();
+        }
     }
 
     @Override
@@ -103,5 +107,11 @@ public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
             mContext.hideLoading();
         }
         return carBrands;
+    }
+
+    @Override
+    protected void onStopLoading() {
+        cancelLoad();
+        mContext.hideLoading();
     }
 }

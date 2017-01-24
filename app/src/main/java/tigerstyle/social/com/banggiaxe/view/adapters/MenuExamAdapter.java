@@ -33,7 +33,7 @@ public class MenuExamAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final String examNumber = mDataSet[position];
-        ((MenuExamAdapter.ViewHolder) holder).textViewName.setText(examNumber);
+        ((MenuExamAdapter.ViewHolder) holder).textViewName.setText(String.valueOf(position+1));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

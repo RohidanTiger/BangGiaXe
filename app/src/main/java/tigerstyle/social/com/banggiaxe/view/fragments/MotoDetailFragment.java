@@ -95,12 +95,8 @@ public class MotoDetailFragment extends BaseFragment{
         mTxtInsurance = (TextView) rootView.findViewById(R.id.txt_insurance_value);
         mTxtTotalPrice = (SuffixTextView) rootView.findViewById(R.id.txt_total_cost_value);
 
-
         motobikeBrand = (MotobikeBrand) getArguments().getSerializable(HomeMotoFragment.ARG_OBJ_KEY);
         deviationPrice = Double.parseDouble(motobikeBrand.getCarPriceDeviation());
-        context.setHideActionBarSearchItem(false);
-        context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_detail_information));
-        setHasOptionsMenu(true);
         fillData();
         calculateTotalCost();
 
@@ -124,8 +120,8 @@ public class MotoDetailFragment extends BaseFragment{
         mTxtSizeValue.setText(motobikeBrand.getCarSize());
         mTxtFuelCapacity.setText(motobikeBrand.getCarFuelTankCapacity());
         mTxtDisplacement.setText(motobikeBrand.getCarEngine());
-        mTxtOutputCapacity.setText(motobikeBrand.getCarPower());
-        mTxtMoment.setText(motobikeBrand.getCarMoment());
+        mTxtOutputCapacity.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(motobikeBrand.getCarPower())));
+        mTxtMoment.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(motobikeBrand.getCarMoment())));
         mTxtGrossWeight.setText(motobikeBrand.getCarTurningCirclel());
         mTxtOrigin.setText(motobikeBrand.getCarOrigin());
         mTxtTypeVehical.setText(motobikeBrand.getCarGear());
@@ -176,7 +172,7 @@ public class MotoDetailFragment extends BaseFragment{
                         numberPateFee[0] = MOTO_NUMBER_PLATE_ZONE2_3;
                     }
                     mTxtPlateNumberValue.setText(NumberFormater.longFormat(numberPateFee[0]));
-                    long totalCost = (long) (deviationPrice* ONE_MILLION*ONE_MILLION + MOTO_INSURANCE + registrationFee[0] + numberPateFee[0]);
+                    long totalCost = (long) (deviationPrice*ONE_MILLION + MOTO_INSURANCE + registrationFee[0] + numberPateFee[0]);
                     mTxtTotalPrice.setText(NumberFormater.longFormat(totalCost).concat("đ"));
                 }else{
                     mTxtRegistrationTitle.setText("Phí trước bạ (2%)");
@@ -192,5 +188,12 @@ public class MotoDetailFragment extends BaseFragment{
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        context.setHideActionBarSearchItem(false);
+        context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_detail_information));
+        setHasOptionsMenu(true);
     }
 }

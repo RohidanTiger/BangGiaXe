@@ -2,13 +2,13 @@ package tigerstyle.social.com.banggiaxe.customize;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 /**
  * Created by billymobile on 1/11/17.
  */
 
-public class SquareLayout extends LinearLayout {
+public class SquareLayout extends RelativeLayout {
     public SquareLayout(Context context) {
         super(context);
     }

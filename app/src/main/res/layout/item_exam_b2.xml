@@ -2,20 +2,30 @@
 <tigerstyle.social.com.banggiaxe.customize.SquareLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:id="@+id/rootView"
     android:background="@drawable/corner_view">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        style="@style/Layout.FillWidth"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            style="@style/Layout.FillWidth"
+            android:text="Đề thi số"
+            android:gravity="center"
+            android:textColor="@color/cmn_black"
+            android:textSize="@dimen/text_title"
+            android:layout_marginTop="@dimen/padding_medium"/>
 
         <TextView
             android:id="@+id/txt_exam_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Layout.FillWidth"
+            android:layout_marginTop="@dimen/padding_normal_bigger"
+            android:textColor="@color/cmn_black"
+            android:textSize="@dimen/text_larger"
             android:gravity="center"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 </tigerstyle.social.com.banggiaxe.customize.SquareLayout>

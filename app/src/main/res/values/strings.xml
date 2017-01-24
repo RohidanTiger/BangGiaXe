@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bang Gia Xe</string>
+    <string name="app_name">Bảng Giá Xe</string>
     <string name="noNetwork">Không có kết nối internet</string>
     <string name="message_open_network_setting">Không có kết nối internet. Bạn có muốn thiết lập ？</string>
     <string name="loading">Đang tải dữ liệu</string>
@@ -9,6 +9,7 @@
     <string name="cmn_done">Hoàn thành</string>
     <string name="cmn_cancel">Bỏ qua</string>
     <string name="cmn_internet_connection_lost">Lỗi kết nối tới máy chủ.Xin vui lòng thử lại</string>
+    <string name="cmn_no_internet_access">Không có kết nối internet.</string>
     <string name="cmn_timeout">Timeout </string>
     <string name="cmn_no_response">Không có dữ liệu hồi đáp</string>
     <string name="msg_confirm_quit_app">Bạn có chắc chắn muốn thoát khỏi ứng dụng？</string>
@@ -21,6 +22,7 @@
     <string name="cmn_road_tolls">Phí đường bộ (1 năm)</string>
     <string name="cmn_insurance">Bảo hiểm trách nhiệm dân sự (1 năm)</string>
     <string name="cmn_number_plate">Phí làm biển số</string>
+    <string name="cmn_no_search_answer">Không có kết quả tìm kiếm.</string>
 
     <!-- Title detail -->
     <string name="cmn_vehical_size">Dài x rộng x cao (mm)</string>
@@ -28,6 +30,7 @@
     <string name="cmn_displacement">Động cơ (phân khối)</string>
     <string name="cmn_output_capacity">Công suất (mã lực)</string>
     <string name="cmn_torque_power">Mô-men xoắn (Nm)</string>
+    <string name="cmn_ground_clearance">Khoảng sáng gầm (mm)</string>
     <string name="cmn_gross_weight">Trọng lượng khô (kg)</string>
     <string name="cmn_origin">Nguồn gốc</string>
     <string name="cmn_type_of_vehical">Loại xe</string>
@@ -40,6 +43,8 @@
     <string name="cmn_oto_title">Bảng giá oto</string>
     <string name="cmn_a1_certificate">Thi lý thuyết bằng A1</string>
     <string name="cmn_b2_certificate">Thi lý thuyết bằng B2</string>
+    <string name="cmn_a1_title">Bộ đề bằng A1</string>
+    <string name="cmn_b2_title">Bộ đề bằng B2</string>
     <string name="cmn_vehical_type">Loại xe</string>
 
     <array name="brand_array">

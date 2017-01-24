@@ -6,6 +6,7 @@ import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -104,10 +105,6 @@ public class B2ExamDetailFragment extends BaseFragment{
         // Group4
         mLayoutAnswer4 = (RelativeLayout) rootView.findViewById(R.id.layout_answer4);
         mCheckBox4     = (AppCompatCheckBox)  rootView.findViewById(R.id.checkbox_4);
-
-        context.setHideActionBarSearchItem(false);
-        context.getSupportActionBar().setTitle("Đề 1");
-        setHasOptionsMenu(true);
 
         listQuestion = new ArrayList<>();
         requestQuestionList(new DataChangeListener() {
@@ -329,5 +326,19 @@ public class B2ExamDetailFragment extends BaseFragment{
             mLayoutTime.setVisibility(View.GONE);
             mBtnSubmit.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.action_search).setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        context.setHideActionBarSearchItem(false);
+        context.getSupportActionBar().setTitle("Đề ".concat(String.valueOf(positionExam+1)));
+        setHasOptionsMenu(true);
     }
 }

@@ -298,7 +298,8 @@
                     android:paddingTop="@dimen/padding_normal"
                     android:layout_toRightOf="@+id/txt_origin_title"
                     android:textColor="@color/genre"
-                    android:textSize="@dimen/text_normal" />
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold"/>
 
                 <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                     android:id="@+id/txt_type_of_vehical"

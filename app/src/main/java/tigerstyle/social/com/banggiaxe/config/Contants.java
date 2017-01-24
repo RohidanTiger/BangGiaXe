@@ -17,6 +17,7 @@ public class Contants {
 
     public static String NAME_IMAGE_CAPTURE = "tempPhoto";
     public static String NUMBER_FORMAT = "#,###,###,###";
+    public static String NUMBER_FORMAT2 = "#,###,###,###";
     public static long ONE_MILLION = 1000000;
 
 

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,6 +29,8 @@ import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
+
+import static tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment.ARG_POSITION;
 
 /**
  * Created by billymobile on 1/11/17.
@@ -60,6 +63,8 @@ public class ExamDetailFragment extends BaseFragment {
     private RelativeLayout mLayoutAnswer4;
     private CheckBox mCheckBox4;
 
+    private int positionExam;
+
     private DatabaseReference mFirebaseDatabase;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -69,6 +74,7 @@ public class ExamDetailFragment extends BaseFragment {
         mBtnSubmit = (Button) rootView.findViewById(R.id.btn_submit_answer);
         mTxtQuestion = (TextView) rootView.findViewById(R.id.txt_question);
         mImageDetail = (ImageView) rootView.findViewById(R.id.img_question);
+        positionExam = getArguments().getInt(ARG_POSITION);
 
         // Group1
         mLayoutAnswer1 = (RelativeLayout) rootView.findViewById(R.id.layout_answer1);
@@ -85,10 +91,6 @@ public class ExamDetailFragment extends BaseFragment {
         // Group4
         mLayoutAnswer4 = (RelativeLayout) rootView.findViewById(R.id.layout_answer4);
         mCheckBox4     = (CheckBox)  rootView.findViewById(R.id.checkbox_4);
-
-        context.setHideActionBarSearchItem(false);
-        context.getSupportActionBar().setTitle("Đề 1");
-        setHasOptionsMenu(true);
 
         mFirebaseDatabase = mFirebaseInstance.getReference();
         listQuestion = new ArrayList<>();
@@ -164,5 +166,19 @@ public class ExamDetailFragment extends BaseFragment {
             mLayoutAnswer3.setVisibility(View.VISIBLE);
             mLayoutAnswer4.setVisibility(View.VISIBLE);
         }
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.action_search).setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        context.setHideActionBarSearchItem(false);
+        context.getSupportActionBar().setTitle("Đề ".concat(String.valueOf(positionExam+1)));
+        setHasOptionsMenu(true);
     }
 }

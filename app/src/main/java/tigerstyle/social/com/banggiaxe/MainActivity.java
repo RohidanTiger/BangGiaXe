@@ -31,6 +31,7 @@ import tigerstyle.social.com.banggiaxe.customize.DialogLoading;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.service.FragmentStackManager;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.DialogUtil;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.DrawerMenuAdapter;
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle(R.string.app_name);
+                //getSupportActionBar().setTitle(R.string.app_name);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -395,7 +396,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                     searchView.onActionViewCollapsed();
                 }
-
                 return false;
             }
             default:
@@ -422,5 +422,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public ArrayList<CarBrand> getListCar(){
         return listCar;
+    }
+
+    public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
+        ConnectivityReceiver.connectivityReceiverListener = listener;
     }
 }

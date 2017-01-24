@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -44,8 +45,10 @@ public class ExamMenuFragment extends BaseFragment {
                 bundle.putInt(ARG_POSITION,position);
                 if(view_type == ARG_EXAM_A1_TYPE){
                     context.pushFragments(new ExamDetailFragment(),bundle,true,true);
+                    context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_a1_title));
                 }else{
                     context.pushFragments(new B2ExamDetailFragment(),bundle,true,true);
+                    context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_b2_title));
                 }
             }
         });
@@ -59,9 +62,20 @@ public class ExamMenuFragment extends BaseFragment {
     }
 
     @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.action_search).setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public void onResume(){
         super.onResume();
-        context.getSupportActionBar().setTitle("Lý thuyết bằng A1");
+        if(view_type == ARG_EXAM_A1_TYPE){
+            context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_a1_title));
+        }else{
+            context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_b2_title));
+        }
         context.setHideActionBarSearchItem(true);
+        setHasOptionsMenu(true);
     }
 }

@@ -13,4 +13,8 @@ public class NumberFormater {
         DecimalFormat formatter = new DecimalFormat(Contants.NUMBER_FORMAT);
         return formatter.format(number).replaceAll(",",".");
     }
+
+    public static String twoDecimaFormat(Double number){
+        return String.format("%.2f", number);
+    }
 }

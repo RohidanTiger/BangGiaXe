@@ -81,6 +81,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     private TextView mTxtRoadTolls;
     private TextView mTxtInsurance;
     private TextView mTxtNumberPlate;
+    private TextView mTxtGroundClearance;
     private TextView mTxtInspectionFee;
     private TextView mTxtTotalCost;
     private SuffixTextView mTxtAreaTitle;
@@ -113,6 +114,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         mTxtOutputCapacity = (TextView) rootView.findViewById(R.id.txt_output_capacity_value);
         mTxtMoment = (TextView) rootView.findViewById(R.id.txt_torque_power_value);
         mTxtGrossWeight = (TextView) rootView.findViewById(R.id.txt_gross_weight_value);
+        mTxtGroundClearance = (TextView) rootView.findViewById(R.id.txt_ground_clearance_value);
         mTxtOrigin = (TextView) rootView.findViewById(R.id.txt_origin_value);
         mTxtTypeVehical = (TextView) rootView.findViewById(R.id.txt_type_of_vehical_value);
         mTxtNumberOfGears = (TextView) rootView.findViewById(R.id.txt_number_of_gears_value);
@@ -133,9 +135,6 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         listCar = context.getListCar();
 
         carBrand = (CarBrand) getArguments().getParcelable(HomeOtoFragment.ARG_OBJ_KEY);
-        context.setHideActionBarSearchItem(false);
-        context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_detail_information));
-        setHasOptionsMenu(true);
         fillData();
         fillTotalCost();
         fillChartData();
@@ -166,6 +165,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         mTxtOutputCapacity.setText(carBrand.getCarPower());
         mTxtMoment.setText(carBrand.getCarMoment());
         mTxtGrossWeight.setText(carBrand.getCarTurningCirclel());
+        mTxtGroundClearance.setText(carBrand.getCarGroundClearance());
         mTxtOrigin.setText(carBrand.getCarOrigin());
         mTxtTypeVehical.setText(carBrand.getCarType());
         mTxtNumberOfGears.setText(carBrand.getCarGear());
@@ -354,5 +354,13 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         mLayoutManager = new GridLayoutManager(context,2);
         mRecyclePompetitor.setLayoutManager(mLayoutManager);
         mRecyclePompetitor.setAdapter(mPompetitorAdapter);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        context.setHideActionBarSearchItem(false);
+        context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_detail_information));
+        setHasOptionsMenu(true);
     }
 }

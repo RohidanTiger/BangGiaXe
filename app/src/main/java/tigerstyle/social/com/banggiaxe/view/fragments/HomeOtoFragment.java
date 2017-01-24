@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,19 +23,22 @@ import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeCarAdapter;
 
 /**
  * Created by billymobile on 12/28/16.
  */
 
-public class HomeOtoFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<List<CarBrand>>,SearchingListener {
+public class HomeOtoFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<List<CarBrand>>,SearchingListener,
+        ConnectivityReceiver.ConnectivityReceiverListener{
 
     RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
     private CustomSpinner mBrandSpinner;
     private CustomSpinner mPriceSpinner;
-    private CustomSpinner mCarTpeSpinner;
+    private CustomSpinner mCarTypeSpinner;
+    private TextView mTxtResult;
 
     private HomeCarAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -42,8 +46,9 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
 
     private int brandSelect = 0;
     private int priceSelect = 0;
+    private int typeSelect = 0;
     private List<String> listBrand;
-    private List<String> listPrice;
+    private List<String> listCarTpe;
     public static String ARG_OBJ_KEY = "arg-brand-obj";
 
     @Override
@@ -54,11 +59,12 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         mBrandSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_brand);
         mPriceSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_price);
-        mCarTpeSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_car_type);
+        mCarTypeSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_car_type);
+        mTxtResult = (TextView) rootView.findViewById(R.id.txt_result);
 
         // get data from resource
         listBrand = Arrays.asList(getResources().getStringArray(R.array.car_brand_array));
-        listPrice = Arrays.asList(getResources().getStringArray(R.array.car_price_array));
+        listCarTpe = Arrays.asList(getResources().getStringArray(R.array.car_type_array));
         mAdapter = new HomeCarAdapter(context,carBrands);
         mLayoutManager = new LinearLayoutManager(context);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -100,6 +106,13 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
     @Override
     public void onResume(){
         super.onResume();
+        context.setConnectivityListener(this);
+        if(ConnectivityReceiver.isConnected()){
+            mTxtResult.setVisibility(View.GONE);
+        }else{
+            mTxtResult.setVisibility(View.VISIBLE);
+            mTxtResult.setText(context.getResources().getString(R.string.cmn_no_internet_access));
+        }
         context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_oto_title));
         context.setHideActionBarSearchItem(true);
     }
@@ -112,12 +125,17 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
                 listResult.add(brand);
             }
         }
+        if(listResult.size() > 0){
+            mTxtResult.setVisibility(View.GONE);
+        }else{
+            mTxtResult.setVisibility(View.VISIBLE);
+            mTxtResult.setText(context.getResources().getString(R.string.cmn_no_search_answer));
+        }
         mAdapter.setmDataSet(listResult);
     }
 
     @Override
     public void cancelSearch() {
-
     }
 
     private void initSpiner(){
@@ -144,6 +162,16 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
             }
         });
 
+        mCarTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                typeSelect = i;
+                mAdapter.setmDataSet(requestSearch());
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
     }
 
     private ArrayList<CarBrand> requestSearch(){
@@ -264,6 +292,37 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
                 }
             }
         }
-        return listResult;
+
+        ArrayList<CarBrand> finalResult = new ArrayList<>();
+        String carType = listCarTpe.get(typeSelect);
+        if(typeSelect != 0){
+            for(CarBrand brand : listResult){
+                if(brand.getCarType().trim().equals(carType.trim())){
+                    finalResult.add(brand);
+                }
+            }
+        }else{
+            finalResult = listResult;
+        }
+        if(carBrands.size() > 0){
+            if(finalResult.size() > 0){
+                mTxtResult.setVisibility(View.GONE);
+            }else{
+                mTxtResult.setVisibility(View.VISIBLE);
+                mTxtResult.setText(context.getResources().getString(R.string.cmn_no_search_answer));
+            }
+        }
+        return finalResult;
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(isConnected){
+            mTxtResult.setVisibility(View.GONE);
+            context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+        }else{
+            mTxtResult.setVisibility(View.VISIBLE);
+            mTxtResult.setText(context.getResources().getString(R.string.cmn_no_internet_access));
+        }
     }
 }
