@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,8 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_gravity="bottom"
-                android:visibility="invisible"
-                android:background="@color/color_dark"/>
+                android:background="@color/color_dark"
+                android:visibility="invisible" />
 
         </FrameLayout>
 
@@ -46,9 +51,9 @@
                 android:layout_height="wrap_content"
                 android:background="@color/color_menu_click"
                 android:gravity="center"
-                android:textColor="@color/cmn_white"
                 android:text="So sánh ô tô"
                 android:textAllCaps="false"
+                android:textColor="@color/cmn_white"
                 android:textSize="@dimen/text_title" />
 
             <View
@@ -56,20 +61,155 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_gravity="bottom"
-                android:background="@color/color_dark"/>
+                android:background="@color/color_dark" />
 
         </FrameLayout>
 
     </LinearLayout>
 
-    <android.support.percent.PercentRelativeLayout
-        style="@style/Layout.FillWidth"
-        android:layout_marginTop="@dimen/padding_normal">
+    <RelativeLayout
+        style="@style/Layout.FillWidth">
 
-        <tigerstyle.social.com.banggiaxe.customize.CustomSpinner>
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/layout1"
+            style="@style/Layout.FillWidth"
+            android:layout_marginTop="@dimen/padding_normal">
 
-        </tigerstyle.social.com.banggiaxe.customize.CustomSpinner>
+            <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+                android:id="@+id/spiner_brand"
+                style="@style/spinner_common"
+                android:layout_margin="@dimen/padding_smaller"
+                app:layout_widthPercent="30%" />
 
-    </android.support.percent.PercentRelativeLayout>
+            <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+                android:id="@+id/spiner_type"
+                style="@style/spinner_common"
+                android:layout_margin="@dimen/padding_smaller"
+                android:layout_toRightOf="@id/spiner_brand"
+                app:layout_widthPercent="30%" />
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            style="@style/Layout.FillWidth"
+            android:layout_below="@id/layout1"
+            android:layout_marginTop="@dimen/padding_normal">
+
+            <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+                android:id="@+id/spiner_brand2"
+                style="@style/spinner_common"
+                android:layout_margin="@dimen/padding_smaller"
+                app:layout_widthPercent="30%" />
+
+            <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+                android:id="@+id/spiner_type2"
+                style="@style/spinner_common"
+                android:layout_margin="@dimen/padding_smaller"
+                android:layout_toRightOf="@id/spiner_brand2"
+                app:layout_widthPercent="30%" />
+        </android.support.percent.PercentRelativeLayout>
+        
+        <Button
+            style="@style/Layout.WrapWidthHeight"
+            android:text="So Sánh"
+            android:paddingRight="@dimen/padding_bigger"
+            android:paddingLeft="@dimen/padding_bigger"
+            android:layout_margin="@dimen/padding_big"
+            android:background="@drawable/selector_watch_result"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        style="@style/Layout.FillWidthHeight"
+        android:layout_margin="@dimen/padding_normal">
+
+        <LinearLayout
+            style="@style/Layout.FillWidth"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/Layout.FillWidthHeight">
+
+                <ImageView
+                    android:id="@+id/img_vehical1"
+                    android:layout_width="120dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="@dimen/btn_height_medium"
+                    android:layout_height="@dimen/btn_height_medium"
+                    android:src="@drawable/image_vs"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/img_vehical2"
+                    android:layout_width="120dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <TextView
+                    android:id="@+id/txt_vehical_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_vehical_size"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_below="@+id/txt_vehical_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txt_vehical_title"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <TextView
+                    android:id="@+id/txt_fuel_capacity_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_fuel_capacity"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_fuel_capacity_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_below="@+id/txt_fuel_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_fuel_capacity_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txt_fuel_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+            
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

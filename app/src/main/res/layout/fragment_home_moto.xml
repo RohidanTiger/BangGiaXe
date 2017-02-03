@@ -45,11 +45,21 @@
 
     </android.support.percent.PercentRelativeLayout>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_menu"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+
     <android.support.percent.PercentRelativeLayout
         android:id="@+id/layout_menu"
         style="@style/Layout.FillWidth"
         android:background="@color/cmn_gray"
-        android:layout_below="@+id/layout_menu_title">
+        android:layout_below="@+id/layout_menu_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
             android:id="@+id/spiner_brand"
@@ -75,12 +85,4 @@
             android:entries="@array/price_array"/>
 
     </android.support.percent.PercentRelativeLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/layout_menu"
-        android:scrollbars="vertical">
-    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
