@@ -73,5 +73,4 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
             textViewName = (TextView) v.findViewById(R.id.txtNameMenu);
         }
     }
-
 }

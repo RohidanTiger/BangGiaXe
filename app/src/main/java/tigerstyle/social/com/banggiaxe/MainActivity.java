@@ -30,6 +30,7 @@ import tigerstyle.social.com.banggiaxe.config.Contants;
 import tigerstyle.social.com.banggiaxe.customize.DialogLoading;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
+import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 import tigerstyle.social.com.banggiaxe.service.FragmentStackManager;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.DialogUtil;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SearchView.OnQueryTextListener queryTextListener;
     private Toolbar toolbar;
     private ArrayList<CarBrand> listCar;
+    private ArrayList<MotobikeBrand> listMoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -422,6 +424,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public ArrayList<CarBrand> getListCar(){
         return listCar;
+    }
+
+    public ArrayList<MotobikeBrand> getListMoto() {
+        return listMoto;
+    }
+
+    public void setListMoto(ArrayList<MotobikeBrand> listMoto) {
+        this.listMoto = listMoto;
     }
 
     public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {

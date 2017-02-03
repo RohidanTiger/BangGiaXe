@@ -46,9 +46,22 @@
     <string name="cmn_a1_title">Bộ đề bằng A1</string>
     <string name="cmn_b2_title">Bộ đề bằng B2</string>
     <string name="cmn_vehical_type">Loại xe</string>
+    <string name="cmn_technical_information">Thông số kỹ thuật</string>
+    <string name="cmn_cost_estimation">Ước lượng chi phí</string>
 
     <array name="brand_array">
         <item>Tất cả</item>
+        <item>BMW</item>
+        <item>Honda</item>
+        <item>Piaggio</item>
+        <item>SYM</item>
+        <item>Suzuki</item>
+        <item>Vespa</item>
+        <item>Yamaha</item>
+    </array>
+
+    <array name="brand_array2">
+        <item>Hãng</item>
         <item>BMW</item>
         <item>Honda</item>
         <item>Piaggio</item>
@@ -71,6 +84,35 @@
 
     <array name="car_brand_array">
         <item>Tất cả</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Chevrolet</item>
+        <item>Ford</item>
+        <item>Honda</item>
+        <item>Hyundai</item>
+        <item>Infiniti</item>
+        <item>Isuzu</item>
+        <item>Kia</item>
+        <item>Lamborghini</item>
+        <item>Lexus</item>
+        <item>Maserati</item>
+        <item>Mazda</item>
+        <item>Mercedes</item>
+        <item>Mitsubishi</item>
+        <item>Nissan</item>
+        <item>Peugeot</item>
+        <item>Porsche</item>
+        <item>Renault</item>
+        <item>Rolls-Royce</item>
+        <item>Subaru</item>
+        <item>Suzuki</item>
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Volvo</item>
+    </array>
+
+    <array name="car_brand_array2">
+        <item>Hãng</item>
         <item>Audi</item>
         <item>BMW</item>
         <item>Chevrolet</item>

@@ -30,4 +30,8 @@
     <color name="cmn_name_color">#3D6CA1</color>
     <color name="cmn_price2">#539408</color>
     <color name="cmn_price1">#81233C</color>
+    <color name="color_menu_normal">#d8dcde</color>
+    <color name="color_menu_click">#828485</color>
+    <color name="color_dark">#686a6a</color>
+
 </resources>

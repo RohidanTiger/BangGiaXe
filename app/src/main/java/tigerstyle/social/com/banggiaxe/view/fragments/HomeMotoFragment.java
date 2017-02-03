@@ -1,6 +1,7 @@
 package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
+
+import com.google.firebase.database.DatabaseReference;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +34,8 @@ import tigerstyle.social.com.banggiaxe.config.Contants;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
+import tigerstyle.social.com.banggiaxe.service.MotoDataRequest;
+import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.BaseSpinerAdapter;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeMotoAdapter;
 
@@ -55,6 +61,8 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
     private int priceSelect = 0;
     private List<String> listBrand;
     private List<String> listPrice;
+    private MotoDataRequest dataRequest;
+    private DatabaseReference mFirebaseDatabase;
 
     public static String ARG_OBJ_KEY = "arg-brand-obj";
 
@@ -84,7 +92,18 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
                 context.pushFragments(new MotoDetailFragment(),bundle,true,true);
             }
         });
-        requestMotobikeData();
+        //requestMotobikeData();
+        mFirebaseDatabase = mFirebaseInstance.getReference();
+        dataRequest = new MotoDataRequest(context,mFirebaseDatabase);
+        dataRequest.requestData(new MotoDataRequest.DataChangeListener() {
+            @Override
+            public void onDataChange(ArrayList<MotobikeBrand> data) {
+                Logger.d("NumberData",data.size()+"");
+                motobikeBrands = data;
+                mAdapter.setmDataSet(motobikeBrands);
+                context.setListMoto(motobikeBrands);
+            }
+        });
         return rootView;
     }
 

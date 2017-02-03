@@ -90,5 +90,4 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
     public interface OnItemClickListener {
         void onClick(CarBrand brand);
     }
-
 }

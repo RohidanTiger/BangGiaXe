@@ -12,7 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/cmn_gray_light"
+        android:background="@color/cmn_transparent"
         android:layout_marginTop="@dimen/padding_bigger" />
     
     <android.support.percent.PercentRelativeLayout
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="Làm lại đề "
                 android:textColor="@color/cmn_white"
-                android:gravity="center"
+                android:paddingLeft="@dimen/padding_medium"
                 android:layout_centerVertical="true"
                 android:drawableRight="@drawable/ic_action_retry"
                 android:textSize="@dimen/text_title"/>
@@ -53,9 +53,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Làm lại đề "
+                android:text="Xem đáp án"
                 android:textColor="@color/cmn_white"
-                android:gravity="center"
+                android:paddingLeft="@dimen/padding_medium"
                 android:layout_centerVertical="true"
                 android:drawableRight="@drawable/ic_action_retry"
                 android:textSize="@dimen/text_title"/>
@@ -73,9 +73,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Làm lại đề "
+                android:text="Làm đề thi khác"
                 android:textColor="@color/cmn_white"
-                android:gravity="center"
+                android:paddingLeft="@dimen/padding_medium"
                 android:layout_centerVertical="true"
                 android:drawableRight="@drawable/ic_goto_menu"
                 android:textSize="@dimen/text_title"/>

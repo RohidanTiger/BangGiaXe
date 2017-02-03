@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -26,9 +28,11 @@ import java.util.ArrayList;
 
 import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
+import tigerstyle.social.com.banggiaxe.customize.SpacesItemDecoration;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
+import tigerstyle.social.com.banggiaxe.view.adapters.ResultDetailAdapter;
 
 import static tigerstyle.social.com.banggiaxe.config.Contants.EXAM_TIME;
 import static tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment.ARG_POSITION;
@@ -47,9 +51,14 @@ public class B2ExamDetailFragment extends BaseFragment{
     private ImageView mImageDetail;
     private int currentQuestion = 0;
     private String[] arrayResult= new String[30];
+    private int[] arrayColorResult = new int[30];
     private LinearLayout mLayoutAnswer;
     private RelativeLayout mLayoutTime;
     private TextView mTxtTime;
+    private RecyclerView mRecyclerResult;
+    private ResultDetailAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
     // Group1
     private RelativeLayout mLayoutAnswer1;
     private AppCompatCheckBox mCheckBox1;
@@ -83,10 +92,12 @@ public class B2ExamDetailFragment extends BaseFragment{
         mTxtQuestion = (TextView) rootView.findViewById(R.id.txt_question);
         mImageDetail = (ImageView) rootView.findViewById(R.id.img_question);
         mLayoutTime = (RelativeLayout) rootView.findViewById(R.id.layout_time);
+        mRecyclerResult = (RecyclerView) rootView.findViewById(R.id.recycler_result);
 
         positionExam = getArguments().getInt(ARG_POSITION);
         viewMode = getArguments().getInt(VIEW_MODE);
         if(viewMode != NORMAL_MODE) arrayResult = getArguments().getStringArray(ResultFragment.ARG_ANSWERS);
+        mAdapter = new ResultDetailAdapter(context,arrayColorResult);
 
         mLayoutAnswer = (LinearLayout) rootView.findViewById(R.id.layout_answer);
         mTxtTime = (TextView) rootView.findViewById(R.id.txt_time);
@@ -142,6 +153,7 @@ public class B2ExamDetailFragment extends BaseFragment{
                 context.pushFragments(new ResultFragment(),bundle,true,true);
             }
         });
+        initRecycleView();
         return rootView;
     }
 
@@ -258,6 +270,8 @@ public class B2ExamDetailFragment extends BaseFragment{
                 result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
                 result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
                 arrayResult[currentQuestion] = result[0];
+                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
             }
         });
         mCheckBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -269,6 +283,8 @@ public class B2ExamDetailFragment extends BaseFragment{
                 result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
                 result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
                 arrayResult[currentQuestion] = result[0];
+                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
             }
         });
         mCheckBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -280,6 +296,8 @@ public class B2ExamDetailFragment extends BaseFragment{
                 result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
                 result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
                 arrayResult[currentQuestion] = result[0];
+                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
             }
         });
         mCheckBox4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -291,6 +309,23 @@ public class B2ExamDetailFragment extends BaseFragment{
                 result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
                 result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
                 arrayResult[currentQuestion] = result[0];
+                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
+            }
+        });
+    }
+
+    private void initRecycleView(){
+        mLayoutManager = new GridLayoutManager(context,10);
+        mRecyclerResult.setLayoutManager(mLayoutManager);
+        SpacesItemDecoration itemDecoration = new SpacesItemDecoration(getContext(), R.dimen.padding_min);
+        mRecyclerResult.addItemDecoration(itemDecoration);
+        mRecyclerResult.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new ResultDetailAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(int position) {
+                currentQuestion = position;
+                fillData(listQuestion.get(position));
             }
         });
     }
@@ -319,7 +354,11 @@ public class B2ExamDetailFragment extends BaseFragment{
                 }
                 @Override
                 public void onFinish() {
-
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
+                    bundle.putInt(ResultFragment.ARG_QUESTIONS,positionExam);
+                    context.popFragments(false);
+                    context.pushFragments(new ResultFragment(),bundle,true,true);
                 }
             }.start();
         }else{
