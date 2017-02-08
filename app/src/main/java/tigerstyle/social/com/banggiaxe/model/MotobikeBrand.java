@@ -174,4 +174,11 @@ public class MotobikeBrand implements Serializable{
         return carImage;
     }
 
+    public String getCarType() {
+        return carType;
+    }
+
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
 }

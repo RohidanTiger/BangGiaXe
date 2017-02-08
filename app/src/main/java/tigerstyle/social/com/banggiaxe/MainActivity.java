@@ -36,6 +36,7 @@ import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.DialogUtil;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.DrawerMenuAdapter;
+import tigerstyle.social.com.banggiaxe.view.fragments.ComparisonFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeMotoFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeOtoFragment;
@@ -129,11 +130,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     }case 2:{
                         clearAllPreviousFragment();
+                        pushFragments(new ComparisonFragment(), false, true);
+                        break;
+                    }case 3:{
+                        clearAllPreviousFragment();
                         Bundle bundle = new Bundle();
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_A1_TYPE);
                         pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
-                    }case 3:{
+                    }case 4:{
                         clearAllPreviousFragment();
                         Bundle bundle = new Bundle();
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_B2_TYPE);

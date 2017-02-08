@@ -1,6 +1,8 @@
 package tigerstyle.social.com.banggiaxe.model;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
@@ -9,12 +11,11 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 
 @IgnoreExtraProperties
-public class Question {
+public class Question implements Parcelable{
     private String answers;
     private String image;
     private String question;
     private String result;
-    private Bitmap mResoure;
 
     public Question(){
 
@@ -25,6 +26,25 @@ public class Question {
         this.question = question;
         this.image = image;
     }
+
+    protected Question(Parcel in) {
+        answers = in.readString();
+        image = in.readString();
+        question = in.readString();
+        result = in.readString();
+    }
+
+    public static final Creator<Question> CREATOR = new Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel in) {
+            return new Question(in);
+        }
+
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };
 
     public String getAnswers() {
         return answers;
@@ -58,11 +78,16 @@ public class Question {
         this.result = result;
     }
 
-    public Bitmap getmResoure() {
-        return mResoure;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setmResoure(Bitmap mResoure) {
-        this.mResoure = mResoure;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(answers);
+        parcel.writeString(image);
+        parcel.writeString(question);
+        parcel.writeString(result);
     }
 }

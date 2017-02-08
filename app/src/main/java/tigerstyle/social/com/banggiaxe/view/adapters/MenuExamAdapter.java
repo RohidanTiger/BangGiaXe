@@ -14,12 +14,12 @@ import tigerstyle.social.com.banggiaxe.R;
  */
 
 public class MenuExamAdapter extends RecyclerView.Adapter{
-    private String[] mDataSet;
+    private int mNumberData;
     private MainActivity mContext;
     private OnItemClickListener mListener;
 
-    public MenuExamAdapter(String[] data, MainActivity context){
-        this.mDataSet = data;
+    public MenuExamAdapter(int data, MainActivity context){
+        this.mNumberData = data;
         this.mContext = context;
     }
 
@@ -32,7 +32,6 @@ public class MenuExamAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        final String examNumber = mDataSet[position];
         ((MenuExamAdapter.ViewHolder) holder).textViewName.setText(String.valueOf(position+1));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +43,7 @@ public class MenuExamAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return mDataSet.length;
+        return mNumberData;
     }
 
     /* Setter for listener. */

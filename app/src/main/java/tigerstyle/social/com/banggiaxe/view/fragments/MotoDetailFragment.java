@@ -124,7 +124,7 @@ public class MotoDetailFragment extends BaseFragment{
         mTxtMoment.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(motobikeBrand.getCarMoment())));
         mTxtGrossWeight.setText(motobikeBrand.getCarTurningCirclel());
         mTxtOrigin.setText(motobikeBrand.getCarOrigin());
-        mTxtTypeVehical.setText(motobikeBrand.getCarGear());
+        mTxtTypeVehical.setText(motobikeBrand.getCarType());
         mTxtNumberOfGears.setText(motobikeBrand.getCarGear());
     }
 

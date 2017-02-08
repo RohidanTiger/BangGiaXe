@@ -23,8 +23,8 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
 
     public DrawerMenuAdapter(MainActivity context){
         this.mContext = context;
-        mTitle = new int[]{R.string.cmn_moto_title,R.string.cmn_oto_title,R.string.cmn_a1_certificate,R.string.cmn_b2_certificate};
-        mImage = new int[]{R.drawable.ic_moto, R.drawable.ic_sportcar,0,0};
+        mTitle = new int[]{R.string.cmn_moto_title,R.string.cmn_oto_title, R.string.cmn_comparision,R.string.cmn_a1_certificate,R.string.cmn_b2_certificate};
+        mImage = new int[]{R.drawable.ic_moto, R.drawable.ic_sportcar, R.drawable.ic_comparison,0,0};
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {

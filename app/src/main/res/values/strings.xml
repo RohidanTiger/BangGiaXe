@@ -28,6 +28,7 @@
     <string name="cmn_vehical_size">Dài x rộng x cao (mm)</string>
     <string name="cmn_fuel_capacity">Dung tích bình xăng (lít)</string>
     <string name="cmn_displacement">Động cơ (phân khối)</string>
+    <string name="cmn_turning_circle">Đường kính vòng quay tối thiểu (m)</string>
     <string name="cmn_output_capacity">Công suất (mã lực)</string>
     <string name="cmn_torque_power">Mô-men xoắn (Nm)</string>
     <string name="cmn_ground_clearance">Khoảng sáng gầm (mm)</string>
@@ -41,6 +42,7 @@
 
     <string name="cmn_moto_title">Bảng giá xe máy</string>
     <string name="cmn_oto_title">Bảng giá oto</string>
+    <string name="cmn_comparision">So sánh</string>
     <string name="cmn_a1_certificate">Thi lý thuyết bằng A1</string>
     <string name="cmn_b2_certificate">Thi lý thuyết bằng B2</string>
     <string name="cmn_a1_title">Bộ đề bằng A1</string>

@@ -32,10 +32,13 @@ import tigerstyle.social.com.banggiaxe.customize.SpacesItemDecoration;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
+import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 import tigerstyle.social.com.banggiaxe.view.adapters.ResultDetailAdapter;
 
 import static tigerstyle.social.com.banggiaxe.config.Contants.EXAM_TIME;
+import static tigerstyle.social.com.banggiaxe.config.Contants.NUMBER_QUESTION;
 import static tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment.ARG_POSITION;
+import static tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment.ARG_QUESTION;
 
 /**
  * Created by billymobile on 1/13/17.
@@ -118,15 +121,7 @@ public class B2ExamDetailFragment extends BaseFragment{
         mCheckBox4     = (AppCompatCheckBox)  rootView.findViewById(R.id.checkbox_4);
 
         listQuestion = new ArrayList<>();
-        requestQuestionList(new DataChangeListener() {
-            @Override
-            public void onDataChange(ArrayList<Question> questions) {
-                context.hideLoading();
-                listQuestion = questions;
-                fillData(listQuestion.get(currentQuestion));
-                initCountDownTimer();
-            }
-        });
+        requestQuestionList();
 
         mBtnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,62 +152,21 @@ public class B2ExamDetailFragment extends BaseFragment{
         return rootView;
     }
 
-    private void requestQuestionList(final DataChangeListener listener){
-        context.showLoading();
-        final ArrayList listQues = new ArrayList();
-        String content = "";
-
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(
-                    new InputStreamReader(context.getAssets().open("question/".concat(String.valueOf(positionExam+1).concat(".json")))));
-
-            String mLine;
-            while ((mLine = reader.readLine()) != null) {
-                content = content.concat(mLine);
-            }
-        } catch (IOException e) {
-            context.hideLoading();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    context.hideLoading();
-                }
-            }
-        }
-
-        JSONObject jsonObj;
-        try {
-            jsonObj = new JSONObject(content);
-
-            for(int i = 0; i < 30; i++){
-                JSONObject c = jsonObj.getJSONObject("cau".concat(String.valueOf(i+1)));
-                Question q = new Question();
-                q.setQuestion(c.getString("question"));
-                q.setImage(c.getString("image"));
-                q.setAnswers(c.getString("answers"));
-                q.setResult(c.getString("result"));
-                listQues.add(q);
-            }
-            listener.onDataChange(listQues);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        Logger.i("Question",content);
+    private void requestQuestionList(){
+        listQuestion = getArguments().getParcelableArrayList(ARG_QUESTION);
+        fillData(listQuestion.get(currentQuestion));
+        initCountDownTimer();
     }
 
     private void fillData(Question question){
         mTxtQuestionIndex.setText(String.valueOf(currentQuestion + 1));
-        mBtnNext.setVisibility((currentQuestion == 29) ? View.INVISIBLE: View.VISIBLE);
+        mBtnNext.setVisibility((currentQuestion == NUMBER_QUESTION-1) ? View.INVISIBLE: View.VISIBLE);
         mBtnPrevious.setVisibility((currentQuestion == 0) ? View.INVISIBLE: View.VISIBLE);
         String answer[] = question.getAnswers().split("--");
         mTxtQuestion.setText(question.getQuestion());
         if(!question.getImage().equals("none")){
             mImageDetail.setVisibility(View.VISIBLE);
-            String mDrawableName = "b".concat(question.getImage());
+            String mDrawableName = "i".concat(question.getImage());
             int resID = getResources().getIdentifier(mDrawableName , "drawable", context.getPackageName());
             mImageLoader.displayImage("drawable://"+resID, mImageDetail);
         }else{

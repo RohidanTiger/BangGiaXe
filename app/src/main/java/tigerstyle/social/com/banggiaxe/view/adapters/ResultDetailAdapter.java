@@ -51,7 +51,7 @@ public class ResultDetailAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return 30;
+        return mValue.length;
     }
 
     public void setBackgroundColor(int position, int value){
