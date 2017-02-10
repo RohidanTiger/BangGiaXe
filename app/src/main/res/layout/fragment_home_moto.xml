@@ -85,4 +85,11 @@
             android:entries="@array/price_array"/>
 
     </android.support.percent.PercentRelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_result"
+        style="@style/Layout.WrapWidthHeight"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_title"/>
+
 </RelativeLayout>

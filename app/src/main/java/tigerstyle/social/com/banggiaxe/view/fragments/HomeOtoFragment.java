@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 
@@ -53,8 +54,6 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
     private List<String> listBrand;
     private List<String> listCarTpe;
     public static String ARG_OBJ_KEY = "arg-brand-obj";
-    private OtoDataRequest dataRequest;
-    private DatabaseReference mFirebaseDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -84,18 +83,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
             }
         });
 
-        mFirebaseDatabase = mFirebaseInstance.getReference();
-        dataRequest = new OtoDataRequest(context,mFirebaseDatabase);
-//        dataRequest.requestData(new OtoDataRequest.DataChangeListener() {
-//            @Override
-//            public void onDataChange(ArrayList<CarBrand> data) {
-//                context.hideLoading();
-//                carBrands = (ArrayList<CarBrand>) data;
-//                context.setListCar(carBrands);
-//                mAdapter.setmDataSet(carBrands);
-//            }
-//        });
-        context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+        context.getSupportLoaderManager().initLoader(2, null, this).forceLoad();
         return rootView;
     }
 
@@ -127,8 +115,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
         if(ConnectivityReceiver.isConnected()){
             mTxtResult.setVisibility(View.GONE);
         }else{
-            mTxtResult.setVisibility(View.VISIBLE);
-            mTxtResult.setText(context.getResources().getString(R.string.cmn_no_internet_access));
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
         }
         context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_oto_title));
         context.setHideActionBarSearchItem(true);
@@ -338,8 +325,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
             mTxtResult.setVisibility(View.GONE);
             context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
         }else{
-            mTxtResult.setVisibility(View.VISIBLE);
-            mTxtResult.setText(context.getResources().getString(R.string.cmn_no_internet_access));
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
         }
     }
 }

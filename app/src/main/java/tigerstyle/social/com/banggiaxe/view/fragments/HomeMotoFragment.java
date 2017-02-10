@@ -2,6 +2,8 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 
@@ -35,6 +39,7 @@ import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 import tigerstyle.social.com.banggiaxe.service.MotoDataRequest;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.BaseSpinerAdapter;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeMotoAdapter;
@@ -43,7 +48,8 @@ import tigerstyle.social.com.banggiaxe.view.adapters.HomeMotoAdapter;
 /**
  * Created by nextophn on 8/8/15.
  */
-public class HomeMotoFragment extends BaseFragment implements SearchingListener{
+public class HomeMotoFragment extends BaseFragment implements SearchingListener,LoaderManager.LoaderCallbacks<List<MotobikeBrand>>,
+        ConnectivityReceiver.ConnectivityReceiverListener{
     RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
     private CustomSpinner mBrandSpinner;
@@ -61,8 +67,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
     private int priceSelect = 0;
     private List<String> listBrand;
     private List<String> listPrice;
-    private MotoDataRequest dataRequest;
-    private DatabaseReference mFirebaseDatabase;
+    private TextView mTxtResult;
 
     public static String ARG_OBJ_KEY = "arg-brand-obj";
 
@@ -74,6 +79,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
         mBrandSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_brand);
         mPriceSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_price);
         mBrandDeviationSpinner = (CustomSpinner) rootView.findViewById(R.id.spiner_deviation_price);
+        mTxtResult = (TextView) rootView.findViewById(R.id.txt_result);
 
         // get data from resource
         listBrand = Arrays.asList(getResources().getStringArray(R.array.brand_array));
@@ -92,70 +98,9 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
                 context.pushFragments(new MotoDetailFragment(),bundle,true,true);
             }
         });
-        //requestMotobikeData();
-        mFirebaseDatabase = mFirebaseInstance.getReference();
-        dataRequest = new MotoDataRequest(context,mFirebaseDatabase);
-        dataRequest.requestData(new MotoDataRequest.DataChangeListener() {
-            @Override
-            public void onDataChange(ArrayList<MotobikeBrand> data) {
-                Logger.d("NumberData",data.size()+"");
-                motobikeBrands = data;
-                mAdapter.setmDataSet(motobikeBrands);
-                context.setListMoto(motobikeBrands);
-            }
-        });
+
+        context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
         return rootView;
-    }
-
-    private void requestMotobikeData(){
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder().url(Contants.URL_XE_MAY).build();
-        try {
-            Response response = client.newCall(request).execute();
-            String htmlContent = response.body().string();
-            int startIndex = htmlContent.indexOf("var data = {");
-            int lastIndex = htmlContent.indexOf("function showData(data, brand, brand_value, price_value)");
-            String data = htmlContent.substring(startIndex+18,lastIndex-1);
-            data = "{".concat(data);
-            JSONObject jsonObj = new JSONObject(data);
-            JSONArray vehicalListIndex = jsonObj.names();
-
-            for(int i = 0; i < vehicalListIndex.length(); i++){
-                JSONObject c = jsonObj.getJSONObject(vehicalListIndex.getString(i));
-
-                String id = c.getString("carId");
-                String name = c.getString("carName");
-                String type = c.getString("carType");
-                String brand = c.getString("carBrand");
-                String carOrigin = c.getString("carOrigin");
-                String price = c.getString("carPrice");
-                String priceDeviation = c.getString("carPriceDeviation");
-                String engine = c.getString("carEngine");
-                String gear = c.getString("carGear");
-                String power = c.getString("carPower");
-                String moment = c.getString("carMoment");
-                String size = c.getString("carSize");
-                String fuelTankCapacity = c.getString("carFuelTankCapacity");
-                String turningCircle = c.getString("carTurningCircle");
-                String imgage = c.getString("carImage");
-                MotobikeBrand motobikeBrand = new MotobikeBrand(id,name,type,brand,carOrigin,price,priceDeviation,engine,gear,power,moment,size,fuelTankCapacity,turningCircle,imgage);
-                motobikeBrands.add(motobikeBrand);
-            }
-            Collections.sort(motobikeBrands, new Comparator<MotobikeBrand>() {
-                @Override
-                public int compare(MotobikeBrand m1, MotobikeBrand m2) {
-                    return (Integer.parseInt(m1.getCarID()) > Integer.parseInt(m2.getCarID())) ? 1 : -1;
-                }
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-            hideLoading();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            hideLoading();
-        }
-        mAdapter.notifyDataSetChanged();
     }
 
 
@@ -167,6 +112,14 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
                 listResult.add(brand);
             }
         }
+        if(motobikeBrands.size() > 0){
+            if(listResult.size() > 0){
+                mTxtResult.setVisibility(View.GONE);
+            }else{
+                mTxtResult.setVisibility(View.VISIBLE);
+                mTxtResult.setText(context.getResources().getString(R.string.cmn_no_search_answer));
+            }
+        }
         mAdapter.setmDataSet(listResult);
     }
 
@@ -176,15 +129,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
     }
 
     private void initSpiner(){
-//        mBrandAdapter = new BaseSpinerAdapter(getContext(), R.layout.spinner_item, listBrand);
-//        mBrandSpinner.setAdapter(mBrandAdapter);
-//
-//        mPriceAdapter = new BaseSpinerAdapter(getContext(), R.layout.spinner_item, listPrice);
-//        mPriceSpinner.setAdapter(mPriceAdapter);
-//
         List<String> listDeviationPrice = Arrays.asList(getResources().getStringArray(R.array.price_array));
-//        mPriceDeviationAdapter = new BaseSpinerAdapter(getContext(), R.layout.spinner_item, listDeviationPrice);
-//        mBrandDeviationSpinner.setAdapter(mPriceDeviationAdapter);
         mBrandSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -296,6 +241,14 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
                 }
             }
         }
+        if(motobikeBrands.size() > 0){
+            if(listResult.size() > 0){
+                mTxtResult.setVisibility(View.GONE);
+            }else{
+                mTxtResult.setVisibility(View.VISIBLE);
+                mTxtResult.setText(context.getResources().getString(R.string.cmn_no_search_answer));
+            }
+        }
         return listResult;
     }
 
@@ -304,5 +257,42 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener{
         super.onResume();
         context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_moto_title));
         context.setHideActionBarSearchItem(true);
+        context.setConnectivityListener(this);
+        if(ConnectivityReceiver.isConnected()){
+            mTxtResult.setVisibility(View.GONE);
+        }else{
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public Loader<List<MotobikeBrand>> onCreateLoader(int id, Bundle args) {
+        return new MotoDataRequest(context);
+    }
+
+    @Override
+    public void onLoadFinished(Loader<List<MotobikeBrand>> loader, List<MotobikeBrand> data) {
+        context.hideLoading();
+        this.motobikeBrands = (ArrayList<MotobikeBrand>) data;
+        context.setListMoto(motobikeBrands);
+        mAdapter.setmDataSet(motobikeBrands);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<MotobikeBrand>> loader) {
+        context.hideLoading();
+        this.motobikeBrands = new ArrayList<>();
+        context.setListMoto(motobikeBrands);
+        mAdapter.setmDataSet(motobikeBrands);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(isConnected){
+            mTxtResult.setVisibility(View.GONE);
+            context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+        }else{
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
+        }
     }
 }

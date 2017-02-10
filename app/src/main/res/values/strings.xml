@@ -10,6 +10,7 @@
     <string name="cmn_cancel">Bỏ qua</string>
     <string name="cmn_internet_connection_lost">Lỗi kết nối tới máy chủ.Xin vui lòng thử lại</string>
     <string name="cmn_no_internet_access">Không có kết nối internet.</string>
+    <string name="cmn_update_data_sucess">Hoàn tất cập nhật dữ liệu.</string>
     <string name="cmn_timeout">Timeout </string>
     <string name="cmn_no_response">Không có dữ liệu hồi đáp</string>
     <string name="msg_confirm_quit_app">Bạn có chắc chắn muốn thoát khỏi ứng dụng？</string>
@@ -50,6 +51,8 @@
     <string name="cmn_vehical_type">Loại xe</string>
     <string name="cmn_technical_information">Thông số kỹ thuật</string>
     <string name="cmn_cost_estimation">Ước lượng chi phí</string>
+    <string name="url_car_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/CarData.json</string>
+    <string name="url_moto_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/MotoData.json</string>
 
     <array name="brand_array">
         <item>Tất cả</item>

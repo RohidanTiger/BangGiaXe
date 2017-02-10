@@ -2,7 +2,9 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
 import android.support.percent.PercentRelativeLayout;
+import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 
@@ -24,7 +27,10 @@ import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
+import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
+import tigerstyle.social.com.banggiaxe.service.MotoDataRequest;
 import tigerstyle.social.com.banggiaxe.service.OtoDataRequest;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
@@ -36,7 +42,7 @@ import static tigerstyle.social.com.banggiaxe.config.Contants.IMAGE_URL;
  * Created by billymobile on 2/3/17.
  */
 
-public class ComparisonFragment extends BaseFragment {
+public class ComparisonFragment extends BaseFragment implements ConnectivityReceiver.ConnectivityReceiverListener{
     private Button mBtnMotoComparison;
     private View mViewMoto;
     private Button mBtnOtoComparison;
@@ -91,9 +97,42 @@ public class ComparisonFragment extends BaseFragment {
     private List<String> listMotoBrand;
     private List<String> listCarBrand;
 
+    private LoaderManager.LoaderCallbacks<List<CarBrand>> carDataListener = new LoaderManager.LoaderCallbacks<List<CarBrand>>() {
+        @Override
+        public Loader<List<CarBrand>> onCreateLoader(int id, Bundle args) {
+            return new CarDataRequest(context);
+        }
+
+        @Override
+        public void onLoadFinished(Loader<List<CarBrand>> loader, List<CarBrand> data) {
+            context.hideLoading();
+            context.setListCar((ArrayList<CarBrand>)data);
+        }
+
+        @Override
+        public void onLoaderReset(Loader<List<CarBrand>> loader) {
+            context.hideLoading();
+        }
+    };
+    private LoaderManager.LoaderCallbacks<List<MotobikeBrand>> motoDataListener = new LoaderManager.LoaderCallbacks<List<MotobikeBrand>>() {
+        @Override
+        public Loader<List<MotobikeBrand>> onCreateLoader(int id, Bundle args) {
+            return new MotoDataRequest(context);
+        }
+
+        @Override
+        public void onLoadFinished(Loader<List<MotobikeBrand>> loader, List<MotobikeBrand> data) {
+            context.hideLoading();
+            context.setListMoto((ArrayList<MotobikeBrand>)data);
+        }
+
+        @Override
+        public void onLoaderReset(Loader<List<MotobikeBrand>> loader) {
+            context.hideLoading();
+        }
+    };
+
     private int mComparisonType = 0;
-    private OtoDataRequest dataRequest;
-    private DatabaseReference mFirebaseDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -148,14 +187,7 @@ public class ComparisonFragment extends BaseFragment {
 
         if(context.getListCar() != null && context.getListCar().size() > 0){
         }else{
-            mFirebaseDatabase = mFirebaseInstance.getReference();
-            dataRequest = new OtoDataRequest(context,mFirebaseDatabase);
-            dataRequest.requestData(new OtoDataRequest.DataChangeListener() {
-                @Override
-                public void onDataChange(ArrayList<CarBrand> data) {
-                    context.setListCar(data);
-                }
-            });
+
         }
 
         mBtnMotoComparison.setOnClickListener(new View.OnClickListener() {
@@ -164,10 +196,13 @@ public class ComparisonFragment extends BaseFragment {
                 mSpinerBrand1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
                 mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
                 mComparisonType = 0;
+                initBrandSpiner();
                 resetUI();
                 mLayoutGrossWeight.setVisibility(View.VISIBLE);
                 mLayoutTurningCircle.setVisibility(View.GONE);
                 mLayoutGroundClearance.setVisibility(View.GONE);
+                mImgVehical1.setVisibility(View.INVISIBLE);
+                mImgVehical2.setVisibility(View.INVISIBLE);
                 resetStatus();
                 mBtnMotoComparison.setBackgroundColor(ContextCompat.getColor(context, R.color.color_menu_click));
                 mViewMoto.setVisibility(View.VISIBLE);
@@ -186,6 +221,8 @@ public class ComparisonFragment extends BaseFragment {
                 mLayoutGrossWeight.setVisibility(View.GONE);
                 mLayoutTurningCircle.setVisibility(View.VISIBLE);
                 mLayoutGroundClearance.setVisibility(View.VISIBLE);
+                mImgVehical1.setVisibility(View.INVISIBLE);
+                mImgVehical2.setVisibility(View.INVISIBLE);
                 resetStatus();
                 mBtnOtoComparison.setBackgroundColor(ContextCompat.getColor(context, R.color.color_menu_click));
                 mViewOto.setVisibility(View.VISIBLE);
@@ -197,6 +234,8 @@ public class ComparisonFragment extends BaseFragment {
         mButtonComparison.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mImgVehical1.setVisibility(View.VISIBLE);
+                mImgVehical2.setVisibility(View.VISIBLE);
                 if(mComparisonType == 0){
                     if(moto1 != null && moto2 != null){
                         String urlImage1 = IMAGE_URL + moto1.getCarImage();
@@ -220,6 +259,9 @@ public class ComparisonFragment extends BaseFragment {
                 }
             }
         });
+        if(context.getListCar() == null || context.getListCar().size() == 0){
+            context.getSupportLoaderManager().initLoader(2, null, carDataListener).forceLoad();
+        }
         return rootView;
     }
 
@@ -261,7 +303,9 @@ public class ComparisonFragment extends BaseFragment {
         mTxtTorquePower1.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car1.getCarMoment())));
         mTxtTorquePower2.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car2.getCarMoment())));
         mTxtGroundClearance1.setText(car1.getCarGroundClearance());
-        mTxtGroundClearance2.setText(car1.getCarGroundClearance());
+        mTxtGroundClearance2.setText(car2.getCarGroundClearance());
+        mTxtTurningCircle1.setText(car1.getCarTurningCirclel());
+        mTxtTurningCircle2.setText(car2.getCarTurningCirclel());
         mTxtGrossWeight1.setText(car1.getCarTurningCirclel());
         mTxtGrossWeight2.setText(car2.getCarTurningCirclel());
 
@@ -286,6 +330,8 @@ public class ComparisonFragment extends BaseFragment {
         mTxtTorquePower2.setText("");
         mTxtGroundClearance1.setText("");
         mTxtGroundClearance2.setText("");
+        mTxtTurningCircle1.setText("");
+        mTxtTurningCircle2.setText("");
         mTxtGrossWeight1.setText("");
         mTxtGrossWeight2.setText("");
         mTxtTypeOfVehical1.setText("");
@@ -374,10 +420,12 @@ public class ComparisonFragment extends BaseFragment {
                     listCar1.clear();
                     listCarName1.clear();
                     String otoBrand = listCarBrand.get(i);
-                    for(CarBrand brand : allCar){
-                        if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
-                            listCar1.add(brand);
-                            listCarName1.add(brand.getCarName());
+                    if(allCar != null){
+                        for(CarBrand brand : allCar){
+                            if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
+                                listCar1.add(brand);
+                                listCarName1.add(brand.getCarName());
+                            }
                         }
                     }
                     mSpinerType1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName1));
@@ -435,13 +483,15 @@ public class ComparisonFragment extends BaseFragment {
                 listCar1.clear();
                 listCarName1.clear();
                 String otoBrand = listCarBrand.get(i);
-                for(CarBrand brand : allCar){
-                    if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
-                        listCar1.add(brand);
-                        listCarName1.add(brand.getCarName());
+                if(allCar != null){
+                    for(CarBrand brand : allCar){
+                        if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
+                            listCar1.add(brand);
+                            listCarName1.add(brand.getCarName());
+                        }
                     }
+                    mSpinerType1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName1));
                 }
-                mSpinerType1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName1));
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -464,13 +514,15 @@ public class ComparisonFragment extends BaseFragment {
                 listCar2.clear();
                 listCarName2.clear();
                 String carBrand = listCarBrand.get(i);
-                for(CarBrand brand : allCar){
-                    if(brand.getCarBrand().equals(carBrand)) {
-                        listCar2.add(brand);
-                        listCarName2.add(brand.getCarName());
+                if(allCar != null){
+                    for(CarBrand brand : allCar){
+                        if(brand.getCarBrand().equals(carBrand)) {
+                            listCar2.add(brand);
+                            listCarName2.add(brand.getCarName());
+                        }
                     }
+                    mSpinerType2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName2));
                 }
-                mSpinerType2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName2));
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -498,5 +550,23 @@ public class ComparisonFragment extends BaseFragment {
         super.onResume();
         context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_comparision));
         setHasOptionsMenu(true);
+        context.setConnectivityListener(this);
+        if(!ConnectivityReceiver.isConnected()){
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(!isConnected){
+            Toast.makeText(context,context.getResources().getString(R.string.cmn_no_internet_access),Toast.LENGTH_LONG).show();
+        }else{
+            if(context.getListMoto() == null || context.getListMoto().size() == 0){
+                context.getSupportLoaderManager().initLoader(1, null, motoDataListener).forceLoad();
+            }
+            if(context.getListCar() == null || context.getListCar().size() == 0){
+                context.getSupportLoaderManager().initLoader(2, null, carDataListener).forceLoad();
+            }
+        }
     }
 }
