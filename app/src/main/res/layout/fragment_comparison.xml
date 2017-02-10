@@ -166,6 +166,40 @@
                 style="@style/Layout.FillWidth">
 
                 <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_vehical_price"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_price"
+                    android:gravity="center"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="7"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_price1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_price"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_price2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_price"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                     android:id="@+id/txt_vehical_title"
                     style="@style/Layout.FillWidth"
                     android:text="@string/cmn_vehical_size"

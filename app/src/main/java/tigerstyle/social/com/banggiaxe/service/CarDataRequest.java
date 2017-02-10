@@ -26,6 +26,7 @@ import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 
 public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
     private MainActivity mContext;
+    private String urlRquest = "https://www.dropbox.com/s/vm5wr8p442hcweu/CarData.json";
     public CarDataRequest(MainActivity context) {
         super(context);
         this.mContext = context;
@@ -43,15 +44,15 @@ public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
         ArrayList<CarBrand> carBrands = new ArrayList<>();
         OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder().url(Contants.URL_OTO).build();
+        Request request = new Request.Builder().url(urlRquest).build();
         try {
             Response response = client.newCall(request).execute();
             String htmlContent = response.body().string();
-            int startIndex = htmlContent.indexOf("var data = {");
-            int lastIndex = htmlContent.indexOf("var VnExpress =");//function showData(data, brand, brand_value, price_value)
-            String data = htmlContent.substring(startIndex + 18, lastIndex - 1);
-            data = "{".concat(data);
-            JSONObject jsonObj = new JSONObject(data);
+//            int startIndex = htmlContent.indexOf("var data = {");
+//            int lastIndex = htmlContent.indexOf("var VnExpress =");//function showData(data, brand, brand_value, price_value)
+//            String data = htmlContent.substring(startIndex + 18, lastIndex - 1);
+//            data = "{".concat(data);
+            JSONObject jsonObj = new JSONObject(htmlContent);//data
             JSONArray vehicalListIndex = jsonObj.names();
 
             for (int i = 0; i < vehicalListIndex.length(); i++) {

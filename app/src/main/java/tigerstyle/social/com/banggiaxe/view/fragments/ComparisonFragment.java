@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.percent.PercentRelativeLayout;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +24,8 @@ import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
+import tigerstyle.social.com.banggiaxe.service.OtoDataRequest;
+import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 import tigerstyle.social.com.banggiaxe.view.adapters.BaseSpinerAdapter;
@@ -45,6 +50,8 @@ public class ComparisonFragment extends BaseFragment {
     private ImageView mImgVehical2;
 
     // Information Detail
+    private TextView mTxtVehicalPrice1;
+    private TextView mTxtVehicalPrice2;
     private TextView mTxtVehicalSize1;
     private TextView mTxtVehicalSize2;
     private TextView mTxtFuelCapacity1;
@@ -85,6 +92,8 @@ public class ComparisonFragment extends BaseFragment {
     private List<String> listCarBrand;
 
     private int mComparisonType = 0;
+    private OtoDataRequest dataRequest;
+    private DatabaseReference mFirebaseDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,6 +103,8 @@ public class ComparisonFragment extends BaseFragment {
         mBtnOtoComparison = (Button) rootView.findViewById(R.id.btn_oto_comparison);
         mViewOto = rootView.findViewById(R.id.view_oto);
 
+        mTxtVehicalPrice1 = (TextView) rootView.findViewById(R.id.txt_vehical_price1);
+        mTxtVehicalPrice2 = (TextView) rootView.findViewById(R.id.txt_vehical_price2);
         mButtonComparison = (Button) rootView.findViewById(R.id.btn_comparison);
         mTxtVehicalSize1 = (TextView) rootView.findViewById(R.id.txt_vehical_size1);
         mTxtVehicalSize2 = (TextView) rootView.findViewById(R.id.txt_vehical_size2);
@@ -135,9 +146,25 @@ public class ComparisonFragment extends BaseFragment {
         listCar1 = new ArrayList<>();
         listCar2 = new ArrayList<>();
 
+        if(context.getListCar() != null && context.getListCar().size() > 0){
+        }else{
+            mFirebaseDatabase = mFirebaseInstance.getReference();
+            dataRequest = new OtoDataRequest(context,mFirebaseDatabase);
+            dataRequest.requestData(new OtoDataRequest.DataChangeListener() {
+                @Override
+                public void onDataChange(ArrayList<CarBrand> data) {
+                    context.setListCar(data);
+                }
+            });
+        }
+
         mBtnMotoComparison.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSpinerBrand1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
+                mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
+                mComparisonType = 0;
+                resetUI();
                 mLayoutGrossWeight.setVisibility(View.VISIBLE);
                 mLayoutTurningCircle.setVisibility(View.GONE);
                 mLayoutGroundClearance.setVisibility(View.GONE);
@@ -151,6 +178,11 @@ public class ComparisonFragment extends BaseFragment {
         mBtnOtoComparison.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSpinerBrand1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarBrand));
+                mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarBrand));
+                initSpiner2();
+                mComparisonType = 1;
+                resetUI();
                 mLayoutGrossWeight.setVisibility(View.GONE);
                 mLayoutTurningCircle.setVisibility(View.VISIBLE);
                 mLayoutGroundClearance.setVisibility(View.VISIBLE);
@@ -176,7 +208,15 @@ public class ComparisonFragment extends BaseFragment {
                         fillMotoData();
                     }
                 }else{
-
+                    if(car1 != null && car2 != null){
+                        String urlImage1 = IMAGE_URL + car1.getCarImage();
+                        PicassoLoader.getInstance(context).load(urlImage1).placeholder(R.drawable.bg_captcha).
+                                error(R.drawable.bg_captcha).into(mImgVehical1);
+                        String urlImage2 = IMAGE_URL + car2.getCarImage();
+                        PicassoLoader.getInstance(context).load(urlImage2).placeholder(R.drawable.bg_captcha).
+                                error(R.drawable.bg_captcha).into(mImgVehical2);
+                        fillCarData();
+                    }
                 }
             }
         });
@@ -184,6 +224,8 @@ public class ComparisonFragment extends BaseFragment {
     }
 
     private void fillMotoData(){
+        mTxtVehicalPrice1.setText(moto1.getCarPrice());
+        mTxtVehicalPrice2.setText(moto2.getCarPrice());
         mTxtVehicalSize1.setText(moto1.getCarSize());
         mTxtVehicalSize2.setText(moto2.getCarSize());
         mTxtFuelCapacity1.setText(moto1.getCarFuelTankCapacity());
@@ -206,7 +248,50 @@ public class ComparisonFragment extends BaseFragment {
     }
 
     private void fillCarData(){
+        mTxtVehicalPrice1.setText(car1.getCarPrice());
+        mTxtVehicalPrice2.setText(car2.getCarPrice());
+        mTxtVehicalSize1.setText(car1.getCarSize());
+        mTxtVehicalSize2.setText(car2.getCarSize());
+        mTxtFuelCapacity1.setText(car1.getCarFuelTankCapacity());
+        mTxtFuelCapacity2.setText(car2.getCarFuelTankCapacity());
+        mTxtDisplacement1.setText(car1.getCarEngine());
+        mTxtDisplacement2.setText(car2.getCarEngine());
+        mTxtOutputCapacity1.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car1.getCarPower())));
+        mTxtOutputCapacity2.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car2.getCarPower())));
+        mTxtTorquePower1.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car1.getCarMoment())));
+        mTxtTorquePower2.setText(NumberFormater.twoDecimaFormat(Double.parseDouble(car2.getCarMoment())));
+        mTxtGroundClearance1.setText(car1.getCarGroundClearance());
+        mTxtGroundClearance2.setText(car1.getCarGroundClearance());
+        mTxtGrossWeight1.setText(car1.getCarTurningCirclel());
+        mTxtGrossWeight2.setText(car2.getCarTurningCirclel());
 
+        mTxtTypeOfVehical1.setText(car1.getCarType());
+        mTxtTypeOfVehical2.setText(car2.getCarType());
+        mTxtNumberOfGears1.setText(car1.getCarGear());
+        mTxtNumberOfGears2.setText(car2.getCarGear());
+    }
+
+    private void resetUI(){
+        mTxtVehicalPrice1.setText("");
+        mTxtVehicalPrice2.setText("");
+        mTxtVehicalSize1.setText("");
+        mTxtVehicalSize2.setText("");
+        mTxtFuelCapacity1.setText("");
+        mTxtFuelCapacity2.setText("");
+        mTxtDisplacement1.setText("");
+        mTxtDisplacement2.setText("");
+        mTxtOutputCapacity1.setText("");
+        mTxtOutputCapacity2.setText("");
+        mTxtTorquePower1.setText("");
+        mTxtTorquePower2.setText("");
+        mTxtGroundClearance1.setText("");
+        mTxtGroundClearance2.setText("");
+        mTxtGrossWeight1.setText("");
+        mTxtGrossWeight2.setText("");
+        mTxtTypeOfVehical1.setText("");
+        mTxtTypeOfVehical2.setText("");
+        mTxtNumberOfGears1.setText("");
+        mTxtNumberOfGears2.setText("");
     }
 
     private void resetStatus(){
@@ -221,8 +306,11 @@ public class ComparisonFragment extends BaseFragment {
 
     private void initBrandSpiner(){
         final ArrayList<MotobikeBrand> allMoto =  context.getListMoto();
+        final ArrayList<CarBrand> allCar =  context.getListCar();
+
         if(mComparisonType == 0){
             mSpinerBrand1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
+            mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
             mSpinerBrand1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -245,14 +333,13 @@ public class ComparisonFragment extends BaseFragment {
             mSpinerType1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    if(listMoto1!=null)moto1 = listMoto1.get(0);
+                    if(listMoto1!=null)moto1 = listMoto1.get(i);
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
                 }
             });
 
-            mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listMotoBrand));
             mSpinerBrand2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -274,15 +361,142 @@ public class ComparisonFragment extends BaseFragment {
             mSpinerType2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    if(listMoto2!=null)moto2 = listMoto2.get(0);
+                    if(listMoto2!=null)moto2 = listMoto2.get(i);
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
                 }
             });
         }else{
-            mSpinerBrand1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarBrand));
-            mSpinerBrand2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarBrand));
+            mSpinerBrand1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    listCar1.clear();
+                    listCarName1.clear();
+                    String otoBrand = listCarBrand.get(i);
+                    for(CarBrand brand : allCar){
+                        if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
+                            listCar1.add(brand);
+                            listCarName1.add(brand.getCarName());
+                        }
+                    }
+                    mSpinerType1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName1));
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+            });
+
+            mSpinerType1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    if(listCar1!=null)car1 = listCar1.get(i);
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+            });
+
+            mSpinerBrand2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    listCar2.clear();
+                    listCarName2.clear();
+                    String carBrand = listCarBrand.get(i);
+                    for(CarBrand brand : allCar){
+                        if(brand.getCarBrand().equals(carBrand)) {
+                            listCar2.add(brand);
+                            listCarName2.add(brand.getCarName());
+                        }
+                    }
+                    mSpinerType2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName2));
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+            });
+            mSpinerType2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    if(listCar2!=null)car2 = listCar2.get(i);
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+            });
         }
+    }
+
+    private void initSpiner2(){
+        final ArrayList<CarBrand> allCar =  context.getListCar();
+        mSpinerBrand1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                listCar1.clear();
+                listCarName1.clear();
+                String otoBrand = listCarBrand.get(i);
+                for(CarBrand brand : allCar){
+                    if(brand.getCarBrand().trim().equals(otoBrand.trim())) {
+                        listCar1.add(brand);
+                        listCarName1.add(brand.getCarName());
+                    }
+                }
+                mSpinerType1.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName1));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        mSpinerType1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(listCar1!=null)car1 = listCar1.get(i);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        mSpinerBrand2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                listCar2.clear();
+                listCarName2.clear();
+                String carBrand = listCarBrand.get(i);
+                for(CarBrand brand : allCar){
+                    if(brand.getCarBrand().equals(carBrand)) {
+                        listCar2.add(brand);
+                        listCarName2.add(brand.getCarName());
+                    }
+                }
+                mSpinerType2.setAdapter(new BaseSpinerAdapter(context, R.layout.spinner_item, listCarName2));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+        mSpinerType2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(listCar2!=null)car2 = listCar2.get(i);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.action_search).setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_comparision));
+        setHasOptionsMenu(true);
     }
 }

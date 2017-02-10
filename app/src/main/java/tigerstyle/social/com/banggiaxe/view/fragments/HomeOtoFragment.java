@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -23,6 +25,7 @@ import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
+import tigerstyle.social.com.banggiaxe.service.OtoDataRequest;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeCarAdapter;
 
@@ -50,6 +53,8 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
     private List<String> listBrand;
     private List<String> listCarTpe;
     public static String ARG_OBJ_KEY = "arg-brand-obj";
+    private OtoDataRequest dataRequest;
+    private DatabaseReference mFirebaseDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,6 +83,18 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
                 context.pushFragments(new CarDetailFragment(),bundle,true,true);
             }
         });
+
+        mFirebaseDatabase = mFirebaseInstance.getReference();
+        dataRequest = new OtoDataRequest(context,mFirebaseDatabase);
+//        dataRequest.requestData(new OtoDataRequest.DataChangeListener() {
+//            @Override
+//            public void onDataChange(ArrayList<CarBrand> data) {
+//                context.hideLoading();
+//                carBrands = (ArrayList<CarBrand>) data;
+//                context.setListCar(carBrands);
+//                mAdapter.setmDataSet(carBrands);
+//            }
+//        });
         context.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
         return rootView;
     }
