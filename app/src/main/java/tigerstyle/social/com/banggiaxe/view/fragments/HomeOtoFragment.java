@@ -13,8 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -26,7 +24,6 @@ import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
-import tigerstyle.social.com.banggiaxe.service.OtoDataRequest;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeCarAdapter;
 
@@ -89,6 +86,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
 
     @Override
     public Loader<List<CarBrand>> onCreateLoader(int id, Bundle args) {
+        context.showLoading();
         return new CarDataRequest(context);
     }
 

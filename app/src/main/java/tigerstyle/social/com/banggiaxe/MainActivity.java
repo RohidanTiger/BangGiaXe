@@ -24,6 +24,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 import tigerstyle.social.com.banggiaxe.config.Contants;
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ArrayList<CarBrand> listCar;
     private ArrayList<MotobikeBrand> listMoto;
+    public AdRequest adRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +82,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         listMenu = (RecyclerView) findViewById(R.id.navList);
         setupDrawer();
+        //adRequest = new AdRequest.Builder().build();
+        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.unit_ad_unit_id));
+        adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
+                .build();
 
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);

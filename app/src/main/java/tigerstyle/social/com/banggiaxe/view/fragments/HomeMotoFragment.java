@@ -15,8 +15,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -267,6 +265,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
 
     @Override
     public Loader<List<MotobikeBrand>> onCreateLoader(int id, Bundle args) {
+        context.showLoading();
         return new MotoDataRequest(context);
     }
 

@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +25,7 @@ import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.customize.SpacesItemDecoration;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
+import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.MenuExamAdapter;
 
@@ -32,7 +36,7 @@ import static tigerstyle.social.com.banggiaxe.config.Contants.NUMBER_QUESTION_MO
  * Created by billymobile on 1/11/17.
  */
 /* 1=1, 2=2, 3=1+2, 4=3, 5=1+3, 6=2+3, 8=4, 9=1+4, 12 = 3+4*/
-public class ExamMenuFragment extends BaseFragment {
+public class ExamMenuFragment extends BaseFragment implements ConnectivityReceiver.ConnectivityReceiverListener {
 
     public static String AGR_KEY = "EXAM_TYPE";
     public static int ARG_EXAM_A1_TYPE = 1;
@@ -47,11 +51,14 @@ public class ExamMenuFragment extends BaseFragment {
     private int view_type = 1;
     private ArrayList<Question> listQuestion = new ArrayList<>();
     private ArrayList<String> questionPosition = new ArrayList<>();
+    private AdView mAdView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_exam_menu, null);
         mRecyclerMenu = (RecyclerView) rootView.findViewById(R.id.recyclerview_exam_menu);
+        mAdView = (AdView) rootView.findViewById(R.id.adView);
+        mAdView.loadAd(context.adRequest);
         view_type = getArguments().getInt(AGR_KEY);
         if(view_type == ARG_EXAM_A1_TYPE){
             mAdapter = new MenuExamAdapter(8,context);
@@ -240,7 +247,21 @@ public class ExamMenuFragment extends BaseFragment {
         }else{
             context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_b2_title));
         }
+        if(ConnectivityReceiver.isConnected()){
+            mAdView.setVisibility(View.VISIBLE);
+        }else{
+            mAdView.setVisibility(View.GONE);
+        }
         context.setHideActionBarSearchItem(true);
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        if(isConnected){
+            mAdView.setVisibility(View.VISIBLE);
+        }else{
+            mAdView.setVisibility(View.GONE);
+        }
     }
 }

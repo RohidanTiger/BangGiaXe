@@ -4,13 +4,11 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
  * Created by billymobile on 1/11/17.
  */
 
-@IgnoreExtraProperties
 public class Question implements Parcelable{
     private String answers;
     private String image;

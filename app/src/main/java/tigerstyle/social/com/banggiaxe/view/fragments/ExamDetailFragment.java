@@ -20,11 +20,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -284,7 +279,7 @@ public class ExamDetailFragment extends BaseFragment {
                 public void onFinish() {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
-                    bundle.putInt(ResultFragment.ARG_QUESTIONS,positionExam);
+                    bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
                     context.popFragments(false);
                     context.pushFragments(new ResultFragment(),bundle,true,true);
                 }

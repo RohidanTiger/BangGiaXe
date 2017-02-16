@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@color/cmn_gray"
     style="@style/Layout.FillWidthHeight">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_exam_menu"
         android:layout_margin="@dimen/padding_smaller"
+        android:layout_below="@id/adView"
         style="@style/Layout.FillWidth">
-
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

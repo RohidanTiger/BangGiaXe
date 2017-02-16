@@ -54,6 +54,9 @@
     <string name="url_car_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/CarData.json</string>
     <string name="url_moto_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/MotoData.json</string>
 
+    <string name="unit_ad_unit_id">ca-app-pub-8332022239901570~8562191248</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8332022239901570/3992390841</string>
+
     <array name="brand_array">
         <item>Tất cả</item>
         <item>BMW</item>

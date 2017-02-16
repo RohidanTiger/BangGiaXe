@@ -12,11 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +26,7 @@ import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
 import tigerstyle.social.com.banggiaxe.service.MotoDataRequest;
-import tigerstyle.social.com.banggiaxe.service.OtoDataRequest;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
-import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 import tigerstyle.social.com.banggiaxe.view.adapters.BaseSpinerAdapter;

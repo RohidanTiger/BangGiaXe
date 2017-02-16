@@ -143,7 +143,7 @@ public class B2ExamDetailFragment extends BaseFragment{
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
-                bundle.putInt(ResultFragment.ARG_QUESTIONS,positionExam);
+                bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
                 context.popFragments(false);
                 context.pushFragments(new ResultFragment(),bundle,true,true);
             }
@@ -310,7 +310,7 @@ public class B2ExamDetailFragment extends BaseFragment{
                 public void onFinish() {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
-                    bundle.putInt(ResultFragment.ARG_QUESTIONS,positionExam);
+                    bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
                     context.popFragments(false);
                     context.pushFragments(new ResultFragment(),bundle,true,true);
                 }

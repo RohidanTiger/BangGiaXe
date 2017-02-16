@@ -15,7 +15,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.FirebaseDatabase;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -29,13 +28,11 @@ public class BaseFragment extends Fragment {
     public View rootView;
     public static ImageLoader mImageLoader;
     protected Typeface mTfLight;
-    public FirebaseDatabase mFirebaseInstance;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = (MainActivity) getActivity();
-        mFirebaseInstance = FirebaseDatabase.getInstance();
         TAG = BaseFragment.class.getSimpleName();
         mImageLoader= ImageLoader.getInstance();
         mImageLoader.init(ImageLoaderConfiguration.createDefault(context));
