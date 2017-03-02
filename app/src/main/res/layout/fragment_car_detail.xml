@@ -199,10 +199,10 @@
                         android:layout_below="@id/txt_fuel_capacity_title"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_displacement"
+                        android:text="Động cơ"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        app:suffix_length="11"
+                        app:suffix_length="0"
                         app:ratio="0.8"/>
 
                     <TextView
@@ -620,6 +620,7 @@
                 android:layout_marginTop="@dimen/padding_normal"
                 android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginLeft="@dimen/padding_small"
+                android:visibility="gone"
                 android:background="@drawable/shadow_view"
                 android:layout_below="@id/layout_total_cost">
 
@@ -635,6 +636,7 @@
                 android:layout_marginTop="@dimen/padding_normal"
                 android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginLeft="@dimen/padding_small"
+                android:visibility="gone"
                 android:background="@drawable/shadow_view"
                 android:layout_below="@id/layout_turnover">
 

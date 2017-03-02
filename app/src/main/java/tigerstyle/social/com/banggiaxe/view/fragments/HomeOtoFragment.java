@@ -1,10 +1,12 @@
 package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +53,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
     private List<String> listBrand;
     private List<String> listCarTpe;
     public static String ARG_OBJ_KEY = "arg-brand-obj";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

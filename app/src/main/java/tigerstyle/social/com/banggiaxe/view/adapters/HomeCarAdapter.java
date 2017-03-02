@@ -24,6 +24,7 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
     private ArrayList<CarBrand> mDataSet;
     private MainActivity mContext;
     private OnItemClickListener listener;
+    private long mLastClickTime = System.currentTimeMillis();
 
     public HomeCarAdapter(MainActivity context, ArrayList<CarBrand> dataSet) {
         this.mDataSet = dataSet;
@@ -60,6 +61,11 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                long now = System.currentTimeMillis();
+                if (now - mLastClickTime < 1000) {
+                    return;
+                }
+                mLastClickTime = now;
                 listener.onClick(brand);
             }
         });

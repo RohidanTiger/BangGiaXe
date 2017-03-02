@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView listMenu;
     private DrawerMenuAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private int mCurrentPosition = 0;
 
     // Number Fragment In Stack
     private int currentStackSize = 0;
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAdapter.setOnItemClickListener(new DrawerMenuAdapter.OnItemClickListener() {
             @Override
             public void onClick(int index) {
+                mCurrentPosition = index;
                 switch (index){
                     case 0:{
                         clearAllPreviousFragment();
@@ -171,7 +173,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                //getSupportActionBar().setTitle(R.string.app_name);
+                switch (mCurrentPosition){
+                    case 0:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_moto_title));
+                        break;
+                    }case 1:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_oto_title));
+                        break;
+                    }case 2:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_comparision));
+                        break;
+                    }case 3:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_a1_title));
+                        break;
+                    }case 4:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_b2_title));
+                        break;
+                    }
+                }
+
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };

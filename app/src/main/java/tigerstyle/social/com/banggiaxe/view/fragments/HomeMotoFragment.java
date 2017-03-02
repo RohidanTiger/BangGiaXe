@@ -2,6 +2,7 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
@@ -66,6 +67,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
     private List<String> listBrand;
     private List<String> listPrice;
     private TextView mTxtResult;
+    private long mLastClickTime = 0;
 
     public static String ARG_OBJ_KEY = "arg-brand-obj";
 
@@ -91,6 +93,11 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
         mAdapter.setOnItemClickListener(new HomeMotoAdapter.OnItemClickListener() {
             @Override
             public void onClick(MotobikeBrand brand) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 2000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(HomeMotoFragment.ARG_OBJ_KEY,brand);
                 context.pushFragments(new MotoDetailFragment(),bundle,true,true);
