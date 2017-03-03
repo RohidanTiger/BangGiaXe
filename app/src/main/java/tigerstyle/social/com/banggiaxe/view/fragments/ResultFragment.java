@@ -17,23 +17,11 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-
 import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
-import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
-import tigerstyle.social.com.banggiaxe.utils.Logger;
-
-import static tigerstyle.social.com.banggiaxe.config.Contants.NUMBER_QUESTION;
 
 /**
  * Created by billymobile on 1/17/17.
@@ -122,7 +110,7 @@ public class ResultFragment extends
 //    }
 
     private void drawChart(){
-        for(int i = 0; i < NUMBER_QUESTION; i++){
+        for(int i = 0; i < listQuestion.size(); i++){
             String answer = listQuestion.get(i).getResult();
             answer = answer.replaceAll("-","");
             if(answer.equals(mArrayAnswer[i])){
@@ -132,7 +120,7 @@ public class ResultFragment extends
 
         ArrayList<PieEntry> yVals = new ArrayList<PieEntry>();
         yVals.add(new PieEntry(mRightNumber,"Trả lời đúng",0));
-        yVals.add(new PieEntry(NUMBER_QUESTION - mRightNumber,"Trả lời chưa chính xác",1));
+        yVals.add(new PieEntry(listQuestion.size() - mRightNumber,"Trả lời chưa chính xác",1));
 
         ArrayList<Integer> colors = new ArrayList<Integer>();
         for (int c : ColorTemplate.COLORFUL_COLORS) colors.add(c);
@@ -185,13 +173,14 @@ public class ResultFragment extends
                     bundle.putInt(B2ExamDetailFragment.VIEW_MODE,1);
                     context.pushFragments(new B2ExamDetailFragment(),bundle,true,true);
                 }else{
-                    bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
+                    bundle.putParcelableArrayList(ExamMenuFragment.ARG_QUESTION,listQuestion);
+                    bundle.putSerializable(ResultFragment.ARG_ANSWERS,mArrayAnswer);
+                    bundle.putInt(ExamDetailFragment.VIEW_MODE,1);
                     context.pushFragments(new ExamDetailFragment(),bundle,true,true);
                 }
 
             }
         });
-
         mBtnGotoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,12 +2,14 @@
 <com.andexert.library.RippleView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     rv_centered="true"
     android:id="@+id/ripple"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <RelativeLayout
+        android:id="@+id/layout_content"
         style="@style/Layout.FillWidth"
         android:background="@drawable/list_row_selector">
 
@@ -93,12 +95,38 @@
             android:textSize="@dimen/text_normal"
             android:textStyle="bold"/>
 
+
         <View
+            android:id="@+id/view_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
             android:layout_below="@id/txtDeviationPrice"
             android:background="@color/list_divider" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view_divider"
+        android:layout_below="@id/layout_content"
+        android:visibility="gone">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txtDeviationPrice"
+            android:layout_alignParentBottom="true"
+            android:background="@color/list_divider" />
     </RelativeLayout>
 </com.andexert.library.RippleView>

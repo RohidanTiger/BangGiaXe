@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdView;
+
 import java.util.Arrays;
 
 import tigerstyle.social.com.banggiaxe.BaseFragment;
@@ -63,6 +65,7 @@ public class MotoDetailFragment extends BaseFragment{
     private TextView mTxtInsurance;
     private SuffixTextView mTxtTotalPrice;
     private double deviationPrice;
+    private AdView mAdView;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +102,8 @@ public class MotoDetailFragment extends BaseFragment{
         deviationPrice = Double.parseDouble(motobikeBrand.getCarPriceDeviation());
         fillData();
         calculateTotalCost();
-
+        mAdView = (AdView) rootView.findViewById(R.id.adView);
+        mAdView.loadAd(context.adRequest);
         return rootView;
     }
 

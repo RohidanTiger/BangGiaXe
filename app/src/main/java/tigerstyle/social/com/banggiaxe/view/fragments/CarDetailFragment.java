@@ -28,6 +28,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,6 +87,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     private TextView mTxtTotalCost;
     private SuffixTextView mTxtAreaTitle;
     private CustomSpinner mSpinnerArea;
+    private AdView mAdView;
 
     BarDataSet set1, set2;
     private List<String> listMonth;
@@ -139,6 +141,8 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         fillTotalCost();
         fillChartData();
         //showPompetitor();
+        mAdView = (AdView) rootView.findViewById(R.id.adView);
+        mAdView.loadAd(context.adRequest);
         return rootView;
     }
 

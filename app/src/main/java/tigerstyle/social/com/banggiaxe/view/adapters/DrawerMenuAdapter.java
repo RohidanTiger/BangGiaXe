@@ -1,5 +1,6 @@
 package tigerstyle.social.com.banggiaxe.view.adapters;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
     private int[] mTitle;
     private int[] mImage;
     private OnItemClickListener listener;
+    private int mSelectedIndex = -1;
 
     public DrawerMenuAdapter(MainActivity context){
         this.mContext = context;
@@ -29,6 +31,11 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         listener = onItemClickListener;
+    }
+
+    public void setSelection(int position) {
+        mSelectedIndex =  position;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -45,6 +52,13 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
         }else{
             ((DrawerMenuAdapter.ViewHolder) holder).imgVehical.setVisibility(View.INVISIBLE);
         }
+
+        if (position == mSelectedIndex) {
+            holder.itemView.setSelected(true);
+        } else {
+            holder.itemView.setSelected(false);
+        }
+
         ((DrawerMenuAdapter.ViewHolder) holder).textViewName.setText(mContext.getResources().getString(mTitle[position]));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

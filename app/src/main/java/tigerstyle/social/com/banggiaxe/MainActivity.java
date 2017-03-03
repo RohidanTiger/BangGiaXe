@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     private void setupDrawer() {
         mAdapter = new DrawerMenuAdapter(this);
+        mAdapter.setSelection(mCurrentPosition);
         mLayoutManager = new LinearLayoutManager(this);
         listMenu.setLayoutManager(mLayoutManager);
         listMenu.setAdapter(mAdapter);
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(int index) {
                 mCurrentPosition = index;
+                mAdapter.setSelection(mCurrentPosition);
                 switch (index){
                     case 0:{
                         clearAllPreviousFragment();

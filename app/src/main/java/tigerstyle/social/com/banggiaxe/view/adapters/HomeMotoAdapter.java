@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
@@ -52,6 +55,12 @@ public class HomeMotoAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final MotobikeBrand brand = mDataSet.get(position);
+        if(position > 0 && position %10 == 0){
+            ((ViewHolder) holder).layoutAd.setVisibility(View.VISIBLE);
+            ((ViewHolder) holder).mAdView.loadAd(mContext.adRequest);
+        }else{
+            ((ViewHolder) holder).layoutAd.setVisibility(View.GONE);
+        }
         ((HomeMotoAdapter.ViewHolder) holder).textViewName.setText(brand.getCarName());
         ((HomeMotoAdapter.ViewHolder) holder).textViewBrand.setText(brand.getCarBrand());
         ((HomeMotoAdapter.ViewHolder) holder).textViewPrice.setText(brand.getCarPrice());
@@ -78,6 +87,8 @@ public class HomeMotoAdapter extends RecyclerView.Adapter {
         public TextView textViewBrand;
         public TextView textViewPrice;
         public TextView textViewDeviationPrice;
+        public RelativeLayout layoutAd;
+        public AdView mAdView;
 
         public ViewHolder(View v) {
             super(v);
@@ -86,6 +97,8 @@ public class HomeMotoAdapter extends RecyclerView.Adapter {
             textViewBrand = (TextView) v.findViewById(R.id.txtBrand);
             textViewPrice = (TextView) v.findViewById(R.id.txtPrice);
             textViewDeviationPrice = (TextView) v.findViewById(R.id.txtDeviationPrice);
+            layoutAd = (RelativeLayout) v.findViewById(R.id.layout_ad);
+            mAdView = (AdView) v.findViewById(R.id.adView);
         }
     }
 

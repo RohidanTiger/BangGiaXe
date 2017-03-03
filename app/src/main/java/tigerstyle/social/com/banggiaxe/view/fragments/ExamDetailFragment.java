@@ -138,6 +138,17 @@ public class ExamDetailFragment extends BaseFragment {
                 fillData(listQuestion.get(currentQuestion));
             }
         });
+        mBtnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
+                bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
+                bundle.putInt(ResultFragment.ARG_EXAM_TYPE,1);
+                context.popFragments(false);
+                context.pushFragments(new ResultFragment(),bundle,true,true);
+            }
+        });
         initRecycleView();
         return rootView;
     }
@@ -280,6 +291,7 @@ public class ExamDetailFragment extends BaseFragment {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(ResultFragment.ARG_ANSWERS,arrayResult);
                     bundle.putParcelableArrayList(ResultFragment.ARG_QUESTIONS,listQuestion);
+                    bundle.putInt(ResultFragment.ARG_EXAM_TYPE,1);
                     context.popFragments(false);
                     context.pushFragments(new ResultFragment(),bundle,true,true);
                 }
