@@ -125,7 +125,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/txtDeviationPrice"
             android:layout_alignParentBottom="true"
             android:background="@color/list_divider" />
     </RelativeLayout>

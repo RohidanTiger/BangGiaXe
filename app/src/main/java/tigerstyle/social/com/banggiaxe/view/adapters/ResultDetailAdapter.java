@@ -35,7 +35,7 @@ public class ResultDetailAdapter extends RecyclerView.Adapter{
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((ResultDetailAdapter.ViewHolder) holder).textViewName.setText(String.valueOf(position+1));
         if(mValue[position] == 2){
-            holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.cmn_price1));
+            holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.cmn_orange));
         }else if(mValue[position] == 1){
             holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.cmn_price2));
         }else{

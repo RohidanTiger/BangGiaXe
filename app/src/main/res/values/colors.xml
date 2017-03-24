@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#657e8a</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="color_mainapp">#467CC3</color>
@@ -33,5 +33,6 @@
     <color name="color_menu_normal">#d8dcde</color>
     <color name="color_menu_click">#828485</color>
     <color name="color_dark">#686a6a</color>
+    <color name="color_header_brow">#BCAAA4</color>
 
 </resources>

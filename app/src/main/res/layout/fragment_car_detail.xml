@@ -138,8 +138,8 @@
 
                 <TextView
                     style="@style/Layout.FillWidth"
-                    android:background="@color/cmn_divider_gray"
-                    android:textColor="@color/cmn_text"
+                    android:background="@color/color_header_brow"
+                    android:textColor="@color/cmn_white"
                     android:padding="@dimen/padding_normal"
                     android:textSize="@dimen/text_title"
                     android:text="@string/cmn_technical_information"/>
@@ -300,7 +300,7 @@
                         android:layout_below="@id/txt_ground_clearance_title"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_gross_weight"
+                        android:text="@string/cmn_turning_circle"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
                         app:suffix_length="4"
@@ -401,8 +401,8 @@
 
                 <TextView
                     style="@style/Layout.FillWidth"
-                    android:background="@color/cmn_divider_gray"
-                    android:textColor="@color/cmn_text"
+                    android:background="@color/color_header_brow"
+                    android:textColor="@color/cmn_white"
                     android:padding="@dimen/padding_normal"
                     android:textSize="@dimen/text_title"
                     android:text="@string/cmn_cost_estimation"/>

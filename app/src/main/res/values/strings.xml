@@ -54,8 +54,8 @@
     <string name="url_car_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/CarData.json</string>
     <string name="url_moto_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/MotoData.json</string>
 
-    <string name="unit_ad_unit_id">ca-app-pub-8332022239901570~8562191248</string>
-    <string name="banner_ad_unit_id">ca-app-pub-8332022239901570/3992390841</string>
+    <string name="unit_ad_unit_id">ca-app-pub-2910568088893309~9505194877</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2910568088893309/1842327274</string>
 
     <array name="brand_array">
         <item>Tất cả</item>
@@ -92,7 +92,6 @@
 
     <array name="car_brand_array">
         <item>Tất cả</item>
-        <item>Audi</item>
         <item>BMW</item>
         <item>Chevrolet</item>
         <item>Ford</item>
@@ -101,17 +100,18 @@
         <item>Infiniti</item>
         <item>Isuzu</item>
         <item>Kia</item>
-        <item>Lamborghini</item>
+        <!--<item>Lamborghini</item>-->
         <item>Lexus</item>
         <item>Maserati</item>
         <item>Mazda</item>
         <item>Mercedes</item>
+        <item>Mini</item>
         <item>Mitsubishi</item>
         <item>Nissan</item>
         <item>Peugeot</item>
         <item>Porsche</item>
         <item>Renault</item>
-        <item>Rolls-Royce</item>
+        <!--<item>Rolls-Royce</item>-->
         <item>Subaru</item>
         <item>Suzuki</item>
         <item>Toyota</item>
@@ -121,7 +121,7 @@
 
     <array name="car_brand_array2">
         <item>Hãng</item>
-        <item>Audi</item>
+        <!--<item>Audi</item>-->
         <item>BMW</item>
         <item>Chevrolet</item>
         <item>Ford</item>
@@ -130,17 +130,18 @@
         <item>Infiniti</item>
         <item>Isuzu</item>
         <item>Kia</item>
-        <item>Lamborghini</item>
+        <!--<item>Lamborghini</item>-->
         <item>Lexus</item>
         <item>Maserati</item>
         <item>Mazda</item>
         <item>Mercedes</item>
+        <item>Mini</item>
         <item>Mitsubishi</item>
         <item>Nissan</item>
         <item>Peugeot</item>
         <item>Porsche</item>
         <item>Renault</item>
-        <item>Rolls-Royce</item>
+        <!--<item>Rolls-Royce</item>-->
         <item>Subaru</item>
         <item>Suzuki</item>
         <item>Toyota</item>

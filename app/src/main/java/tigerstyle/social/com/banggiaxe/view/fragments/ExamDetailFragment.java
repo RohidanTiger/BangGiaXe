@@ -100,8 +100,6 @@ public class ExamDetailFragment extends BaseFragment {
 
         positionExam = getArguments().getInt(ARG_POSITION);
         viewMode = getArguments().getInt(VIEW_MODE);
-        if(viewMode != NORMAL_MODE) arrayResult = getArguments().getStringArray(ResultFragment.ARG_ANSWERS);
-        mAdapter = new ResultDetailAdapter(context,arrayColorResult);
 
         // Group1
         mLayoutAnswer1 = (RelativeLayout) rootView.findViewById(R.id.layout_answer1);
@@ -119,10 +117,27 @@ public class ExamDetailFragment extends BaseFragment {
         mLayoutAnswer4 = (RelativeLayout) rootView.findViewById(R.id.layout_answer4);
         mCheckBox4     = (CheckBox)  rootView.findViewById(R.id.checkbox_4);
 
+        if(viewMode != NORMAL_MODE) arrayResult = getArguments().getStringArray(ResultFragment.ARG_ANSWERS);
+
         listQuestion = new ArrayList<>();
         listQuestion = getArguments().getParcelableArrayList(ARG_QUESTION);
         fillData(listQuestion.get(currentQuestion));
         initCountDownTimer();
+
+        if (viewMode != NORMAL_MODE) {
+            arrayResult = getArguments().getStringArray(ResultFragment.ARG_ANSWERS);
+            for (int i = 0; i < listQuestion.size(); i++) {
+                String answer = listQuestion.get(i).getResult();
+                answer = answer.replaceAll("-", "");
+                if (answer.equals(arrayResult[i])) {
+                    arrayColorResult[i] = 1;
+                } else {
+                    arrayColorResult[i] = 2;
+                }
+            }
+        }
+        mAdapter = new ResultDetailAdapter(context,arrayColorResult);
+
         mBtnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,58 +225,60 @@ public class ExamDetailFragment extends BaseFragment {
 
     private void updateAnswers(){
         final String[] result = {""};
-        mCheckBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                result[0] = "";
-                result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
-                result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
-                result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
-                result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
-                arrayResult[currentQuestion] = result[0];
-                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
-                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
-            }
-        });
-        mCheckBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                result[0] = "";
-                result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
-                result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
-                result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
-                result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
-                arrayResult[currentQuestion] = result[0];
-                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
-                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
-            }
-        });
-        mCheckBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                result[0] = "";
-                result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
-                result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
-                result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
-                result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
-                arrayResult[currentQuestion] = result[0];
-                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
-                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
-            }
-        });
-        mCheckBox4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                result[0] = "";
-                result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
-                result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
-                result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
-                result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
-                arrayResult[currentQuestion] = result[0];
-                arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
-                mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
-            }
-        });
+        if(viewMode == NORMAL_MODE){
+            mCheckBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    result[0] = "";
+                    result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
+                    result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
+                    result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
+                    result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
+                    arrayResult[currentQuestion] = result[0];
+                    arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                    mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
+                }
+            });
+            mCheckBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    result[0] = "";
+                    result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
+                    result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
+                    result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
+                    result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
+                    arrayResult[currentQuestion] = result[0];
+                    arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                    mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
+                }
+            });
+            mCheckBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    result[0] = "";
+                    result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
+                    result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
+                    result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
+                    result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
+                    arrayResult[currentQuestion] = result[0];
+                    arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                    mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
+                }
+            });
+            mCheckBox4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    result[0] = "";
+                    result[0] = result[0].concat((mCheckBox1.isChecked())?"1":"");
+                    result[0] = result[0].concat((mCheckBox2.isChecked())?"2":"");
+                    result[0] = result[0].concat((mCheckBox3.isChecked())?"3":"");
+                    result[0] = result[0].concat((mCheckBox4.isChecked())?"4":"");
+                    arrayResult[currentQuestion] = result[0];
+                    arrayColorResult[currentQuestion] = (arrayResult[currentQuestion].length() > 0) ? 1 : 0;
+                    mAdapter.setBackgroundColor(currentQuestion,arrayColorResult[currentQuestion]);
+                }
+            });
+        }
     }
 
     private void initCountDownTimer(){

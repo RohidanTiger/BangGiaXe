@@ -3,7 +3,10 @@ package tigerstyle.social.com.banggiaxe;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
@@ -23,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView listMenu;
     private DrawerMenuAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private TextView mTxtRateApp;
     private int mCurrentPosition = 0;
 
     // Number Fragment In Stack
@@ -82,13 +87,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         listMenu = (RecyclerView) findViewById(R.id.navList);
+        mTxtRateApp = (TextView) findViewById(R.id.btnRateApp);
         setupDrawer();
-        //adRequest = new AdRequest.Builder().build();
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.unit_ad_unit_id));
-        adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
-                .build();
-
+        //adRequest = new AdRequest.Builder().build();
+        adRequest = new AdRequest.Builder().addTestDevice("867826023574924").build();
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
 
@@ -101,10 +104,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         initFragmentStackManager();
 
         enableNetworkOnMainThread();
-
         getScreenDimension();
 
         pushFragments(new HomeMotoFragment(), false, true);
+        mTxtRateApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openApp("com.ht.chickenzero.banggiaxe");
+            }
+        });
     }
 
     private void enableNetworkOnMainThread() {
@@ -473,5 +481,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
         ConnectivityReceiver.connectivityReceiverListener = listener;
+    }
+
+    void openApp(String applicationId) {
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=".concat(applicationId)));
+        startActivity(myIntent);
     }
 }

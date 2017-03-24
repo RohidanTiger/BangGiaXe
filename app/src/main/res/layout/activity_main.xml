@@ -39,6 +39,7 @@
             android:background="@color/list_row_start_color"/>
 
         <TextView
+            android:id="@+id/btnRateApp"
             android:layout_width="250dp"
             android:layout_height="@dimen/btn_height"
             android:layout_alignParentBottom="true"

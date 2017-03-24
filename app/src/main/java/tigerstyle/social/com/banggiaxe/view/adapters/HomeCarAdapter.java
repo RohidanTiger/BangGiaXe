@@ -67,7 +67,7 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
         String urlImage = IMAGE_URL + brand.getCarImage();
         PicassoLoader.getInstance(mContext).load(urlImage).placeholder(R.drawable.bg_captcha).
                 error(R.drawable.bg_captcha).into((((HomeCarAdapter.ViewHolder) holder).imgVehical));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        ((HomeCarAdapter.ViewHolder) holder).layoutContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 long now = System.currentTimeMillis();
@@ -86,6 +86,7 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public RelativeLayout layoutContent;
         public ImageView imgVehical;
         public TextView textViewName;
         public TextView textViewBrand;
@@ -96,6 +97,7 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
 
         public ViewHolder(View v) {
             super(v);
+            layoutContent = (RelativeLayout) v.findViewById(R.id.layout_content);
             imgVehical = (ImageView) v.findViewById(R.id.imgVehical);
             textViewName = (TextView) v.findViewById(R.id.txtName);
             textViewBrand = (TextView) v.findViewById(R.id.txtBrand);

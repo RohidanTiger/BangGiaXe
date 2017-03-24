@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "444998536257",
-    "firebase_url": "https://importdb-518da.firebaseio.com",
-    "project_id": "importdb-518da",
-    "storage_bucket": "importdb-518da.appspot.com"
+    "project_number": "582660161273",
+    "firebase_url": "https://bang-gia-xe.firebaseio.com",
+    "project_id": "bang-gia-xe",
+    "storage_bucket": "bang-gia-xe.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:444998536257:android:0c44d3c3974809e4",
+        "mobilesdk_app_id": "1:582660161273:android:74bd2131213a8efb",
         "android_client_info": {
-          "package_name": "tigerstyle.social.com.banggiaxe"
+          "package_name": "com.ht.chickenzero.banggiaxe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "444998536257-nu33vgqjvqperbu16soi9k8vdfj8e4rl.apps.googleusercontent.com",
+          "client_id": "582660161273-ibvk5nrdjofj236ajsup2o9271nie9u6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC1uWXpuMPTd7LYFsVtBa7LptXdp8tD6UU"
+          "current_key": "AIzaSyCXQmAgAQ7Y-VaJTa8BuXVvQbA9taPqHQo"
         }
       ],
       "services": {

@@ -10,29 +10,24 @@ import android.os.Parcelable;
 
 /*
 {
-"carId":"229",
-"carName":"Camry 2.5Q",
-"carType":"Sedan",
-"carBrand":"Toyota",
-"carOrigin":"L\u1eafp r\u00e1p",
-"carPrice":"1.383",
-"carPriceDeviation":"1.354",
-"carTurnover":[
-["108","79","77","167","247","240","236","222","250","180","190","260","2256"],
-["225","99","187","170","168","213","165","111","219","164",0,0,"1721"]],
-"carTurnoverCol1":"N\/A",
-"carTurnoverCol2":"1.721",
-"carEngine":"2.5 I4 Dual VVT-i",
+"carId":"2091",
+"carName":"BT-50 3.2AT 4WD",
+"carType":"Pick-up",
+"carBrand":"Mazda",
+"carOrigin":"Nh\u1eadp kh\u1ea9u",
+"carPrice":"819",
+"carPriceDeviation":"802",
+"carEngine":"Diesel 3.2 I5",
 "carGear":"AT 6 c\u1ea5p",
-"carPower":"178",
-"carMoment":"231",
-"carSize":"4825x1825x1470",
-"carFuelTankCapacity":"70",
-"carGroundClearance":"150",
-"carCompetitors":"206, 318, 402, 527 ",
-"carTurningCircle":"11",
-"carImage":"importxls\/importxls-event-1-coordinates-R2-time-1482393726.jpg",
-"shareUrl":"\/interactive\/2016\/bang-gia-xe\/sedan-camry-2-5q-229.html"
+"carPower":"197",
+"carMoment":"470",
+"carSize":"5365x1850x1821",
+"carFuelTankCapacity":"80",
+"carGroundClearance":"237",
+"carCompetitors":"592,593,555,308,569,610,1859",
+"carTurningCircle":"12.4",
+"carImage":"\/2017\/02\/27\/mazdabt50sidedrive-1488192653.jpg",
+"shareUrl":"\/interactive\/2016\/bang-gia-xe\/pick-up-bt-50-3-2at-4wd-2091.html"
 }
 */
 public class CarBrand implements Parcelable {

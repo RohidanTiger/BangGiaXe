@@ -15,3 +15,14 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-dontwarn okio.**
+-dontwarn retrofit2.Platform$Java8
+
+-keep class com.squareup.okhttp.** { *; }
+-dontwarn com.squareup.okhttp.**
+
+-keep class android.support.v4.** { *; }
+-keep interface android.support.v4.app.** { *; }
+-keep public class * extends android.support.v4.**
+-keep public class * extends android.app.Fragment
+-keep class android.support.v7.widget.** { *; }

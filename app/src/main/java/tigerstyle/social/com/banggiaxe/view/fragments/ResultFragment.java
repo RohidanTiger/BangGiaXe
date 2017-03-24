@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -37,6 +38,7 @@ public class ResultFragment extends
     private RelativeLayout mBtnRetry;
     private RelativeLayout mBtnWatchResult;
     private RelativeLayout mBtnGotoMenu;
+    private TextView mTxtPercent;
 
     private int mRightNumber = 0;
     private int mExamType;
@@ -53,6 +55,7 @@ public class ResultFragment extends
         mExamType = getArguments().getInt(ARG_EXAM_TYPE);
 
         mPieChart = (PieChart)rootView.findViewById(R.id.chart);
+        mTxtPercent = (TextView) rootView.findViewById(R.id.txt_percen);
         mBtnRetry = (RelativeLayout) rootView.findViewById(R.id.btn_retry);
         mBtnWatchResult = (RelativeLayout) rootView.findViewById(R.id.btn_watch_result);
         mBtnGotoMenu = (RelativeLayout) rootView.findViewById(R.id.btn_goto_menu);
@@ -118,6 +121,9 @@ public class ResultFragment extends
             }
         }
 
+        float percent = (100f * mRightNumber / listQuestion.size());
+        mTxtPercent.setText(String.valueOf((int)percent).concat("%"));
+
         ArrayList<PieEntry> yVals = new ArrayList<PieEntry>();
         yVals.add(new PieEntry(mRightNumber,"Trả lời đúng",0));
         yVals.add(new PieEntry(listQuestion.size() - mRightNumber,"Trả lời chưa chính xác",1));
@@ -129,6 +135,7 @@ public class ResultFragment extends
 
         PieDataSet dataSet = new PieDataSet(yVals, "");
         dataSet.setColors(colors);
+        dataSet.setValueTextColor(Color.BLACK);
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(5);
 
@@ -136,7 +143,7 @@ public class ResultFragment extends
         data.setDataSet(dataSet);
 
         data.setValueTextSize(11f);
-        data.setValueTextColor(Color.GRAY);
+        data.setValueTextColor(Color.WHITE);
 
         mPieChart.setData(data);
         mPieChart.highlightValues(null);

@@ -139,10 +139,10 @@
 
                 <TextView
                     style="@style/Layout.FillWidth"
-                    android:background="@color/cmn_divider_gray"
+                    android:background="@color/color_header_brow"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/cmn_technical_information"
-                    android:textColor="@color/cmn_text"
+                    android:textColor="@color/cmn_white"
                     android:textSize="@dimen/text_title" />
 
                 <RelativeLayout
@@ -388,10 +388,10 @@
 
                 <TextView
                     style="@style/Layout.FillWidth"
-                    android:background="@color/cmn_divider_gray"
+                    android:background="@color/color_header_brow"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/cmn_cost_estimation"
-                    android:textColor="@color/cmn_text"
+                    android:textColor="@color/cmn_white"
                     android:textSize="@dimen/text_title" />
 
                 <RelativeLayout
