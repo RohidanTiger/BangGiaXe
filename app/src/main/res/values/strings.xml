@@ -50,8 +50,9 @@
     <string name="cmn_b2_title">Bộ đề bằng B2</string>
     <string name="cmn_vehical_type">Loại xe</string>
     <string name="cmn_technical_information">Thông số kỹ thuật</string>
+    <string name="cmn_competatitor_information">Các đối thủ</string>
     <string name="cmn_cost_estimation">Ước lượng chi phí</string>
-    <string name="url_car_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/CarData.json</string>
+    <string name="url_car_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/CarDataNew.json</string>
     <string name="url_moto_data">https://raw.githubusercontent.com/RohidanTiger/BangGiaXe/master/MotoData.json</string>
 
     <string name="unit_ad_unit_id">ca-app-pub-2910568088893309~9505194877</string>

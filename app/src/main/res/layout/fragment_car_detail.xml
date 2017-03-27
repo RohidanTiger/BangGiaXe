@@ -615,16 +615,6 @@
 
             </LinearLayout>
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@id/layout_total_cost"
-                android:layout_centerHorizontal="true"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
-
 
             <RelativeLayout
                 style="@style/Layout.FillWidthHeight"
@@ -642,22 +632,55 @@
                     android:layout_height="200dp" />
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/layout_pompetitors"
-                style="@style/Layout.FillWidth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_normal"
                 android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginLeft="@dimen/padding_small"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:background="@drawable/shadow_view"
+                android:orientation="vertical"
                 android:layout_below="@id/layout_turnover">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/list_pompetitor"
-                    style="@style/Layout.FillWidth">
-                </android.support.v7.widget.RecyclerView>
+                <TextView
+                    style="@style/Layout.FillWidth"
+                    android:background="@color/color_header_brow"
+                    android:textColor="@color/cmn_white"
+                    android:padding="@dimen/padding_normal"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/cmn_competatitor_information"/>
 
-            </RelativeLayout>
+                <tigerstyle.social.com.banggiaxe.customize.PagerContainer
+                    android:id="@+id/pager_container"
+                    style="@style/Layout.FillWidth"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/padding_medium"
+                    android:layout_marginBottom="@dimen/padding_big"
+                    android:overScrollMode="never">
+
+                    <tigerstyle.social.com.banggiaxe.customize.TransformableViewPager
+                        android:layout_width="200dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal">
+                    </tigerstyle.social.com.banggiaxe.customize.TransformableViewPager>
+
+                </tigerstyle.social.com.banggiaxe.customize.PagerContainer>
+
+            </LinearLayout>
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/layout_pompetitors"
+                android:layout_centerHorizontal="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id">
+            </com.google.android.gms.ads.AdView>
+
 
         </RelativeLayout>
 

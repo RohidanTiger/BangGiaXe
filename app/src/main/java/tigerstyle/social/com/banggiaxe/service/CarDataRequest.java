@@ -52,43 +52,49 @@ public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
             JSONArray vehicalListIndex = jsonObj.names();
 
             for (int i = 0; i < vehicalListIndex.length(); i++) {
+
                 JSONObject c = jsonObj.getJSONObject(vehicalListIndex.getString(i));
+                JSONArray vehicalListName = c.names();
 
-                String id = c.getString("carId");
-                String name = c.getString("carName");
-                String type = c.getString("carType");
-                String brand = c.getString("carBrand");
-                String carOrigin = c.getString("carOrigin");
-                String price = c.getString("carPrice");
-                String priceDeviation = c.getString("carPriceDeviation");
-                JSONArray turnovers = c.getJSONArray("carTurnover");
-                JSONArray turnover1 = turnovers.getJSONArray(0);
-                int[] turnoverVal1 = new int[turnover1.length()];
-                for(int j=0 ; j < turnover1.length() ; j++){
-                    turnoverVal1[j] = turnover1.getInt(j);
+                for (int j = 0; j < vehicalListName.length(); j++) {
+                    JSONObject item = c.getJSONObject(vehicalListName.getString(j));
+                    String id = item.getString("carId");
+                    String name = item.getString("carName");
+                    String type = item.getString("carType");
+                    String brand = item.getString("carBrand");
+                    String carOrigin = item.getString("carOrigin");
+                    String price = item.getString("carPrice");
+                    String priceDeviation = item.getString("carPriceDeviation");
+                    /*JSONArray turnovers = item.getJSONArray("carTurnover");
+                    JSONArray turnover1 = turnovers.getJSONArray(0);
+                    int[] turnoverVal1 = new int[turnover1.length()];
+                    for(int h=0 ; h < turnover1.length() ; h++){
+                        turnoverVal1[h] = turnover1.getInt(h);
+                    }
+                    JSONArray turnover2 = turnovers.getJSONArray(1);
+                    int[] turnoverVal2 = new int[turnover2.length()];
+                    for(int h=0 ; h < turnover2.length() ; h++){
+                        turnoverVal2[h] = turnover2.getInt(h);
+                    }*/
+
+                    String engine = item.getString("carEngine");
+                    String gear = item.getString("carGear");
+                    String power = item.getString("carPower");
+                    String moment = item.getString("carMoment");
+                    String size = item.getString("carSize");
+                    String fuelTankCapacity = item.getString("carFuelTankCapacity");
+                    String groundClearance = item.getString("carGroundClearance");
+                    String[] competitors = item.getString("carCompetitors").split(",");
+                    String turningCircle = item.getString("carTurningCircle");
+                    String imgage = item.getString("carImage");
+                    String shareUrl = item.getString("shareUrl");
+
+                    CarBrand carBrand = new CarBrand(id,name,type,brand,carOrigin,price,priceDeviation,engine,gear,
+                            power,moment,size, fuelTankCapacity,groundClearance,competitors,turningCircle,imgage,shareUrl);
+                    carBrands.add(carBrand);
                 }
-                JSONArray turnover2 = turnovers.getJSONArray(1);
-                int[] turnoverVal2 = new int[turnover2.length()];
-                for(int j=0 ; j < turnover2.length() ; j++){
-                    turnoverVal2[j] = turnover2.getInt(j);
-                }
 
-                String engine = c.getString("carEngine");
-                String gear = c.getString("carGear");
-                String power = c.getString("carPower");
-                String moment = c.getString("carMoment");
-                String size = c.getString("carSize");
-                String fuelTankCapacity = c.getString("carFuelTankCapacity");
-                String groundClearance = c.getString("carGroundClearance");
-                String[] competitors = c.getString("carCompetitors").split(",");
-                String turningCircle = c.getString("carTurningCircle");
-                String imgage = c.getString("carImage");
-                String shareUrl = c.getString("shareUrl");
 
-                CarBrand carBrand = new CarBrand(id,name,type,brand,carOrigin,price,priceDeviation,
-                                        turnoverVal1,turnoverVal2,engine,gear,power,moment,size,
-                                        fuelTankCapacity,groundClearance,competitors,turningCircle,imgage,shareUrl);
-                carBrands.add(carBrand);
             }
             Collections.sort(carBrands, new Comparator<CarBrand>() {
                 @Override

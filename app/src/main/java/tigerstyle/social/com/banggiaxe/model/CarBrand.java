@@ -79,6 +79,30 @@ public class CarBrand implements Parcelable {
         this.shareUrl = shareUrl;
     }
 
+    public CarBrand(String carID, String carName, String carType, String carBrand, String carOrigin,
+                    String carPrice, String carPriceDeviation, String carEngine, String carGear,
+                    String carPower, String carMoment, String carSize, String carFuelTankCapacity,
+                    String carGroundClearance, String[] carCompetitors, String carTurningCirclel, String carImage, String shareUrl) {
+        this.carID = carID;
+        this.carName = carName;
+        this.carType = carType;
+        this.carBrand = carBrand;
+        this.carOrigin = carOrigin;
+        this.carPrice = carPrice;
+        this.carPriceDeviation = carPriceDeviation;
+        this.carEngine = carEngine;
+        this.carGear = carGear;
+        this.carPower = carPower;
+        this.carMoment = carMoment;
+        this.carSize = carSize;
+        this.carFuelTankCapacity = carFuelTankCapacity;
+        this.carGroundClearance = carGroundClearance;
+        this.carCompetitors = carCompetitors;
+        this.carTurningCirclel = carTurningCirclel;
+        this.carImage = carImage;
+        this.shareUrl = shareUrl;
+    }
+
     public String getCarID() {
         return carID;
     }

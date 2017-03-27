@@ -2,8 +2,6 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -11,11 +9,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -23,7 +20,6 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
@@ -36,13 +32,18 @@ import java.util.List;
 
 import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
+import tigerstyle.social.com.banggiaxe.customize.CarouselPageTransformer;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
+import tigerstyle.social.com.banggiaxe.customize.PagerContainer;
 import tigerstyle.social.com.banggiaxe.customize.SuffixTextView;
+import tigerstyle.social.com.banggiaxe.customize.TransformableViewPager;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
-import tigerstyle.social.com.banggiaxe.view.adapters.PompetitorAdapter;
+import tigerstyle.social.com.banggiaxe.view.adapters.CompetitorAdapter;
+import tigerstyle.social.com.banggiaxe.view.adapters.HomeCarAdapter;
 import tigerstyle.social.com.banggiaxe.view.dialog.AreaInforDialog;
+import tigerstyle.social.com.banggiaxe.view.dialog.ComparisonDialog;
 
 import static tigerstyle.social.com.banggiaxe.config.Contants.IMAGE_URL;
 import static tigerstyle.social.com.banggiaxe.config.Contants.INSPECTION_FEE;
@@ -87,14 +88,14 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     private TextView mTxtTotalCost;
     private SuffixTextView mTxtAreaTitle;
     private CustomSpinner mSpinnerArea;
+    private LinearLayout mLayoutPompetitors;
     private AdView mAdView;
 
     BarDataSet set1, set2;
     private List<String> listMonth;
     private ArrayList<CarBrand> listCar;
-    private RecyclerView mRecyclePompetitor;
-    private PompetitorAdapter mPompetitorAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    PagerContainer mContainer;
+    TransformableViewPager pager;
     private long price;
     private long deviationPrice;
 
@@ -129,18 +130,22 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         mTxtInspectionFee = (TextView) rootView.findViewById(R.id.txt_inspection_fee_value);
         mTxtTotalCost = (TextView) rootView.findViewById(R.id.txt_total_cost_value);
         mTxtAreaTitle = (SuffixTextView) rootView.findViewById(R.id.txt_area_select);
+        mLayoutPompetitors = (LinearLayout) rootView.findViewById(R.id.layout_pompetitors);
         mSpinnerArea = (CustomSpinner) rootView.findViewById(R.id.spinner_area);
 
         mChart = (BarChart) rootView.findViewById(R.id.chart);
-        mRecyclePompetitor = (RecyclerView) rootView.findViewById(R.id.list_pompetitor);
+
+        mContainer = (PagerContainer) rootView.findViewById(R.id.pager_container);
+        pager = mContainer.getViewPager();
+
         listMonth = Arrays.asList(getResources().getStringArray(R.array.month_array));
         listCar = context.getListCar();
 
         carBrand = (CarBrand) getArguments().getParcelable(HomeOtoFragment.ARG_OBJ_KEY);
         fillData();
         fillTotalCost();
-        fillChartData();
-        //showPompetitor();
+        //fillChartData();
+        showPompetitor();
         mAdView = (AdView) rootView.findViewById(R.id.adView);
         mAdView.loadAd(context.adRequest);
         return rootView;
@@ -342,22 +347,37 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     }
 
     private void showPompetitor(){
-        ArrayList<CarBrand> listPompetitor = new ArrayList<>();
+        pager.setOffscreenPageLimit(5);
+        pager.setPageTransformer(true, new CarouselPageTransformer());
+
+        //If hardware acceleration is enabled, you should also remove
+        // clipping on the pager for its children.
+        pager.setClipChildren(false);
+        pager.setPageMargin(0);
         String[] arrayID = this.carBrand.getCarCompetitors();
         if(arrayID.length > 0){
-            for(int i = 0; i < arrayID.length; i++){
-                for(CarBrand brand : listCar){
-                    if(brand.getCarID().equals(arrayID[i].trim())){
-                        listPompetitor.add(brand);
-                        break;
+            ArrayList<CarBrand> listPompetitor = new ArrayList<>();
+            if(arrayID.length > 0){
+                for(int i = 0; i < arrayID.length; i++){
+                    for(CarBrand brand : listCar){
+                        if(brand.getCarID().equals(arrayID[i].trim())){
+                            listPompetitor.add(brand);
+                            break;
+                        }
                     }
                 }
             }
+
+            CompetitorAdapter adapter = new CompetitorAdapter(context,listPompetitor);
+            pager.setAdapter(adapter);
+            adapter.setOnItemClickListener(new HomeCarAdapter.OnItemClickListener() {
+                @Override
+                public void onClick(CarBrand brand) {
+                    ComparisonDialog dialog = new ComparisonDialog(context,carBrand,brand);
+                    dialog.show();
+                }
+            });
         }
-        mPompetitorAdapter = new PompetitorAdapter(context,listPompetitor);
-        mLayoutManager = new GridLayoutManager(context,2);
-        mRecyclePompetitor.setLayoutManager(mLayoutManager);
-        mRecyclePompetitor.setAdapter(mPompetitorAdapter);
     }
 
     @Override

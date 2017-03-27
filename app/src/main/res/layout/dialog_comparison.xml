@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingTop="@dimen/padding_normal"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_popup_close"
+        android:visibility="visible"/>
+
+    <android.support.v4.widget.NestedScrollView
+        style="@style/Layout.FillWidthHeight"
+        android:layout_margin="@dimen/padding_small"
+        android:layout_below="@id/imgClose">
+
+        <LinearLayout
+            style="@style/Layout.FillWidth"
+            android:orientation="vertical">
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <TextView
+                    android:id="@+id/txt_name1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_name2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <RelativeLayout
+                style="@style/Layout.FillWidthHeight">
+
+                <ImageView
+                    android:id="@+id/img_vehical1"
+                    android:layout_width="120dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="@dimen/btn_height_medium"
+                    android:layout_height="@dimen/btn_height_medium"
+                    android:src="@drawable/image_vs"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/img_vehical2"
+                    android:layout_width="120dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_vehical_price"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_price"
+                    android:gravity="center"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="7"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_price1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_price"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_price2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_price"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_vehical_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_vehical_size"
+                    android:gravity="center"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="4"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_size1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_vehical_size2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_vehical_title"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_fuel_capacity_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_fuel_capacity"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="5"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_fuel_capacity_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_fuel_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_fuel_capacity_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_fuel_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_displacement_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_displacement"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="11"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_displacement_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_displacement_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_displacement_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_displacement_title"
+                    android:padding="@dimen/padding_small"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_output_capacity_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_output_capacity"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="7"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_output_capacity_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_output_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_output_capacity_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_output_capacity_title"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_torque_power_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_torque_power"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="4"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_torque_power_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_torque_power_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_torque_power_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_torque_power_title"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/layout_ground_clearance"
+                style="@style/Layout.FillWidth">
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_ground_clearance_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_ground_clearance"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="4"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_ground_clearance_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_ground_clearance_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_ground_clearance_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/txt_ground_clearance_title"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/layout_turning_circle"
+                style="@style/Layout.FillWidth"
+                android:visibility="visible">
+                <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                    android:id="@+id/txt_turning_circle_title"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_turning_circle"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    app:suffix_length="3"
+                    app:ratio="0.8"/>
+
+                <TextView
+                    android:id="@+id/txt_turning_circle_value1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@id/txt_turning_circle_title"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_turning_circle_value2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_below="@id/txt_turning_circle_title"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+                <TextView
+                    android:id="@+id/txt_type_of_vehical"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_type_of_vehical"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_type_of_vehical1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@id/txt_type_of_vehical"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_type_of_vehical2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/txt_type_of_vehical"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                style="@style/Layout.FillWidth">
+                <TextView
+                    android:id="@+id/txt_number_of_gears"
+                    style="@style/Layout.FillWidth"
+                    android:text="@string/cmn_number_of_gears"
+                    android:background="@color/cmn_gray_search_bg"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_number_of_gears1"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@id/txt_number_of_gears"
+                    android:padding="@dimen/padding_small"/>
+
+                <TextView
+                    android:id="@+id/txt_number_of_gears2"
+                    android:layout_height="match_parent"
+                    app:layout_widthPercent="45%"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@id/txt_number_of_gears"
+                    android:padding="@dimen/padding_small"/>
+            </android.support.percent.PercentRelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
