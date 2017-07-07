@@ -79,17 +79,6 @@ public class CompetitorAdapter extends PagerAdapter {
         return (view == object);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imgVehical;
-        public TextView textViewName;
-
-        public ViewHolder(View v) {
-            super(v);
-            imgVehical = (ImageView) v.findViewById(R.id.imgVehical);
-            textViewName = (TextView) v.findViewById(R.id.txt_car_name);
-        }
-    }
-
     public interface OnItemClickListener {
         void onClick(CarBrand brand);
     }

@@ -31,6 +31,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openApp("com.ht.chickenzero.banggiaxe");
             }
         });
+        FirebaseMessaging.getInstance().subscribeToTopic("BangGiaXe");
     }
 
     private void enableNetworkOnMainThread() {
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         listMenu.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new DrawerMenuAdapter.OnItemClickListener() {
             @Override
-            public void onClick(int index) {
+            public void onClick(int index, int title) {
                 mCurrentPosition = index;
                 mAdapter.setSelection(mCurrentPosition);
                 switch (index){
@@ -225,18 +227,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                                Fragment topFragment) {
                         currentFragment = (BaseFragment) topFragment;
                         currentStackSize = stackSize;
-                        Log.d("FragmentManager",
-                                "===FRAGMENT STACK MANAGER: STACK CHANGED : New Size: "
-                                        + stackSize
-                                        + " . Current Fragment : "
-                                        + topFragment.getClass()
-                                        .getSimpleName());
+                        if (currentStackSize > 1) {
+                            mDrawerToggle.setDrawerIndicatorEnabled(false);
+                            getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
+                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    onBackPressed();
+                                }
+                            });
+                        } else {
+                            //show hamburger
+                            mDrawerToggle.setDrawerIndicatorEnabled(true);
+                            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                            mDrawerToggle.syncState();
+                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    drawer.openDrawer(GravityCompat.START);
+                                }
+                            });
+                        }
                     }
                 });
 
         fragmentStackManager.setDefaultAnimation(R.anim.slide_in_right,
                 R.anim.slide_out_left, R.anim.slide_in_left,
                 R.anim.slide_out_right);
+
     }
 
     // Default tab is TAB_HOME

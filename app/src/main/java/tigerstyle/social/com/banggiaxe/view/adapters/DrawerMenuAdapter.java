@@ -63,7 +63,7 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClick(position);
+                listener.onClick(position,mTitle[position]);
             }
         });
     }
@@ -74,7 +74,7 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
     }
 
     public interface OnItemClickListener {
-        void onClick(int index);
+        void onClick(int index, int title);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -5,7 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import tigerstyle.social.com.banggiaxe.MainActivity;
 import tigerstyle.social.com.banggiaxe.SCApplication;
 
 /**
@@ -30,6 +35,10 @@ public class ConnectivityReceiver extends BroadcastReceiver {
 
         if (connectivityReceiverListener != null) {
             connectivityReceiverListener.onNetworkConnectionChanged(isConnected);
+            if(isConnected) {
+                FirebaseMessaging.getInstance().subscribeToTopic("BangGiaXe");
+                Log.i("subcribe","success");
+            }
         }
     }
 

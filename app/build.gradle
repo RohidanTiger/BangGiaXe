@@ -7,8 +7,8 @@ android {
         applicationId "com.ht.chickenzero.banggiaxe"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 11
-        versionName "1.1"
+        versionCode 12
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -42,6 +42,7 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
     compile 'com.google.firebase:firebase-ads:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
