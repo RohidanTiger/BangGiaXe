@@ -49,6 +49,7 @@ import tigerstyle.social.com.banggiaxe.view.fragments.ComparisonFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeMotoFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeOtoFragment;
+import tigerstyle.social.com.banggiaxe.view.fragments.NewsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -168,6 +169,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_B2_TYPE);
                         pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
+                    }case 5:{
+                        clearAllPreviousFragment();
+                        pushFragments(new NewsFragment(), false, true);
+                        break;
                     }
                 }
             }
@@ -201,6 +206,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }case 4:{
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_b2_title));
                         break;
+                    }case 5:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_news));
+                        break;
                     }
                 }
 
@@ -227,27 +235,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                                Fragment topFragment) {
                         currentFragment = (BaseFragment) topFragment;
                         currentStackSize = stackSize;
-                        if (currentStackSize > 1) {
-                            mDrawerToggle.setDrawerIndicatorEnabled(false);
-                            getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
-                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    onBackPressed();
-                                }
-                            });
-                        } else {
-                            //show hamburger
-                            mDrawerToggle.setDrawerIndicatorEnabled(true);
-                            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-                            mDrawerToggle.syncState();
-                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    drawer.openDrawer(GravityCompat.START);
-                                }
-                            });
-                        }
+//                        if (currentStackSize > 1) {
+//                            mDrawerToggle.setDrawerIndicatorEnabled(false);
+//                            getSupportActionBar().setDisplayHomeAsUpEnabled(true);// show back button
+//                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                                @Override
+//                                public void onClick(View v) {
+//                                    onBackPressed();
+//                                }
+//                            });
+//                        } else {
+//                            //show hamburger
+//                            mDrawerToggle.setDrawerIndicatorEnabled(true);
+//                            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//                            mDrawerToggle.syncState();
+//                            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                                @Override
+//                                public void onClick(View v) {
+//                                    drawer.openDrawer(GravityCompat.START);
+//                                }
+
+
+//                            });
+//                        }
                     }
                 });
 

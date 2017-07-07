@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.andexert.library.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    rv_centered="true"
+    android:id="@+id/ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/list_row_selector">
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/Text.FillWidth"
+            android:textSize="@dimen/text_normal"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imgNews"
+            android:layout_width="110dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/bg_captcha"
+            android:layout_marginRight="8dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/txt_title"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_marginBottom="@dimen/padding_normal_bigger"
+            android:layout_marginLeft="@dimen/padding_small"/>
+
+        <TextView
+            android:id="@+id/txt_desc"
+            style="@style/Text.FillWidth"
+            android:layout_alignTop="@+id/imgNews"
+            android:layout_toRightOf="@+id/imgNews"
+            android:layout_marginRight="@dimen/padding_small"
+            android:textSize="@dimen/text_normal" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/imgNews"
+            android:background="@color/list_divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view_divider"
+        android:layout_below="@id/layout_content"
+        android:visibility="visible">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/adView"
+            android:layout_marginTop="1dp"
+            android:background="@color/list_divider" />
+    </RelativeLayout>
+</com.andexert.library.RippleView>

@@ -2,8 +2,11 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -25,6 +28,7 @@ import tigerstyle.social.com.banggiaxe.R;
 import tigerstyle.social.com.banggiaxe.customize.SpacesItemDecoration;
 import tigerstyle.social.com.banggiaxe.listener.DataChangeListener;
 import tigerstyle.social.com.banggiaxe.model.Question;
+import tigerstyle.social.com.banggiaxe.service.NewsRequest;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.MenuExamAdapter;
@@ -106,6 +110,7 @@ public class ExamMenuFragment extends BaseFragment implements ConnectivityReceiv
                 listQuestion = questions;
             }
         });
+
         return rootView;
     }
 
