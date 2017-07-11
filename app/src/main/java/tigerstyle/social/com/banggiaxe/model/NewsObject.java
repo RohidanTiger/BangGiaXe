@@ -1,10 +1,12 @@
 package tigerstyle.social.com.banggiaxe.model;
 
+import java.io.Serializable;
+
 /**
  * Created by QuyDV on 7/7/17.
  */
 
-public class NewsObject {
+public class NewsObject implements Serializable{
     private String urlDetail;
     private String urlImage;
     private String title;

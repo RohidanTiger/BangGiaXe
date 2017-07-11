@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<CarBrand> listCar;
     private ArrayList<MotobikeBrand> listMoto;
     public AdRequest adRequest;
+    public InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +94,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mTxtRateApp = (TextView) findViewById(R.id.btnRateApp);
         setupDrawer();
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.unit_ad_unit_id));
-        //adRequest = new AdRequest.Builder().build();
         adRequest = new AdRequest.Builder().addTestDevice("867826023574924").build();
+        requestNewInterstitial();
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
 
@@ -514,5 +516,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     void openApp(String applicationId) {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=".concat(applicationId)));
         startActivity(myIntent);
+    }
+
+    public void requestNewInterstitial(){
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_unit_id));
+        mInterstitialAd.loadAd(adRequest);
     }
 }

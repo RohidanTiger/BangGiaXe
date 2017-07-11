@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+        android:id="@+id/txt_title"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_origin_title"
+        android:layout_marginTop="3dp"
+        android:paddingTop="@dimen/padding_normal"
+        android:text="@string/cmn_number_of_gears"
+        android:textColor="@color/genre"
+        android:textSize="@dimen/text_normal" />
+
+    <TextView
+        android:id="@+id/txt_value"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_origin_title"
+        android:layout_marginTop="3dp"
+        android:paddingTop="@dimen/padding_normal"
+        android:layout_toRightOf="@+id/txt_number_of_gears"
+        android:textColor="@color/genre"
+        android:textSize="@dimen/text_normal"
+        android:textStyle="bold"/>
+
+</LinearLayout>

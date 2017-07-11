@@ -60,7 +60,7 @@ public class NewsAdapter extends RecyclerView.Adapter{
         ((ViewHolder) holder).textDesc.setText(news.getDesc());
 
         PicassoLoader.getInstance(mContext).load(news.getUrlImage()).placeholder(R.drawable.bg_captcha).
-                error(R.drawable.bg_captcha).into((((HomeMotoAdapter.ViewHolder) holder).imgVehical));
+                error(R.drawable.bg_captcha).into((((ViewHolder) holder).imgNews));
         ((ViewHolder) holder).layoutContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

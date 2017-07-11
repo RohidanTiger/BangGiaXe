@@ -11,9 +11,10 @@
     <ScrollView
         style="@style/Layout.FillWidth"
         android:background="@color/cmn_gray">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/layout_header"
@@ -390,6 +391,46 @@
             </LinearLayout>
 
             <LinearLayout
+                style="@style/Layout.FillWidthHeight"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_small"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:background="@drawable/shadow_view"
+                android:layout_below="@id/layout_infor_detail"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Layout.FillWidth"
+                    android:background="@color/color_header_brow"
+                    android:textColor="@color/cmn_white"
+                    android:padding="@dimen/padding_normal"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/cmn_equipment_information"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_equipped"
+                    style="@style/Layout.FillWidth"
+                    android:padding="@dimen/padding_normal"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                style="@style/Layout.FillWidthHeight"
+                android:id="@+id/layout_turnover"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_small"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:visibility="gone"
+                android:background="@drawable/shadow_view">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </RelativeLayout>
+
+            <LinearLayout
                 android:id="@+id/layout_total_cost"
                 style="@style/Layout.FillWidthHeight"
                 android:layout_marginTop="@dimen/padding_normal"
@@ -615,23 +656,6 @@
 
             </LinearLayout>
 
-
-            <RelativeLayout
-                style="@style/Layout.FillWidthHeight"
-                android:id="@+id/layout_turnover"
-                android:layout_marginTop="@dimen/padding_normal"
-                android:layout_marginRight="@dimen/padding_small"
-                android:layout_marginLeft="@dimen/padding_small"
-                android:visibility="gone"
-                android:background="@drawable/shadow_view"
-                android:layout_below="@id/layout_total_cost">
-
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/chart"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-            </RelativeLayout>
-
             <LinearLayout
                 android:id="@+id/layout_pompetitors"
                 android:layout_width="match_parent"
@@ -677,12 +701,12 @@
                 android:layout_alignParentBottom="true"
                 android:layout_below="@id/layout_pompetitors"
                 android:layout_centerHorizontal="true"
-                ads:adSize="BANNER"
+                ads:adSize="SMART_BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id">
             </com.google.android.gms.ads.AdView>
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
 </RelativeLayout>

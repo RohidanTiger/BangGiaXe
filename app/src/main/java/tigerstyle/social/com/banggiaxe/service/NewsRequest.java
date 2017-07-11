@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import tigerstyle.social.com.banggiaxe.MainActivity;
 import tigerstyle.social.com.banggiaxe.model.NewsObject;
 
 /**
@@ -18,10 +19,10 @@ import tigerstyle.social.com.banggiaxe.model.NewsObject;
  */
 
 public class NewsRequest extends AsyncTaskLoader<List<NewsObject>> {
-    private Context mContext;
+    private MainActivity mContext;
     private String mUrl;
 
-    public NewsRequest(Context context, String url) {
+    public NewsRequest(MainActivity context, String url) {
         super(context);
         this.mContext = context;
         mUrl = url;
@@ -30,6 +31,7 @@ public class NewsRequest extends AsyncTaskLoader<List<NewsObject>> {
     @Override
     public void onStartLoading() {
         if (takeContentChanged()) {
+            mContext.showLoading();
             forceLoad();
         }
     }
@@ -51,7 +53,7 @@ public class NewsRequest extends AsyncTaskLoader<List<NewsObject>> {
                 listNews.add(news);
             }
             return listNews;
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

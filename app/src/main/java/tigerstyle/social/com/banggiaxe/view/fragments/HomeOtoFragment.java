@@ -1,5 +1,6 @@
 package tigerstyle.social.com.banggiaxe.view.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.LoaderManager;
@@ -14,6 +15,8 @@ import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -76,10 +79,24 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
         initSpiner();
         mAdapter.setOnItemClickListener(new HomeCarAdapter.OnItemClickListener() {
             @Override
-            public void onClick(CarBrand brand) {
-                Bundle bundle = new Bundle();
-                bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
-                context.pushFragments(new CarDetailFragment(),bundle,true,true);
+            public void onClick(final CarBrand brand) {
+                if (context.mInterstitialAd.isLoaded()) {
+                    context.mInterstitialAd.show();
+                } else {
+                    context.requestNewInterstitial();
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
+                    context.pushFragments(new CarDetailFragment(),bundle,true,true);
+                }
+                context.mInterstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdClosed() {
+                        context.requestNewInterstitial();
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
+                        context.pushFragments(new CarDetailFragment(),bundle,true,true);
+                    }
+                });
             }
         });
 

@@ -1,7 +1,11 @@
 package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -28,16 +32,19 @@ import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
+import tigerstyle.social.com.banggiaxe.config.Contants;
 import tigerstyle.social.com.banggiaxe.customize.CarouselPageTransformer;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.customize.PagerContainer;
 import tigerstyle.social.com.banggiaxe.customize.SuffixTextView;
 import tigerstyle.social.com.banggiaxe.customize.TransformableViewPager;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
+import tigerstyle.social.com.banggiaxe.service.EquippedRequest;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
 import tigerstyle.social.com.banggiaxe.view.adapters.CompetitorAdapter;
@@ -88,7 +95,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     private TextView mTxtTotalCost;
     private SuffixTextView mTxtAreaTitle;
     private CustomSpinner mSpinnerArea;
-    private LinearLayout mLayoutPompetitors;
+    private LinearLayout mlayoutEquipped;
     private AdView mAdView;
 
     BarDataSet set1, set2;
@@ -98,6 +105,24 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
     TransformableViewPager pager;
     private long price;
     private long deviationPrice;
+
+    private LoaderManager.LoaderCallbacks<HashMap> newsListener = new LoaderManager.LoaderCallbacks<HashMap>(){
+
+        @Override
+        public Loader<HashMap> onCreateLoader(int id, Bundle args) {
+            return new EquippedRequest(context, Contants.SHARE_URL + carBrand.getShareUrl());
+        }
+
+        @Override
+        public void onLoadFinished(Loader<HashMap> loader, HashMap data) {
+            updateEquipment(data);
+        }
+
+        @Override
+        public void onLoaderReset(Loader<HashMap> loader) {
+
+        }
+    };
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,7 +155,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         mTxtInspectionFee = (TextView) rootView.findViewById(R.id.txt_inspection_fee_value);
         mTxtTotalCost = (TextView) rootView.findViewById(R.id.txt_total_cost_value);
         mTxtAreaTitle = (SuffixTextView) rootView.findViewById(R.id.txt_area_select);
-        mLayoutPompetitors = (LinearLayout) rootView.findViewById(R.id.layout_pompetitors);
+        mlayoutEquipped = (LinearLayout) rootView.findViewById(R.id.layout_equipped);
         mSpinnerArea = (CustomSpinner) rootView.findViewById(R.id.spinner_area);
 
         mChart = (BarChart) rootView.findViewById(R.id.chart);
@@ -146,6 +171,7 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
         fillTotalCost();
         //fillChartData();
         showPompetitor();
+        context.getSupportLoaderManager().initLoader(Integer.parseInt(carBrand.getCarID()), null, newsListener).forceLoad();
         mAdView = (AdView) rootView.findViewById(R.id.adView);
         mAdView.loadAd(context.adRequest);
         return rootView;
@@ -377,6 +403,22 @@ public class CarDetailFragment extends BaseFragment implements OnChartValueSelec
                     dialog.show();
                 }
             });
+        }
+    }
+
+    private void updateEquipment(HashMap hashMap){
+        if(hashMap == null || hashMap.size() == 0) return;
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
+        for(int i = 0; i < hashMap.size(); i++){
+            ViewGroup equipmentView = (ViewGroup) layoutInflater.inflate(R.layout.item_equipment, mlayoutEquipped, false);
+            equipmentView.setLayoutParams(layoutParams);
+            String key = (String) hashMap.keySet().toArray()[i];
+            TextView txtTitle = (TextView)equipmentView.findViewById(R.id.txt_title);
+            TextView txtValue = (TextView)equipmentView.findViewById(R.id.txt_value);
+            txtTitle.setText(key);
+            txtValue.setText((String)hashMap.get(key));
+            mlayoutEquipped.addView(equipmentView);
         }
     }
 

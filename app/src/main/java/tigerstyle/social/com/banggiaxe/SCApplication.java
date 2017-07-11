@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.google.firebase.FirebaseApp;
 
 
 /**
@@ -17,6 +18,7 @@ public class SCApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        FirebaseApp.initializeApp(this);
     }
 
     public static SCApplication getContext(){

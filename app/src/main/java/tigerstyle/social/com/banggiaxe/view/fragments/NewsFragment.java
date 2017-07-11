@@ -62,6 +62,14 @@ public class NewsFragment extends BaseFragment{
         mLayoutManager = new LinearLayoutManager(context);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new NewsAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(NewsObject news) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(NewsDetailFragment.ARG_OBJ_KEY,news);
+                context.pushFragments(new NewsDetailFragment(),bundle,true,true);
+            }
+        });
         context.getSupportLoaderManager().initLoader(5, null, newsDataListener).forceLoad();
         return rootView;
     }

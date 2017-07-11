@@ -103,6 +103,41 @@ public class CarBrand implements Parcelable {
         this.shareUrl = shareUrl;
     }
 
+    protected CarBrand(Parcel in) {
+        carID = in.readString();
+        carName = in.readString();
+        carType = in.readString();
+        carBrand = in.readString();
+        carOrigin = in.readString();
+        carPrice = in.readString();
+        carPriceDeviation = in.readString();
+        carTurnover1 = in.createIntArray();
+        carTurnover2 = in.createIntArray();
+        carEngine = in.readString();
+        carGear = in.readString();
+        carPower = in.readString();
+        carMoment = in.readString();
+        carSize = in.readString();
+        carFuelTankCapacity = in.readString();
+        carGroundClearance = in.readString();
+        carCompetitors = in.createStringArray();
+        carTurningCirclel = in.readString();
+        carImage = in.readString();
+        shareUrl = in.readString();
+    }
+
+    public static final Creator<CarBrand> CREATOR = new Creator<CarBrand>() {
+        @Override
+        public CarBrand createFromParcel(Parcel in) {
+            return new CarBrand(in);
+        }
+
+        @Override
+        public CarBrand[] newArray(int size) {
+            return new CarBrand[size];
+        }
+    };
+
     public String getCarID() {
         return carID;
     }
@@ -270,6 +305,25 @@ public class CarBrand implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        parcel.writeString(carID);
+        parcel.writeString(carName);
+        parcel.writeString(carType);
+        parcel.writeString(carBrand);
+        parcel.writeString(carOrigin);
+        parcel.writeString(carPrice);
+        parcel.writeString(carPriceDeviation);
+        parcel.writeIntArray(carTurnover1);
+        parcel.writeIntArray(carTurnover2);
+        parcel.writeString(carEngine);
+        parcel.writeString(carGear);
+        parcel.writeString(carPower);
+        parcel.writeString(carMoment);
+        parcel.writeString(carSize);
+        parcel.writeString(carFuelTankCapacity);
+        parcel.writeString(carGroundClearance);
+        parcel.writeStringArray(carCompetitors);
+        parcel.writeString(carTurningCirclel);
+        parcel.writeString(carImage);
+        parcel.writeString(shareUrl);
     }
 }
