@@ -80,23 +80,21 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
         mAdapter.setOnItemClickListener(new HomeCarAdapter.OnItemClickListener() {
             @Override
             public void onClick(final CarBrand brand) {
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
+                context.pushFragments(new CarDetailFragment(),bundle,true,true);
                 if (context.mInterstitialAd.isLoaded()) {
                     context.mInterstitialAd.show();
                 } else {
                     context.requestNewInterstitial();
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
-                    context.pushFragments(new CarDetailFragment(),bundle,true,true);
                 }
-                context.mInterstitialAd.setAdListener(new AdListener() {
-                    @Override
-                    public void onAdClosed() {
-                        context.requestNewInterstitial();
-                        Bundle bundle = new Bundle();
-                        bundle.putParcelable(HomeOtoFragment.ARG_OBJ_KEY,brand);
-                        context.pushFragments(new CarDetailFragment(),bundle,true,true);
-                    }
-                });
+//                context.mInterstitialAd.setAdListener(new AdListener() {
+//                    @Override
+//                    public void onAdClosed() {
+//                        context.requestNewInterstitial();
+//
+//                    }
+//                });
             }
         });
 

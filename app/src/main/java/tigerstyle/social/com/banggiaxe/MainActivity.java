@@ -171,11 +171,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_B2_TYPE);
                         pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
-                    }case 5:{
+                    }/*case 5:{
                         clearAllPreviousFragment();
                         pushFragments(new NewsFragment(), false, true);
                         break;
-                    }
+                    }*/
                 }
             }
         });
@@ -208,10 +208,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }case 4:{
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_b2_title));
                         break;
-                    }case 5:{
+                    }/*case 5:{
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_news));
                         break;
-                    }
+                    }*/
                 }
 
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()

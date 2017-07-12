@@ -101,6 +101,11 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(HomeMotoFragment.ARG_OBJ_KEY,brand);
                 context.pushFragments(new MotoDetailFragment(),bundle,true,true);
+                if (context.mInterstitialAd.isLoaded()) {
+                    context.mInterstitialAd.show();
+                } else {
+                    context.requestNewInterstitial();
+                }
             }
         });
 

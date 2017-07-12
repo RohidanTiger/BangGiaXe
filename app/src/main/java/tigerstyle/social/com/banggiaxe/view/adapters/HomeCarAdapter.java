@@ -54,7 +54,7 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final CarBrand brand = mDataSet.get(position);
-        if(position > 0 && position %10 == 0){
+        if(position > 0 && (position+1) %10 == 0){
             ((HomeCarAdapter.ViewHolder) holder).layoutAd.setVisibility(View.VISIBLE);
             ((HomeCarAdapter.ViewHolder) holder).mAdView.loadAd(mContext.adRequest);
         }else{

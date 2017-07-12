@@ -55,7 +55,7 @@ public class HomeMotoAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final MotobikeBrand brand = mDataSet.get(position);
-        if(position > 0 && position %10 == 0){
+        if(position > 0 && (position+1) %10 == 0){
             ((ViewHolder) holder).layoutAd.setVisibility(View.VISIBLE);
             ((ViewHolder) holder).mAdView.loadAd(mContext.adRequest);
         }else{
