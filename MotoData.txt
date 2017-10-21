@@ -2007,7 +2007,7 @@
 },
 {
 "carBrand":"Yamaha",
-"carEngine":"155.1cc, SOHC, 4 thì, VVA, xi lanh đơn, làm mát bằng chất lỏng",
+"carEngine":"155.1cc, SOHC, 4 thì, VVA, xi lanh đơn",
 "carFuelTankCapacity":"11.0",
 "carGear":"6 số",
 "carId":"1901",
@@ -2024,7 +2024,7 @@
 },
 {
 "carBrand":"Yamaha",
-"carEngine":"321cc, SOHC, 4 thì, VVA, 2 xi lanh, làm mát bằng chất lỏng",
+"carEngine":"321cc, SOHC, 4 thì, VVA, 2 xi lanh",
 "carFuelTankCapacity":"14.0",
 "carGear":"6 số",
 "carId":"1902",
@@ -2041,7 +2041,7 @@
 },
 {
 "carBrand":"Yamaha",
-"carEngine":"321cc, SOHC, 4 thì, VVA, 2 xi lanh, làm mát bằng chất lỏng",
+"carEngine":"321cc, SOHC, 4 thì, VVA, 2 xi lanh",
 "carFuelTankCapacity":"14.0",
 "carGear":"6 số",
 "carId":"1903",
@@ -2075,7 +2075,7 @@
 },
 {
 "carBrand":"Honda",
-"carEngine":"249.5cc, 2 xi lanh, DOHC, 4 kỳ, 8 van, làm mát bằng dung dịch",
+"carEngine":"249.5cc, 2 xi lanh, DOHC, 4 kỳ, 8 van",
 "carFuelTankCapacity":"14.2",
 "carGear":"6 số",
 "carId":"1905",
@@ -2092,7 +2092,7 @@
 },
 {
 "carBrand":"Honda",
-"carEngine":"149.16cc, 1 xi lanh, DOHC, 4 kỳ, 4 van",
+"carEngine":"149.16cc, 1 xi lanh, DOHC",
 "carFuelTankCapacity":"12.0",
 "carGear":"6 số",
 "carId":"1906",
