@@ -65,7 +65,7 @@ public class HomeMotoAdapter extends RecyclerView.Adapter {
         ((HomeMotoAdapter.ViewHolder) holder).textViewBrand.setText(brand.getCarBrand());
         ((HomeMotoAdapter.ViewHolder) holder).textViewPrice.setText(brand.getCarPrice());
         ((HomeMotoAdapter.ViewHolder) holder).textViewDeviationPrice.setText(brand.getCarPriceDeviation());
-        String urlImage = IMAGE_URL + brand.getCarImage();
+        String urlImage = (brand.getCarImage().contains("importxls"))? (IMAGE_URL + brand.getCarImage()) : brand.getCarImage();
         PicassoLoader.getInstance(mContext).load(urlImage).placeholder(R.drawable.bg_captcha).
                 error(R.drawable.bg_captcha).into((((HomeMotoAdapter.ViewHolder) holder).imgVehical));
         ((HomeMotoAdapter.ViewHolder) holder).layoutContent.setOnClickListener(new View.OnClickListener() {

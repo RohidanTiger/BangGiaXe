@@ -233,10 +233,12 @@ public class ComparisonFragment extends BaseFragment implements ConnectivityRece
                 mImgVehical2.setVisibility(View.VISIBLE);
                 if(mComparisonType == 0){
                     if(moto1 != null && moto2 != null){
-                        String urlImage1 = IMAGE_URL + moto1.getCarImage();
+                        String urlImage1 = (moto1.getCarImage().contains("importxls"))?
+                                (IMAGE_URL + moto1.getCarImage()) : moto1.getCarImage();
                         PicassoLoader.getInstance(context).load(urlImage1).placeholder(R.drawable.bg_captcha).
                                 error(R.drawable.bg_captcha).into(mImgVehical1);
-                        String urlImage2 = IMAGE_URL + moto2.getCarImage();
+                        String urlImage2 = (moto2.getCarImage().contains("importxls"))?
+                                (IMAGE_URL + moto2.getCarImage()) : moto2.getCarImage();
                         PicassoLoader.getInstance(context).load(urlImage2).placeholder(R.drawable.bg_captcha).
                                 error(R.drawable.bg_captcha).into(mImgVehical2);
                         fillMotoData();

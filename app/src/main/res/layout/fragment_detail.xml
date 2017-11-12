@@ -164,7 +164,7 @@
 
                     <TextView
                         android:id="@+id/txt_size_value"
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dip"
                         android:layout_toRightOf="@+id/txt_size_title"
@@ -186,7 +186,7 @@
 
                     <TextView
                         android:id="@+id/txt_fuel_capacity_value"
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_size_value"
                         android:layout_marginTop="1dip"

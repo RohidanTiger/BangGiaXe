@@ -114,7 +114,8 @@ public class MotoDetailFragment extends BaseFragment{
     }
 
     private void fillData(){
-        String urlImage = IMAGE_URL + motobikeBrand.getCarImage();
+        String urlImage = (motobikeBrand.getCarImage().contains("importxls"))?
+                (IMAGE_URL + motobikeBrand.getCarImage()) : motobikeBrand.getCarImage();
         PicassoLoader.getInstance(context).load(urlImage).placeholder(R.drawable.bg_captcha).
                 error(R.drawable.bg_captcha).into(mImageHeader);
         mTxtMotoName.setText(motobikeBrand.getCarName());
