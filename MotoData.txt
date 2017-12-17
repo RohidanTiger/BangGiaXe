@@ -11,7 +11,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"6.8",
 "carPrice":"17.8",
-"carPriceDeviation":"17.4",
+"carPriceDeviation":"17.5",
 "carSize":"1908x699x1070",
 "carTurningCircle":"98",
 "carType":"Xe số"
@@ -28,7 +28,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
 "carPrice":"21.5",
-"carPriceDeviation":"20.8",
+"carPriceDeviation":"21.7",
 "carSize":"1919x709x1080",
 "carTurningCircle":"100",
 "carType":"Xe số"
@@ -45,7 +45,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.80",
 "carPrice":"22.5",
-"carPriceDeviation":"22.3",
+"carPriceDeviation":"22.7",
 "carSize":"1919x709x1080",
 "carTurningCircle":"100",
 "carType":"Xe số"
@@ -62,7 +62,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
 "carPrice":"24.5",
-"carPriceDeviation":"24.0",
+"carPriceDeviation":"24.8",
 "carSize":"1919x709x1080",
 "carTurningCircle":"100",
 "carType":"xe số"
@@ -79,7 +79,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"21.1",
-"carPriceDeviation":"20.0",
+"carPriceDeviation":"20.7",
 "carSize":"1920x702x1075",
 "carTurningCircle":"98",
 "carType":"Xe số"
@@ -164,7 +164,7 @@
 "carOrigin":"Nhập khẩu",
 "carPower":"9.6",
 "carPrice":"50.0",
-"carPriceDeviation":"55.0",
+"carPriceDeviation":"57.0",
 "carSize":"1760x755x1010",
 "carTurningCircle":"101.7",
 "carType":"Xe côn tay"
@@ -215,7 +215,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"14.2",
 "carPrice":"82.0",
-"carPriceDeviation":"87.0",
+"carPriceDeviation":"93.0",
 "carSize":"2034x740x1152",
 "carTurningCircle":"134",
 "carType":"Xe tay ga"
@@ -232,7 +232,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"68.0",
-"carPriceDeviation":"72.5",
+"carPriceDeviation":"76.5",
 "carSize":"2034x740x1152",
 "carTurningCircle":"134",
 "carType":"Xe tay ga"
@@ -249,7 +249,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"12.2",
 "carPrice":"76.0",
-"carPriceDeviation":"80.6",
+"carPriceDeviation":"84.0",
 "carSize":"2026x740x1158",
 "carTurningCircle":"134",
 "carType":"Xe tay ga"
@@ -266,7 +266,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"14.4",
 "carPrice":"90.0",
-"carPriceDeviation":"100.0",
+"carPriceDeviation":"107.0",
 "carSize":"2026x740x1158",
 "carTurningCircle":"134",
 "carType":"Xe tay ga"
@@ -283,7 +283,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"51.0",
-"carPriceDeviation":"55.0",
+"carPriceDeviation":"59.0",
 "carSize":"1930x669x1105",
 "carTurningCircle":"118",
 "carType":"Xe tay ga"
@@ -300,7 +300,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"51.5",
-"carPriceDeviation":"55.4",
+"carPriceDeviation":"65.0",
 "carSize":"1930x669x1105",
 "carTurningCircle":"118",
 "carType":"Xe tay ga"
@@ -317,7 +317,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"51.5",
-"carPriceDeviation":"53.6",
+"carPriceDeviation":"63.6",
 "carSize":"1930x669x1105",
 "carTurningCircle":"118",
 "carType":"Xe tay ga"
@@ -351,7 +351,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.5",
 "carPrice":"55.5",
-"carPriceDeviation":"55.8",
+"carPriceDeviation":"53.3",
 "carSize":"1931x737x1103",
 "carTurningCircle":"130",
 "carType":"Xe tay ga"
@@ -368,7 +368,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"41.0",
-"carPriceDeviation":"39.4",
+"carPriceDeviation":"42.7",
 "carSize":"1881x687x1111",
 "carTurningCircle":"110",
 "carType":"Xe tay ga"
@@ -385,7 +385,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"40.0",
-"carPriceDeviation":"38.4",
+"carPriceDeviation":"42.4",
 "carSize":"1881x687x1111",
 "carTurningCircle":"110",
 "carType":"Xe tay ga"
@@ -402,7 +402,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"38.0",
-"carPriceDeviation":"36.6",
+"carPriceDeviation":"40.6",
 "carSize":"1881x687x1111",
 "carTurningCircle":"110",
 "carType":"Xe tay ga"
@@ -419,7 +419,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"40.0",
-"carPriceDeviation":"39.8",
+"carPriceDeviation":"44.1",
 "carSize":"1881x687x1111",
 "carTurningCircle":"110",
 "carType":"Xe tay ga"
@@ -521,7 +521,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.1",
 "carPrice":"45.5",
-"carPriceDeviation":"45.6",
+"carPriceDeviation":"48.6",
 "carSize":" 1970x670x1080",
 "carTurningCircle":"115",
 "carType":"Xe côn tay"
@@ -691,7 +691,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.199999999999999",
 "carPrice":"35.0",
-"carPriceDeviation":"35.0",
+"carPriceDeviation":"34.0",
 "carSize":" 1805×685×1145",
 "carTurningCircle":"99",
 "carType":"Xe tay ga"
@@ -776,7 +776,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.5",
 "carPrice":"30.0",
-"carPriceDeviation":"30.0",
+"carPriceDeviation":"30.7",
 "carSize":"1850x705x1125",
 "carTurningCircle":"97",
 "carType":"Xe tay ga"
@@ -827,7 +827,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"18.2",
 "carPrice":"49.2",
-"carPriceDeviation":"48.0",
+"carPriceDeviation":"49.0",
 "carSize":"1960x675x980",
 "carTurningCircle":"108",
 "carType":"Xe côn tay"
@@ -844,7 +844,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.5",
 "carPrice":"27.8",
-"carPriceDeviation":"27.0",
+"carPriceDeviation":"27.8",
 "carSize":"1895x715x1075",
 "carTurningCircle":"108",
 "carType":"Xe côn tay"
@@ -912,7 +912,7 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.199999999999999",
 "carPrice":"31.5",
-"carPriceDeviation":"31.0",
+"carPriceDeviation":"31.5",
 "carSize":"1920x680x1065",
 "carTurningCircle":"114",
 "carType":"Xe tay ga"
@@ -1812,8 +1812,8 @@
 "carName":"Lead tiêu chuẩn",
 "carOrigin":"Lắp ráp",
 "carPower":"11.3",
-"carPrice":"37.5",
-"carPriceDeviation":"39.0",
+"carPrice":"37.9",
+"carPriceDeviation":"41.0",
 "carSize":"1832x680x1120",
 "carTurningCircle":"113",
 "carType":"Xe tay ga"
@@ -1864,7 +1864,7 @@
 "carOrigin":"Nhập khẩu",
 "carPower":"16.3",
 "carPrice":"69.0",
-"carPriceDeviation":"66.2",
+"carPriceDeviation":"69.2",
 "carSize":" 2010x720x1030",
 "carTurningCircle":"129",
 "carType":"Xe côn tay"
@@ -2177,23 +2177,6 @@
 },
 {
 "carBrand":"Kawasaki",
-"carEngine":"1,043cc, 4 thì, 4 máy inline DOHC",
-"carFuelTankCapacity":"19",
-"carGear":"6 số",
-"carId":"1911",
-"carImage":"https://giaxe.2banh.vn/cache/dataupload/products/thumbs/266_204_1468035752-86024cad1e83101d97359d7351051156-182-1.png",
-"carMoment":"111",
-"carName":"Kawasaki Z1000",
-"carOrigin":"Nhập khẩu",
-"carPower":"142",
-"carPrice":"464",
-"carPriceDeviation":"460",
-"carSize":"2 045 x 790 x 1 054",
-"carTurningCircle":"221",
-"carType":"PKL"
-},
-{
-"carBrand":"Kawasaki",
 "carEngine":"1,043cc, 4 thì DOHC",
 "carFuelTankCapacity":"21",
 "carGear":"6 số",
@@ -2206,6 +2189,23 @@
 "carPrice":"419",
 "carPriceDeviation":"419",
 "carSize":"2240 x 895 x 1800",
+"carTurningCircle":"221",
+"carType":"PKL"
+},
+{
+"carBrand":"Kawasaki",
+"carEngine":"1,043cc, 4 thì, 4 máy inline DOHC",
+"carFuelTankCapacity":"19",
+"carGear":"6 số",
+"carId":"1911",
+"carImage":"https://giaxe.2banh.vn/cache/dataupload/products/thumbs/266_204_1468035752-86024cad1e83101d97359d7351051156-182-1.png",
+"carMoment":"111",
+"carName":"Kawasaki Z1000",
+"carOrigin":"Nhập khẩu",
+"carPower":"142",
+"carPrice":"464",
+"carPriceDeviation":"460",
+"carSize":"2 045 x 790 x 1 054",
 "carTurningCircle":"221",
 "carType":"PKL"
 },
