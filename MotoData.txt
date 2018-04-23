@@ -11,9 +11,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"6.8",
 "carPrice":"17.8",
-"carPriceDeviation":"17.5",
+"carPriceDeviation":"20.0",
 "carSize":"1908x699x1070",
-"carTurningCircle":"98",
+"carTurningCirclel":"98",
 "carType":"Xe số"
 },
 {
@@ -27,10 +27,10 @@
 "carName":"Wave RSX (Phanh cơ, Vành nan hoa)",
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
-"carPrice":"21.5",
-"carPriceDeviation":"21.7",
+"carPrice":"21.9",
+"carPriceDeviation":"23.2",
 "carSize":"1919x709x1080",
-"carTurningCircle":"100",
+"carTurningCirclel":"100",
 "carType":"Xe số"
 },
 {
@@ -45,9 +45,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.80",
 "carPrice":"22.5",
-"carPriceDeviation":"22.7",
+"carPriceDeviation":"24.2",
 "carSize":"1919x709x1080",
-"carTurningCircle":"100",
+"carTurningCirclel":"100",
 "carType":"Xe số"
 },
 {
@@ -62,9 +62,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
 "carPrice":"24.5",
-"carPriceDeviation":"24.8",
+"carPriceDeviation":"26.8",
 "carSize":"1919x709x1080",
-"carTurningCircle":"100",
+"carTurningCirclel":"100",
 "carType":"xe số"
 },
 {
@@ -79,9 +79,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"21.1",
-"carPriceDeviation":"20.7",
+"carPriceDeviation":"21.7",
 "carSize":"1920x702x1075",
-"carTurningCircle":"98",
+"carTurningCirclel":"98",
 "carType":"Xe số"
 },
 {
@@ -96,9 +96,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"19.6",
-"carPriceDeviation":"18.5",
+"carPriceDeviation":"20.5",
 "carSize":"1920x702x1075",
-"carTurningCircle":"98",
+"carTurningCirclel":"98",
 "carType":"Xe số"
 },
 {
@@ -113,9 +113,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"18.6",
-"carPriceDeviation":"17.5",
+"carPriceDeviation":"19.0",
 "carSize":"1920x702x1075",
-"carTurningCircle":"98",
+"carTurningCirclel":"98",
 "carType":"Xe số"
 },
 {
@@ -130,9 +130,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.5",
 "carPrice":"30.0",
-"carPriceDeviation":"30.1",
+"carPriceDeviation":"32.0",
 "carSize":"1932x711x1092",
-"carTurningCircle":"104",
+"carTurningCirclel":"104",
 "carType":"Xe số"
 },
 {
@@ -147,9 +147,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.5",
 "carPrice":"31.0",
-"carPriceDeviation":"31.3",
+"carPriceDeviation":"33.8",
 "carSize":"1932x711x1092",
-"carTurningCircle":"104",
+"carTurningCirclel":"104",
 "carType":"Xe số"
 },
 {
@@ -164,9 +164,9 @@
 "carOrigin":"Nhập khẩu",
 "carPower":"9.6",
 "carPrice":"50.0",
-"carPriceDeviation":"57.0",
+"carPriceDeviation":"60.0",
 "carSize":"1760x755x1010",
-"carTurningCircle":"101.7",
+"carTurningCirclel":"101.7",
 "carType":"Xe côn tay"
 },
 {
@@ -181,9 +181,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.4",
 "carPrice":"45.5",
-"carPriceDeviation":"40.0",
+"carPriceDeviation":"47.0",
 "carSize":"2025x725x1102",
-"carTurningCircle":"122",
+"carTurningCirclel":"122",
 "carType":"Xe côn tay"
 },
 {
@@ -198,9 +198,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.4",
 "carPrice":"46.0",
-"carPriceDeviation":"40.5",
+"carPriceDeviation":"49.5",
 "carSize":"2025x725x1102",
-"carTurningCircle":"122",
+"carTurningCirclel":"122",
 "carType":"Xe côn tay"
 },
 {
@@ -215,9 +215,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"14.2",
 "carPrice":"82.0",
-"carPriceDeviation":"93.0",
+"carPriceDeviation":"106.0",
 "carSize":"2034x740x1152",
-"carTurningCircle":"134",
+"carTurningCirclel":"134",
 "carType":"Xe tay ga"
 },
 {
@@ -232,9 +232,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.6",
 "carPrice":"68.0",
-"carPriceDeviation":"76.5",
+"carPriceDeviation":"84.5",
 "carSize":"2034x740x1152",
-"carTurningCircle":"134",
+"carTurningCirclel":"134",
 "carType":"Xe tay ga"
 },
 {
@@ -249,9 +249,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"12.2",
 "carPrice":"76.0",
-"carPriceDeviation":"84.0",
+"carPriceDeviation":"92.0",
 "carSize":"2026x740x1158",
-"carTurningCircle":"134",
+"carTurningCirclel":"134",
 "carType":"Xe tay ga"
 },
 {
@@ -266,9 +266,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"14.4",
 "carPrice":"90.0",
-"carPriceDeviation":"107.0",
+"carPriceDeviation":"116.0",
 "carSize":"2026x740x1158",
-"carTurningCircle":"134",
+"carTurningCirclel":"134",
 "carType":"Xe tay ga"
 },
 {
@@ -282,10 +282,10 @@
 "carName":"SH Mode Tiêu chuẩn",
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
-"carPrice":"51.0",
-"carPriceDeviation":"59.0",
+"carPrice":"51.5",
+"carPriceDeviation":"65.0",
 "carSize":"1930x669x1105",
-"carTurningCircle":"118",
+"carTurningCirclel":"118",
 "carType":"Xe tay ga"
 },
 {
@@ -302,7 +302,7 @@
 "carPrice":"51.5",
 "carPriceDeviation":"65.0",
 "carSize":"1930x669x1105",
-"carTurningCircle":"118",
+"carTurningCirclel":"118",
 "carType":"Xe tay ga"
 },
 {
@@ -317,9 +317,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"51.5",
-"carPriceDeviation":"63.6",
+"carPriceDeviation":"69.6",
 "carSize":"1930x669x1105",
-"carTurningCircle":"118",
+"carTurningCirclel":"118",
 "carType":"Xe tay ga"
 },
 {
@@ -333,10 +333,10 @@
 "carName":"PCX tiêu chuẩn",
 "carOrigin":"Lắp ráp",
 "carPower":"11.5",
-"carPrice":"52.0",
-"carPriceDeviation":"50.2",
+"carPrice":"56.5",
+"carPriceDeviation":"64.2",
 "carSize":"1931x737x1103",
-"carTurningCircle":"130",
+"carTurningCirclel":"130",
 "carType":"Xe tay ga"
 },
 {
@@ -350,10 +350,10 @@
 "carName":"PCX cao cấp",
 "carOrigin":"Lắp ráp",
 "carPower":"11.5",
-"carPrice":"55.5",
-"carPriceDeviation":"53.3",
+"carPrice":"70.5",
+"carPriceDeviation":"83.3",
 "carSize":"1931x737x1103",
-"carTurningCircle":"130",
+"carTurningCirclel":"130",
 "carType":"Xe tay ga"
 },
 {
@@ -367,10 +367,10 @@
 "carName":"Air Blade Sơn từ tính cao cấp",
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
-"carPrice":"41.0",
-"carPriceDeviation":"42.7",
+"carPrice":"42.0",
+"carPriceDeviation":"50.7",
 "carSize":"1881x687x1111",
-"carTurningCircle":"110",
+"carTurningCirclel":"110",
 "carType":"Xe tay ga"
 },
 {
@@ -384,10 +384,10 @@
 "carName":"Air Blade Cao cấp",
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
-"carPrice":"40.0",
-"carPriceDeviation":"42.4",
+"carPrice":"41.0",
+"carPriceDeviation":"50.4",
 "carSize":"1881x687x1111",
-"carTurningCircle":"110",
+"carTurningCirclel":"110",
 "carType":"Xe tay ga"
 },
 {
@@ -402,9 +402,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"38.0",
-"carPriceDeviation":"40.6",
+"carPriceDeviation":"47.6",
 "carSize":"1881x687x1111",
-"carTurningCircle":"110",
+"carTurningCirclel":"110",
 "carType":"Xe tay ga"
 },
 {
@@ -419,9 +419,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.2",
 "carPrice":"40.0",
-"carPriceDeviation":"44.1",
+"carPriceDeviation":"50.1",
 "carSize":"1881x687x1111",
-"carTurningCircle":"110",
+"carTurningCirclel":"110",
 "carType":"Xe tay ga"
 },
 {
@@ -436,9 +436,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.1",
 "carPrice":"45.5",
-"carPriceDeviation":"45.6",
+"carPriceDeviation":"47.0",
 "carSize":" 1970x670x1080",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe côn tay"
 },
 {
@@ -453,9 +453,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.1",
 "carPrice":"45.0",
-"carPriceDeviation":"44.4",
+"carPriceDeviation":"47.0",
 "carSize":" 1970×670×1080",
-"carTurningCircle":"135",
+"carTurningCirclel":"135",
 "carType":"Xe côn tay"
 },
 {
@@ -472,7 +472,7 @@
 "carPrice":"46.0",
 "carPriceDeviation":"46.8",
 "carSize":" 1970×670×1080",
-"carTurningCircle":"135",
+"carTurningCirclel":"135",
 "carType":"Xe côn tay"
 },
 {
@@ -489,7 +489,7 @@
 "carPrice":"47.0",
 "carPriceDeviation":"47.1",
 "carSize":" 1970×670×1080",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe côn tay"
 },
 {
@@ -504,9 +504,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"15.1",
 "carPrice":"47.0",
-"carPriceDeviation":"47.0",
+"carPriceDeviation":"48.0",
 "carSize":" 1970×670×1080",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe côn tay"
 },
 {
@@ -523,7 +523,7 @@
 "carPrice":"45.5",
 "carPriceDeviation":"48.6",
 "carSize":" 1970x670x1080",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe côn tay"
 },
 {
@@ -540,7 +540,7 @@
 "carPrice":"28.9",
 "carPriceDeviation":"28.4",
 "carSize":"1935x680x1065",
-"carTurningCircle":"104",
+"carTurningCirclel":"104",
 "carType":"Xe số"
 },
 {
@@ -557,7 +557,7 @@
 "carPrice":"29.5",
 "carPriceDeviation":"28.8",
 "carSize":"1935x680x1065",
-"carTurningCircle":"104",
+"carTurningCirclel":"104",
 "carType":"Xe số"
 },
 {
@@ -574,7 +574,7 @@
 "carPrice":"18.8",
 "carPriceDeviation":"18.4",
 "carSize":" 1890x665x1035",
-"carTurningCircle":"96",
+"carTurningCirclel":"96",
 "carType":"Xe số"
 },
 {
@@ -591,7 +591,7 @@
 "carPrice":"19.8",
 "carPriceDeviation":"19.8",
 "carSize":" 1890x665x1035",
-"carTurningCircle":"96",
+"carTurningCirclel":"96",
 "carType":"Xe số"
 },
 {
@@ -608,7 +608,7 @@
 "carPrice":"23.2",
 "carPriceDeviation":"23.0",
 "carSize":" 1940x715x 1075",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe số"
 },
 {
@@ -625,7 +625,7 @@
 "carPrice":"20.2",
 "carPriceDeviation":"19.6",
 "carSize":" 1940x715x1075",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe số"
 },
 {
@@ -642,7 +642,7 @@
 "carPrice":"21.2",
 "carPriceDeviation":"20.5",
 "carSize":" 1940x715x1075",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe số"
 },
 {
@@ -657,9 +657,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8",
 "carPrice":"42.0",
-"carPriceDeviation":"42.0",
+"carPriceDeviation":"40.0",
 "carSize":" 1820x685x1145",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -674,9 +674,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8",
 "carPrice":"44.0",
-"carPriceDeviation":"43.2",
+"carPriceDeviation":"42.2",
 "carSize":" 1820x685x1145",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -693,7 +693,7 @@
 "carPrice":"35.0",
 "carPriceDeviation":"34.0",
 "carSize":" 1805×685×1145",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -710,7 +710,7 @@
 "carPrice":"36.5",
 "carPriceDeviation":"36.5",
 "carSize":" 1805×685×1145",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -727,7 +727,7 @@
 "carPrice":"139.0",
 "carPriceDeviation":"139.0",
 "carSize":"2090x720x1135",
-"carTurningCircle":"169",
+"carTurningCirclel":"169",
 "carType":"Xe côn tay"
 },
 {
@@ -744,7 +744,7 @@
 "carPrice":"82.0",
 "carPriceDeviation":"79.0",
 "carSize":"1955×740×1115",
-"carTurningCircle":"127",
+"carTurningCirclel":"127",
 "carType":"Xe tay ga"
 },
 {
@@ -761,7 +761,7 @@
 "carPrice":"28.0",
 "carPriceDeviation":"28.0",
 "carSize":"1850x705x1125",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe tay ga"
 },
 {
@@ -778,7 +778,7 @@
 "carPrice":"30.0",
 "carPriceDeviation":"30.7",
 "carSize":"1850x705x1125",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe tay ga"
 },
 {
@@ -793,9 +793,9 @@
 "carOrigin":"Nhập khẩu",
 "carPower":"16",
 "carPrice":"82.9",
-"carPriceDeviation":"81.7",
+"carPriceDeviation":"80.7",
 "carSize":"1955x795x1065",
-"carTurningCircle":"135",
+"carTurningCirclel":"135",
 "carType":"Xe côn tay"
 },
 {
@@ -812,7 +812,7 @@
 "carPrice":"49.0",
 "carPriceDeviation":"48.4",
 "carSize":"1960x675x980",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe côn tay"
 },
 {
@@ -827,9 +827,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"18.2",
 "carPrice":"49.2",
-"carPriceDeviation":"49.0",
+"carPriceDeviation":"49.2",
 "carSize":"1960x675x980",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe côn tay"
 },
 {
@@ -846,7 +846,7 @@
 "carPrice":"27.8",
 "carPriceDeviation":"27.8",
 "carSize":"1895x715x1075",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe côn tay"
 },
 {
@@ -863,7 +863,7 @@
 "carPrice":"24.0",
 "carPriceDeviation":"23.4",
 "carSize":"1895x715x1075",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe côn tự động"
 },
 {
@@ -880,7 +880,7 @@
 "carPrice":"28.3",
 "carPriceDeviation":"28.4",
 "carSize":"1895x715x1075",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe côn tay"
 },
 {
@@ -895,9 +895,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"9.199999999999999",
 "carPrice":"31.0",
-"carPriceDeviation":"29.5",
+"carPriceDeviation":"31.4",
 "carSize":"1920x680x1065",
-"carTurningCircle":"114",
+"carTurningCirclel":"114",
 "carType":"Xe tay ga"
 },
 {
@@ -914,7 +914,7 @@
 "carPrice":"31.5",
 "carPriceDeviation":"31.5",
 "carSize":"1920x680x1065",
-"carTurningCircle":"114",
+"carTurningCirclel":"114",
 "carType":"Xe tay ga"
 },
 {
@@ -931,7 +931,7 @@
 "carPrice":"30.0",
 "carPriceDeviation":"29.5",
 "carSize":"1925x660x1070\n",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -948,7 +948,7 @@
 "carPrice":"30.3",
 "carPriceDeviation":"30.0",
 "carSize":"1925x660x1070\n",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -965,7 +965,7 @@
 "carPrice":"26.4",
 "carPriceDeviation":"26.0",
 "carSize":"1925x660x1070",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -982,7 +982,7 @@
 "carPrice":"25.2",
 "carPriceDeviation":"24.6",
 "carSize":"1935 x670x1070",
-"carTurningCircle":"114",
+"carTurningCirclel":"114",
 "carType":"Xe tay ga"
 },
 {
@@ -997,9 +997,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"0",
 "carPrice":"28.3",
-"carPriceDeviation":"27.5",
+"carPriceDeviation":"28.5",
 "carSize":"1845x665x1095",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe tay ga"
 },
 {
@@ -1016,7 +1016,7 @@
 "carPrice":"32.0",
 "carPriceDeviation":"30.5",
 "carSize":"1860x700x1095",
-"carTurningCircle":"119",
+"carTurningCirclel":"119",
 "carType":"Xe tay ga"
 },
 {
@@ -1033,7 +1033,7 @@
 "carPrice":"24.0",
 "carPriceDeviation":"23.5",
 "carSize":"1910x690x1085",
-"carTurningCircle":"96",
+"carTurningCirclel":"96",
 "carType":"Xe tay ga"
 },
 {
@@ -1050,7 +1050,7 @@
 "carPrice":"22.7",
 "carPriceDeviation":"22.0",
 "carSize":"1910x690x1085",
-"carTurningCircle":"94",
+"carTurningCirclel":"94",
 "carType":"Xe tay ga"
 },
 {
@@ -1067,7 +1067,7 @@
 "carPrice":"15.8",
 "carPriceDeviation":"15.0",
 "carSize":"1920x655x1055",
-"carTurningCircle":"101",
+"carTurningCirclel":"101",
 "carType":"Xe số"
 },
 {
@@ -1084,7 +1084,7 @@
 "carPrice":"16.8",
 "carPriceDeviation":"16.5",
 "carSize":"1920x655x1055",
-"carTurningCircle":"101",
+"carTurningCirclel":"101",
 "carType":"Xe số"
 },
 {
@@ -1101,7 +1101,7 @@
 "carPrice":"17.7",
 "carPriceDeviation":"17.2",
 "carSize":"1920x655x1055",
-"carTurningCircle":"101",
+"carTurningCirclel":"101",
 "carType":"Xe số"
 },
 {
@@ -1118,7 +1118,7 @@
 "carPrice":"415.0",
 "carPriceDeviation":"408.0",
 "carSize":"2115x795x1080",
-"carTurningCircle":"209",
+"carTurningCirclel":"209",
 "carType":"PKL"
 },
 {
@@ -1135,7 +1135,7 @@
 "carPrice":"610.0",
 "carPriceDeviation":"601.0",
 "carSize":"2190x735x1165",
-"carTurningCircle":"260",
+"carTurningCirclel":"260",
 "carType":"PKL"
 },
 {
@@ -1152,7 +1152,7 @@
 "carPrice":"430.0",
 "carPriceDeviation":"425.0",
 "carSize":"2130x760x1090",
-"carTurningCircle":"205",
+"carTurningCirclel":"205",
 "carType":"PKL"
 },
 {
@@ -1169,7 +1169,7 @@
 "carPrice":"147.3",
 "carPriceDeviation":"145.0",
 "carSize":"2150x780x1535",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1186,7 +1186,7 @@
 "carPrice":"86.0",
 "carPriceDeviation":"87.0",
 "carSize":"2020x705x1396",
-"carTurningCircle":"132",
+"carTurningCirclel":"132",
 "carType":"Xe tay ga"
 },
 {
@@ -1203,7 +1203,7 @@
 "carPrice":"72.5",
 "carPriceDeviation":"72.0",
 "carSize":"2020x705x1390",
-"carTurningCircle":"140",
+"carTurningCirclel":"140",
 "carType":"Xe tay ga"
 },
 {
@@ -1220,7 +1220,7 @@
 "carPrice":"71.5",
 "carPriceDeviation":"71.0",
 "carSize":"2020x705x1390",
-"carTurningCircle":"140",
+"carTurningCirclel":"140",
 "carType":"Xe tay ga"
 },
 {
@@ -1237,7 +1237,7 @@
 "carPrice":"55.5",
 "carPriceDeviation":"55.0",
 "carSize":"1930x705x1325",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1254,7 +1254,7 @@
 "carPrice":"56.5",
 "carPriceDeviation":"56.0",
 "carSize":"1930x705x1325",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1271,7 +1271,7 @@
 "carPrice":"41.9",
 "carPriceDeviation":"41.5",
 "carSize":"1850x695x1325",
-"carTurningCircle":"120",
+"carTurningCirclel":"120",
 "carType":"Xe tay ga"
 },
 {
@@ -1288,7 +1288,7 @@
 "carPrice":"34.0",
 "carPriceDeviation":"33.5",
 "carSize":"",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1305,7 +1305,7 @@
 "carPrice":"122.8",
 "carPriceDeviation":"122.0",
 "carSize":"1863x695x790",
-"carTurningCircle":"120",
+"carTurningCirclel":"120",
 "carType":"Xe tay ga"
 },
 {
@@ -1322,7 +1322,7 @@
 "carPrice":"135.0",
 "carPriceDeviation":"134.0",
 "carSize":"1780x750x805",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1339,7 +1339,7 @@
 "carPrice":"66.9",
 "carPriceDeviation":"66.3",
 "carSize":"1770x705x1280",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1356,7 +1356,7 @@
 "carPrice":"80.7",
 "carPriceDeviation":"81.0",
 "carSize":"1770x740x1280",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1373,7 +1373,7 @@
 "carPrice":"84.5",
 "carPriceDeviation":"84.0",
 "carSize":"",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1390,7 +1390,7 @@
 "carPrice":"73.5",
 "carPriceDeviation":"73.0",
 "carSize":"",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1407,7 +1407,7 @@
 "carPrice":"70.0",
 "carPriceDeviation":"67.4",
 "carSize":"",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1424,7 +1424,7 @@
 "carPrice":"74.5",
 "carPriceDeviation":"74.1",
 "carSize":"1863x695x790",
-"carTurningCircle":"120",
+"carTurningCirclel":"120",
 "carType":"Xe tay ga"
 },
 {
@@ -1441,7 +1441,7 @@
 "carPrice":"80.0",
 "carPriceDeviation":"79.6",
 "carSize":"1863x695x790",
-"carTurningCircle":"120",
+"carTurningCirclel":"120",
 "carType":"Xe tay ga"
 },
 {
@@ -1458,7 +1458,7 @@
 "carPrice":"90.3",
 "carPriceDeviation":"88.0",
 "carSize":"1950x740x800",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1475,7 +1475,7 @@
 "carPrice":"29.6",
 "carPriceDeviation":"29.0",
 "carSize":"1940x 715x1105",
-"carTurningCircle":"108",
+"carTurningCirclel":"108",
 "carType":"Xe tay ga"
 },
 {
@@ -1492,7 +1492,7 @@
 "carPrice":"30.1",
 "carPriceDeviation":"28.0",
 "carSize":"1805x680x1145",
-"carTurningCircle":"114",
+"carTurningCirclel":"114",
 "carType":"Xe tay ga"
 },
 {
@@ -1509,7 +1509,7 @@
 "carPrice":"33.7",
 "carPriceDeviation":"33.0",
 "carSize":"1795x668x1100",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -1526,7 +1526,7 @@
 "carPrice":"30.9",
 "carPriceDeviation":"30.0",
 "carSize":"1795x668x1100",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -1543,7 +1543,7 @@
 "carPrice":"29.6",
 "carPriceDeviation":"29.0",
 "carSize":"1795x668x1100",
-"carTurningCircle":"115",
+"carTurningCirclel":"115",
 "carType":"Xe tay ga"
 },
 {
@@ -1560,7 +1560,7 @@
 "carPrice":"31.9",
 "carPriceDeviation":"31.4",
 "carSize":"1805x 655x1145",
-"carTurningCircle":"122",
+"carTurningCirclel":"122",
 "carType":"Xe tay ga"
 },
 {
@@ -1577,7 +1577,7 @@
 "carPrice":"35.5",
 "carPriceDeviation":"35.0",
 "carSize":"1805x 655x1145",
-"carTurningCircle":"122",
+"carTurningCirclel":"122",
 "carType":"Xe tay ga"
 },
 {
@@ -1594,7 +1594,7 @@
 "carPrice":"33.5",
 "carPriceDeviation":"33.0",
 "carSize":"1805x 655x1145",
-"carTurningCircle":"122",
+"carTurningCirclel":"122",
 "carType":"Xe tay ga"
 },
 {
@@ -1611,7 +1611,7 @@
 "carPrice":"32.5",
 "carPriceDeviation":"32.0",
 "carSize":"1935x 660 x1070",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe tay ga"
 },
 {
@@ -1628,7 +1628,7 @@
 "carPrice":"16.5",
 "carPriceDeviation":"16.0",
 "carSize":"1935x 660 x1070",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe số"
 },
 {
@@ -1645,7 +1645,7 @@
 "carPrice":"16.8",
 "carPriceDeviation":"16.2",
 "carSize":"1940 x 695 x 1110 ",
-"carTurningCircle":"103",
+"carTurningCirclel":"103",
 "carType":"Xe số"
 },
 {
@@ -1662,7 +1662,7 @@
 "carPrice":"18.3",
 "carPriceDeviation":"17.5",
 "carSize":"1940x695x1110 ",
-"carTurningCircle":"103",
+"carTurningCirclel":"103",
 "carType":"Xe số"
 },
 {
@@ -1679,7 +1679,7 @@
 "carPrice":"20.7",
 "carPriceDeviation":"20.0",
 "carSize":"1910x680 x1100",
-"carTurningCircle":"96",
+"carTurningCirclel":"96",
 "carType":"Xe côn tay"
 },
 {
@@ -1696,7 +1696,7 @@
 "carPrice":"14.5",
 "carPriceDeviation":"14.0",
 "carSize":"1910x680x1070",
-"carTurningCircle":"95",
+"carTurningCirclel":"95",
 "carType":"Xe số"
 },
 {
@@ -1713,7 +1713,7 @@
 "carPrice":"14.6",
 "carPriceDeviation":"14.0",
 "carSize":"1910x680x1070",
-"carTurningCircle":"95",
+"carTurningCirclel":"95",
 "carType":"Xe số"
 },
 {
@@ -1730,7 +1730,7 @@
 "carPrice":"14.9",
 "carPriceDeviation":"14.2",
 "carSize":"1805x655x1145",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe số"
 },
 {
@@ -1747,7 +1747,7 @@
 "carPrice":"15.9",
 "carPriceDeviation":"15.4",
 "carSize":"1805x655x1145",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe số"
 },
 {
@@ -1764,7 +1764,7 @@
 "carPrice":"16.2",
 "carPriceDeviation":"16.3",
 "carSize":"1805x655x1145",
-"carTurningCircle":"97",
+"carTurningCirclel":"97",
 "carType":"Xe số"
 },
 {
@@ -1775,13 +1775,13 @@
 "carId":"1834",
 "carImage":"importxls/importxls-event-19-coordinates-R61-time-1480913245.jpg",
 "carMoment":"13.8",
-"carName":"NVX Standard 2017",
+"carName":"NVX Standard",
 "carOrigin":"Lắp ráp",
 "carPower":"15",
 "carPrice":"45.0",
 "carPriceDeviation":"50.0",
 "carSize":"1990x700x1125",
-"carTurningCircle":"116",
+"carTurningCirclel":"116",
 "carType":"Xe tay ga"
 },
 {
@@ -1792,13 +1792,13 @@
 "carId":"1849",
 "carImage":"importxls/importxls-event-19-coordinates-R62-time-1480913245.jpg",
 "carMoment":"13.8",
-"carName":"NVX Premium 2017",
+"carName":"NVX Premium",
 "carOrigin":"Lắp ráp",
 "carPower":"15",
 "carPrice":"51.0",
 "carPriceDeviation":"54.0",
 "carSize":"1990x700x1125",
-"carTurningCircle":"118",
+"carTurningCirclel":"118",
 "carType":"Xe tay ga"
 },
 {
@@ -1813,9 +1813,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.3",
 "carPrice":"37.9",
-"carPriceDeviation":"41.0",
+"carPriceDeviation":"44.0",
 "carSize":"1832x680x1120",
-"carTurningCircle":"113",
+"carTurningCirclel":"113",
 "carType":"Xe tay ga"
 },
 {
@@ -1830,9 +1830,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"11.3",
 "carPrice":"39.3",
-"carPriceDeviation":"42.2",
+"carPriceDeviation":"47.2",
 "carSize":"1832x680x1120",
-"carTurningCircle":"113",
+"carTurningCirclel":"113",
 "carType":"Xe tay ga"
 },
 {
@@ -1849,7 +1849,7 @@
 "carPrice":"52.7",
 "carPriceDeviation":"52.7",
 "carSize":"1990x700x1125",
-"carTurningCircle":"118",
+"carTurningCirclel":"118",
 "carType":"Xe tay ga"
 },
 {
@@ -1866,7 +1866,7 @@
 "carPrice":"69.0",
 "carPriceDeviation":"69.2",
 "carSize":" 2010x720x1030",
-"carTurningCircle":"129",
+"carTurningCirclel":"129",
 "carType":"Xe côn tay"
 },
 {
@@ -1883,7 +1883,7 @@
 "carPrice":"71.3",
 "carPriceDeviation":"69.3",
 "carSize":" 2010x720x1030",
-"carTurningCircle":"129",
+"carTurningCirclel":"129",
 "carType":"Xe côn tay"
 },
 {
@@ -1898,9 +1898,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
 "carPrice":"30.5",
-"carPriceDeviation":"33.5",
+"carPriceDeviation":"38.5",
 "carSize":"1863x686x1088",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -1915,9 +1915,9 @@
 "carOrigin":"Lắp ráp",
 "carPower":"8.800000000000001",
 "carPrice":"30.0",
-"carPriceDeviation":"32.8",
+"carPriceDeviation":"37.8",
 "carSize":"1863x686x1088",
-"carTurningCircle":"99",
+"carTurningCirclel":"99",
 "carType":"Xe tay ga"
 },
 {
@@ -1934,7 +1934,7 @@
 "carPrice":"73.9",
 "carPriceDeviation":"73.4",
 "carSize":" 1770 x740 x1280",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1951,7 +1951,7 @@
 "carPrice":"79.8",
 "carPriceDeviation":"78.0",
 "carSize":"1950x740x800",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1968,7 +1968,7 @@
 "carPrice":"96.6",
 "carPriceDeviation":"97.0",
 "carSize":"1950x740x800",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -1985,7 +1985,7 @@
 "carPrice":"405.0",
 "carPriceDeviation":"405.0",
 "carSize":"",
-"carTurningCircle":"",
+"carTurningCirclel":"",
 "carType":"Xe tay ga"
 },
 {
@@ -2002,7 +2002,7 @@
 "carPrice":"70.0",
 "carPriceDeviation":"70.0",
 "carSize":" 1950 x 720 x 1025",
-"carTurningCircle":"131",
+"carTurningCirclel":"131",
 "carType":"Xe côn tay"
 },
 {
@@ -2019,7 +2019,7 @@
 "carPrice":"125.0",
 "carPriceDeviation":"125.0",
 "carSize":"1990 x 725 x 1125",
-"carTurningCircle":"137",
+"carTurningCirclel":"137",
 "carType":"Xe côn tay"
 },
 {
@@ -2036,7 +2036,7 @@
 "carPrice":"139.0",
 "carPriceDeviation":"139.0",
 "carSize":"2.090 x 745 x 1.035",
-"carTurningCircle":"168",
+"carTurningCirclel":"168",
 "carType":"PKL"
 },
 {
@@ -2053,7 +2053,7 @@
 "carPrice":"139.0",
 "carPriceDeviation":"139.0",
 "carSize":"2.090 x 720 x 1.035",
-"carTurningCircle":"168",
+"carTurningCirclel":"168",
 "carType":"PKL"
 },
 {
@@ -2070,7 +2070,7 @@
 "carPrice":"110.0",
 "carPriceDeviation":"110.0",
 "carSize":"2.019 x 719 x 1.039",
-"carTurningCircle":"139",
+"carTurningCirclel":"139",
 "carType":"Xe côn tay"
 },
 {
@@ -2087,7 +2087,7 @@
 "carPrice":"235.0",
 "carPriceDeviation":"235.0",
 "carSize":"2.060 x 724 x 1.098",
-"carTurningCircle":"168",
+"carTurningCirclel":"168",
 "carType":"PKL"
 },
 {
@@ -2104,7 +2104,7 @@
 "carPrice":"110.0",
 "carPriceDeviation":"110.0",
 "carSize":"1.983 x 694 x 1.083",
-"carTurningCircle":"135",
+"carTurningCirclel":"135",
 "carType":"Xe côn tay"
 },
 {
@@ -2121,7 +2121,7 @@
 "carPrice":"73.0",
 "carPriceDeviation":"73",
 "carSize":"2.041 x 783 x 1.067",
-"carTurningCircle":"138",
+"carTurningCirclel":"138",
 "carType":"Xe côn tay"
 },
 {
@@ -2138,7 +2138,7 @@
 "carPrice":"73.0",
 "carPriceDeviation":"73.0",
 "carSize":"2.041 x 783 x 1.067",
-"carTurningCircle":"138",
+"carTurningCirclel":"138",
 "carType":"Xe côn tay"
 },
 {
@@ -2155,7 +2155,7 @@
 "carPrice":"75.0",
 "carPriceDeviation":"75.0",
 "carSize":"2.020 x 700 x 1.075",
-"carTurningCircle":"131",
+"carTurningCirclel":"131",
 "carType":"Xe côn tay"
 },
 {
@@ -2172,25 +2172,8 @@
 "carPrice":"68.9",
 "carPriceDeviation":"68.9",
 "carSize":"2.020 x 745 x 1.040",
-"carTurningCircle":"133",
+"carTurningCirclel":"133",
 "carType":"Xe côn tay"
-},
-{
-"carBrand":"Kawasaki",
-"carEngine":"1,043cc, 4 thì DOHC",
-"carFuelTankCapacity":"21",
-"carGear":"6 số",
-"carId":"1911",
-"carImage":"https://giaxe.2banh.vn/cache/dataupload/products/thumbs/266_204_1499844785-86024cad1e83101d97359d7351051156-252-1.jpg",
-"carMoment":"111",
-"carName":"Kawasaki Versys 1000",
-"carOrigin":"Nhập khẩu",
-"carPower":"120",
-"carPrice":"419",
-"carPriceDeviation":"419",
-"carSize":"2240 x 895 x 1800",
-"carTurningCircle":"221",
-"carType":"PKL"
 },
 {
 "carBrand":"Kawasaki",
@@ -2206,7 +2189,24 @@
 "carPrice":"464",
 "carPriceDeviation":"460",
 "carSize":"2 045 x 790 x 1 054",
-"carTurningCircle":"221",
+"carTurningCirclel":"221",
+"carType":"PKL"
+},
+{
+"carBrand":"Kawasaki",
+"carEngine":"1,043cc, 4 thì DOHC",
+"carFuelTankCapacity":"21",
+"carGear":"6 số",
+"carId":"1911",
+"carImage":"https://giaxe.2banh.vn/cache/dataupload/products/thumbs/266_204_1499844785-86024cad1e83101d97359d7351051156-252-1.jpg",
+"carMoment":"111",
+"carName":"Kawasaki Versys 1000",
+"carOrigin":"Nhập khẩu",
+"carPower":"120",
+"carPrice":"419",
+"carPriceDeviation":"419",
+"carSize":"2240 x 895 x 1800",
+"carTurningCirclel":"221",
 "carType":"PKL"
 },
 {
@@ -2223,7 +2223,7 @@
 "carPrice":"323",
 "carPriceDeviation":"323",
 "carSize":"2.100 x 800 x 1.050",
-"carTurningCircle":"221",
+"carTurningCirclel":"221",
 "carType":"PKL"
 },
 {
@@ -2240,7 +2240,7 @@
 "carPrice":"228",
 "carPriceDeviation":"228",
 "carSize":"2.055 x 740 x 1.355",
-"carTurningCircle":"193",
+"carTurningCirclel":"193",
 "carType":"PKL"
 },
 {
@@ -2257,7 +2257,7 @@
 "carPrice":"196",
 "carPriceDeviation":"196",
 "carSize":"2.014 x 713 x 1.109",
-"carTurningCircle":"174",
+"carTurningCirclel":"174",
 "carType":"PKL"
 },
 {
@@ -2274,7 +2274,7 @@
 "carPrice":"139",
 "carPriceDeviation":"139",
 "carSize":"2.015.x.750.x.1.025",
-"carTurningCircle":"168",
+"carTurningCirclel":"168",
 "carType":"PKL"
 },
 {
@@ -2291,7 +2291,7 @@
 "carPrice":"280",
 "carPriceDeviation":"280",
 "carSize":"2.150 x 860 x 1.165",
-"carTurningCircle":"183",
+"carTurningCirclel":"183",
 "carType":"PKL"
 },
 {
@@ -2308,7 +2308,7 @@
 "carPrice":"320",
 "carPriceDeviation":"320",
 "carSize":"2.114 x 784 x 1.079",
-"carTurningCircle":"169",
+"carTurningCirclel":"169",
 "carType":"PKL"
 },
 {
@@ -2325,7 +2325,7 @@
 "carPrice":"387",
 "carPriceDeviation":"387",
 "carSize":"2.114 x 784 x 1.079",
-"carTurningCircle":"175",
+"carTurningCirclel":"175",
 "carType":"PKL"
 },
 {
@@ -2342,7 +2342,7 @@
 "carPrice":"409",
 "carPriceDeviation":"409",
 "carSize":"2.170 x 800 x 1.055",
-"carTurningCircle":"180",
+"carTurningCirclel":"180",
 "carType":"PKL"
 },
 {
@@ -2359,7 +2359,7 @@
 "carPrice":"429",
 "carPriceDeviation":"429",
 "carSize":"2.165 x 845 x 1.150",
-"carTurningCircle":"191",
+"carTurningCirclel":"191",
 "carType":"PKL"
 },
 {
@@ -2376,7 +2376,7 @@
 "carPrice":"513",
 "carPriceDeviation":"513",
 "carSize":"2.070 x 810 x 1.150",
-"carTurningCircle":"210",
+"carTurningCirclel":"210",
 "carType":"PKL"
 },
 {
@@ -2393,7 +2393,7 @@
 "carPrice":"592",
 "carPriceDeviation":"592",
 "carSize":"2.056 x 746 x 1.115",
-"carTurningCircle":"176",
+"carTurningCirclel":"176",
 "carType":"PKL"
 },
 {
@@ -2410,7 +2410,7 @@
 "carPrice":"926",
 "carPriceDeviation":"926",
 "carSize":"2.310 x 1.010 x 1.133",
-"carTurningCircle":"220",
+"carTurningCirclel":"220",
 "carType":"PKL"
 }
 ]
