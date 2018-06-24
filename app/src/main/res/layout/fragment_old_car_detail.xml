@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/cmn_white"
-    android:orientation="vertical">
+    android:background="@color/cmn_white">
 
     <ScrollView
         style="@style/Layout.FillWidth"
         android:background="@color/cmn_gray">
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/layout_header"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/cmn_white">
-
                 <ImageView
                     android:id="@+id/img_vehical"
                     android:layout_width="120dp"
@@ -30,20 +29,28 @@
 
                 <TextView
                     android:id="@+id/txtVehicalName"
-                    android:layout_width="match_parent"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/padding_smaller"
-                    android:layout_toRightOf="@id/img_vehical"
+                    android:textStyle="bold"
                     android:padding="@dimen/padding_smaller"
                     android:textColor="@color/cmn_name_color"
-                    android:textStyle="bold" />
+                    android:layout_margin="@dimen/padding_smaller"
+                    android:layout_toRightOf="@id/img_vehical"/>
+
+                <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
+                    android:id="@+id/spiner_version"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/txtVehicalName"
+                    android:layout_marginLeft="@dimen/padding_normal"
+                    android:layout_alignBaseline="@id/txtVehicalName" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:background="@color/cmn_gray"
                     android:layout_below="@id/txtVehicalName"
-                    android:layout_toRightOf="@id/img_vehical"
-                    android:background="@color/cmn_gray" />
+                    android:layout_toRightOf="@id/img_vehical"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -54,7 +61,7 @@
 
                     <TextView
                         android:id="@+id/txtBrandTitle"
-                        android:layout_width="140dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dip"
                         android:paddingTop="@dimen/padding_small"
@@ -66,60 +73,34 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txtBrandTitle"
                         android:paddingTop="@dimen/padding_small"
+                        android:layout_toRightOf="@+id/txtBrandTitle"
                         android:textSize="@dimen/text_normal" />
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txtPriceTitle"
-                        android:layout_width="140dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtBrand"
                         android:layout_marginTop="1dip"
+                        android:paddingTop="@dimen/padding_small"
+                        android:text="Giá niêm yết"
                         android:layout_toRightOf="@+id/imgVehical"
-                        android:paddingTop="@dimen/padding_small"
-                        android:text="@string/cmn_price"
-                        android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="7" />
-
-                    <TextView
-                        android:id="@+id/txtPrice"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtBrand"
-                        android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txtPriceTitle"
-                        android:paddingTop="@dimen/padding_small"
-                        android:textColor="@color/cmn_price1"
-                        android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/text_normal" />
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                        android:id="@+id/txtDeviationPriceTitle"
-                        android:layout_width="140dp"
+                        android:id="@+id/txtPrice"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtPrice"
-                        android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/imgVehical"
+                        android:layout_below="@id/txtBrand"
+                        android:layout_marginTop="1dip"
                         android:paddingTop="@dimen/padding_small"
-                        android:text="@string/cmn_deviation_price"
-                        android:textColor="@color/genre"
+                        android:layout_toRightOf="@+id/txtPriceTitle"
+                        android:textColor="@color/cmn_price1"
                         android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="7" />
-
-                    <TextView
-                        android:id="@+id/txtDeviationPrice"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtPrice"
-                        android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txtDeviationPriceTitle"
-                        android:paddingTop="@dimen/padding_small"
-                        android:textColor="@color/cmn_price2"
-                        android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:suffix_length="1"
+                        app:ratio="0.8"/>
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -129,28 +110,27 @@
                 android:id="@+id/layout_infor_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/layout_header"
-                android:layout_marginBottom="@dimen/padding_smaller"
-                android:layout_marginLeft="@dimen/padding_small"
-                android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginTop="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_small"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:layout_marginBottom="@dimen/padding_smaller"
                 android:background="@drawable/shadow_view"
+                android:layout_below="@id/layout_header"
                 android:orientation="vertical">
 
                 <TextView
                     style="@style/Layout.FillWidth"
                     android:background="@color/color_header_brow"
-                    android:padding="@dimen/padding_normal"
-                    android:text="@string/cmn_technical_information"
                     android:textColor="@color/cmn_white"
-                    android:textSize="@dimen/text_title" />
+                    android:padding="@dimen/padding_normal"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/cmn_technical_information"/>
 
                 <RelativeLayout
                     style="@style/Layout.FillWidth"
-                    android:paddingBottom="@dimen/padding_small"
                     android:paddingLeft="@dimen/padding_normal"
-                    android:paddingTop="@dimen/padding_small">
-
+                    android:paddingTop="@dimen/padding_small"
+                    android:paddingBottom="@dimen/padding_small">
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_size_title"
                         android:layout_width="160dp"
@@ -160,17 +140,17 @@
                         android:text="@string/cmn_vehical_size"
                         android:textSize="@dimen/text_normal"
                         app:ratio="0.8"
-                        app:suffix_length="4" />
+                        app:suffix_length="4"/>
 
                     <TextView
                         android:id="@+id/txt_size_value"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txt_size_title"
                         android:paddingTop="@dimen/padding_small_bigger"
+                        android:layout_toRightOf="@+id/txt_size_title"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_fuel_capacity_title"
@@ -181,19 +161,19 @@
                         android:paddingTop="@dimen/padding_normal"
                         android:text="@string/cmn_fuel_capacity"
                         android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="5" />
+                        app:suffix_length="5"
+                        app:ratio="0.8"/>
 
                     <TextView
                         android:id="@+id/txt_fuel_capacity_value"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_size_value"
                         android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txt_fuel_capacity_title"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_fuel_capacity_title"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_displacement_title"
@@ -202,11 +182,11 @@
                         android:layout_below="@id/txt_fuel_capacity_title"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_displacement"
+                        android:text="Động cơ"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="11" />
+                        app:suffix_length="0"
+                        app:ratio="0.8"/>
 
                     <TextView
                         android:id="@+id/txt_displacement_value"
@@ -214,11 +194,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_fuel_capacity_value"
                         android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_displacement_title"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_displacement_title"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_output_capacity_title"
@@ -230,8 +210,8 @@
                         android:text="@string/cmn_output_capacity"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="11" />
+                        app:suffix_length="11"
+                        app:ratio="0.8"/>
 
                     <TextView
                         android:id="@+id/txt_output_capacity_value"
@@ -239,90 +219,17 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_displacement_value"
                         android:layout_marginTop="3dp"
+                        android:paddingTop="@dimen/padding_normal"
                         android:layout_toRightOf="@+id/txt_output_capacity_title"
-                        android:paddingTop="@dimen/padding_normal"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
-
-                    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                        android:id="@+id/txt_torque_power_title"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_output_capacity_title"
-                        android:layout_marginTop="3dp"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_torque_power"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="4" />
-
-                    <TextView
-                        android:id="@+id/txt_torque_power_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_output_capacity_value"
-                        android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_torque_power_title"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
-
-                    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                        android:id="@+id/txt_gross_weight_title"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_torque_power_title"
-                        android:layout_marginTop="3dp"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_gross_weight"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal"
-                        app:ratio="0.8"
-                        app:suffix_length="4" />
-
-                    <TextView
-                        android:id="@+id/txt_gross_weight_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_torque_power_value"
-                        android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_gross_weight_title"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
-
-                    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                        android:id="@+id/txt_origin_title"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_gross_weight_title"
-                        android:layout_marginTop="3dp"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:text="@string/cmn_origin"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal" />
-
-                    <TextView
-                        android:id="@+id/txt_origin_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_gross_weight_value"
-                        android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_origin_title"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:textColor="@color/genre"
-                        android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_type_of_vehical"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_origin_value"
+                        android:layout_below="@id/txt_output_capacity_title"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
                         android:text="@string/cmn_type_of_vehical"
@@ -333,13 +240,13 @@
                         android:id="@+id/txt_type_of_vehical_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_origin_value"
+                        android:layout_below="@id/txt_output_capacity_title"
                         android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_type_of_vehical"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_type_of_vehical"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_number_of_gears"
@@ -356,136 +263,123 @@
                         android:id="@+id/txt_number_of_gears_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_type_of_vehical_value"
+                        android:layout_below="@id/txt_type_of_vehical"
                         android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_number_of_gears"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_number_of_gears"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
                 </RelativeLayout>
             </LinearLayout>
-
-            <!--<com.google.android.gms.ads.AdView-->
-            <!--android:id="@+id/adView"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_below="@id/layout_infor_detail"-->
-            <!--ads:adSize="BANNER"-->
-            <!--ads:adUnitId="@string/banner_ad_unit_id">-->
-            <!--</com.google.android.gms.ads.AdView>-->
 
             <LinearLayout
                 android:id="@+id/layout_total_cost"
                 style="@style/Layout.FillWidthHeight"
-                android:layout_below="@id/layout_infor_detail"
-                android:layout_marginLeft="@dimen/padding_small"
-                android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginTop="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_small"
+                android:layout_marginLeft="@dimen/padding_small"
                 android:background="@drawable/shadow_view"
+                android:layout_below="@id/layout_infor_detail"
                 android:orientation="vertical">
 
                 <TextView
                     style="@style/Layout.FillWidth"
                     android:background="@color/color_header_brow"
-                    android:padding="@dimen/padding_normal"
-                    android:text="@string/cmn_cost_estimation"
                     android:textColor="@color/cmn_white"
-                    android:textSize="@dimen/text_title" />
+                    android:padding="@dimen/padding_normal"
+                    android:textSize="@dimen/text_title"
+                    android:text="@string/cmn_cost_estimation"/>
 
                 <RelativeLayout
                     style="@style/Layout.FillWidth"
-                    android:paddingBottom="@dimen/padding_small"
                     android:paddingLeft="@dimen/padding_normal"
-                    android:paddingTop="@dimen/padding_small">
+                    android:paddingTop="@dimen/padding_small"
+                    android:paddingBottom="@dimen/padding_small">
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_area_select"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:clickable="true"
+                        android:paddingTop="@dimen/padding_small_bigger"
+                        android:textSize="@dimen/text_normal"
+                        android:text="Khu vực đăng ký"
                         android:drawableRight="@drawable/ic_action_help"
                         android:paddingRight="@dimen/btn_height_bigger"
-                        android:paddingTop="@dimen/padding_small_bigger"
-                        android:text="Khu vực đăng ký"
-                        android:textSize="@dimen/text_normal" />
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:clickable="true"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.CustomSpinner
                         android:id="@+id/spinner_area"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/padding_small"
-                        android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txt_deviation_price"
-                        android:entries="@array/area_array"
-                        android:paddingTop="@dimen/padding_small_bigger"
+                        android:paddingTop="@dimen/padding_smaller"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:layout_marginLeft="@dimen/padding_small"
+                        android:textStyle="bold"
+                        android:entries="@array/area_array"
+                        android:layout_toRightOf="@id/txt_area_select"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_deviation_price"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@+id/txt_deviation_price_value"
-                        android:layout_alignBottom="@+id/txt_deviation_price_value"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@id/txt_area_select"
                         android:paddingTop="@dimen/padding_small_bigger"
                         android:text="Giá thị trường "
-                        android:textSize="@dimen/text_normal" />
+                        android:textSize="@dimen/text_normal"
+                        android:layout_below="@+id/txt_area_select"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
 
                     <TextView
                         android:id="@+id/txt_deviation_price_value"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/spinner_area"
-                        android:layout_marginLeft="@dimen/padding_medium"
                         android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txt_deviation_price"
+                        android:layout_marginLeft="@dimen/padding_medium"
                         android:paddingTop="@dimen/padding_small_bigger"
+                        android:layout_alignBaseline="@id/txt_deviation_price"
+                        android:layout_toRightOf="@+id/txt_deviation_price"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_registration_fee"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_deviation_price"
                         android:layout_marginTop="2dip"
                         android:paddingTop="@dimen/padding_small_bigger"
-                        android:text="Phí trước bạ (5%)"
+                        android:text="Phí trước bạ (12%)"
+                        android:layout_below="@id/txt_deviation_price"
                         android:textSize="@dimen/text_normal"
                         app:ratio="0.8"
-                        app:suffix_length="4" />
+                        app:suffix_length="5"/>
 
                     <TextView
                         android:id="@+id/txt_registration_fee_value"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_deviation_price"
-                        android:layout_marginLeft="@dimen/padding_medium"
                         android:layout_marginTop="1dip"
-                        android:layout_toRightOf="@+id/txt_deviation_price"
+                        android:layout_marginLeft="@dimen/padding_medium"
                         android:paddingTop="@dimen/padding_small_bigger"
+                        android:layout_below="@id/txt_deviation_price"
+                        android:layout_toRightOf="@+id/txt_deviation_price"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/txt_number_plate_value"
+                        android:id="@+id/txt_road_tolls_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_registration_fee_value"
-                        android:layout_marginLeft="@dimen/padding_medium"
                         android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_road_tolls"
+                        android:layout_marginLeft="@dimen/padding_medium"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_road_tolls"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_insurance"
@@ -494,43 +388,78 @@
                         android:layout_below="@id/txt_road_tolls"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
-                        android:text="Bảo hiểm trách nhiệm dân sự (tối thiểu)"
+                        android:text="@string/cmn_insurance"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
                         app:ratio="0.8"
-                        app:suffix_length="12" />
+                        app:suffix_length="7"/>
 
                     <TextView
                         android:id="@+id/txt_insurance_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txt_road_tolls"
-                        android:layout_marginLeft="@dimen/padding_medium"
                         android:layout_marginTop="10dp"
-                        android:layout_toRightOf="@+id/txt_road_tolls"
+                        android:layout_marginLeft="@dimen/padding_medium"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_road_tolls"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
-                        android:id="@+id/txt_road_tolls"
+                        android:id="@+id/txt_number_plate"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/txt_number_plate_value"
-                        android:layout_alignBottom="@id/txt_number_plate_value"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:paddingTop="@dimen/padding_normal"
-                        android:text="Lệ phí làm biển số"
+                        android:layout_marginTop="1dip"
+                        android:paddingTop="@dimen/padding_small_bigger"
+                        android:text="@string/cmn_number_plate"
+                        android:layout_below="@id/txt_insurance"
                         android:textColor="@color/genre"
                         android:textSize="@dimen/text_normal" />
+
+                    <TextView
+                        android:id="@+id/txt_number_plate_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_insurance"
+                        android:layout_marginTop="3dp"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:layout_marginLeft="@dimen/padding_medium"
+                        android:layout_toRightOf="@+id/txt_insurance"
+                        android:textColor="@color/genre"
+                        android:textSize="@dimen/text_normal"
+                        android:textStyle="bold"/>
+
+                    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                        android:id="@+id/txt_inspection_fee"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_number_plate_value"
+                        android:layout_marginTop="3dp"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:text="@string/cmn_inspection_fee"
+                        android:textColor="@color/genre"
+                        android:textSize="@dimen/text_normal" />
+
+                    <TextView
+                        android:id="@+id/txt_inspection_fee_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_number_plate_value"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="@dimen/padding_medium"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_inspection_fee"
+                        android:textColor="@color/genre"
+                        android:textSize="@dimen/text_normal"
+                        android:textStyle="bold"/>
 
                     <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
                         android:id="@+id/txt_total_cost"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_insurance"
+                        android:layout_below="@id/txt_inspection_fee"
                         android:layout_marginTop="3dp"
                         android:paddingTop="@dimen/padding_normal"
                         android:text="@string/cmn_total_cost"
@@ -541,18 +470,33 @@
                         android:id="@+id/txt_total_cost_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txt_insurance"
-                        android:layout_marginLeft="@dimen/padding_medium"
+                        android:layout_below="@id/txt_inspection_fee"
                         android:layout_marginTop="3dp"
-                        android:layout_toRightOf="@+id/txt_total_cost"
+                        android:layout_marginLeft="@dimen/padding_medium"
                         android:paddingTop="@dimen/padding_normal"
+                        android:layout_toRightOf="@+id/txt_total_cost"
                         android:textColor="@color/cmn_orange"
                         android:textSize="@dimen/text_normal"
                         android:textStyle="bold"
                         app:ratio="0.8"
-                        app:suffix_length="1" />
+                        app:suffix_length="1"/>
 
-                </RelativeLayout>
+                    <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+                        android:id="@+id/txt_road_tolls"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:text="@string/cmn_road_tolls"
+                        android:textColor="@color/genre"
+                        android:textSize="@dimen/text_normal"
+                        app:ratio="0.8"
+                        app:suffix_length="7"
+                        android:layout_alignBaseline="@+id/txt_road_tolls_value"
+                        android:layout_alignBottom="@+id/txt_road_tolls_value"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -562,10 +506,10 @@
                 android:layout_marginTop="@dimen/padding_normal"
                 android:layout_marginRight="@dimen/padding_small"
                 android:layout_marginLeft="@dimen/padding_small"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/shadow_view"
                 android:orientation="vertical"
-                android:layout_below="@id/layout_total_cost">
+                android:layout_below="@id/layout_turnover">
 
                 <TextView
                     style="@style/Layout.FillWidth"
@@ -573,7 +517,7 @@
                     android:textColor="@color/cmn_white"
                     android:padding="@dimen/padding_normal"
                     android:textSize="@dimen/text_title"
-                    android:text="Những lựa chọn khác"/>
+                    android:text="@string/cmn_competatitor_information"/>
 
                 <tigerstyle.social.com.banggiaxe.customize.PagerContainer
                     android:id="@+id/pager_container"
@@ -598,11 +542,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_below="@id/layout_pompetitors"
+                android:layout_below="@id/layout_total_cost"
                 android:layout_centerHorizontal="true"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id">
+            </com.google.android.gms.ads.AdView>
 
-        </RelativeLayout>
+
+        </LinearLayout>
+
     </ScrollView>
 </RelativeLayout>

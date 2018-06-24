@@ -4,14 +4,12 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,7 +19,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,28 +26,29 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.messaging.FirebaseMessaging;
+import android.app.AlertDialog;
 
 import java.util.ArrayList;
 
 import tigerstyle.social.com.banggiaxe.config.Contants;
 import tigerstyle.social.com.banggiaxe.customize.DialogLoading;
+import tigerstyle.social.com.banggiaxe.customize.dialog.SpotsDialog;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 import tigerstyle.social.com.banggiaxe.service.FragmentStackManager;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.utils.DialogUtil;
-import tigerstyle.social.com.banggiaxe.utils.Logger;
 import tigerstyle.social.com.banggiaxe.view.adapters.DrawerMenuAdapter;
 import tigerstyle.social.com.banggiaxe.view.fragments.ComparisonFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.ExamMenuFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeMotoFragment;
 import tigerstyle.social.com.banggiaxe.view.fragments.HomeOtoFragment;
-import tigerstyle.social.com.banggiaxe.view.fragments.NewsFragment;
+import tigerstyle.social.com.banggiaxe.view.fragments.IosDownLoadFragment;
+import tigerstyle.social.com.banggiaxe.view.fragments.OldCarFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -81,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<MotobikeBrand> listMoto;
     public AdRequest adRequest;
     public InterstitialAd mInterstitialAd;
+
+    //private ProgressDialog pDialog;
+
+    private AlertDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,36 +148,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(int index, int title) {
                 mCurrentPosition = index;
                 mAdapter.setSelection(mCurrentPosition);
+                clearAllPreviousFragment();
                 switch (index){
                     case 0:{
-                        clearAllPreviousFragment();
                         pushFragments(new HomeMotoFragment(), false, true);
                         break;
                     }case 1:{
-                        clearAllPreviousFragment();
                         pushFragments(new HomeOtoFragment(), false, true);
                         break;
                     }case 2:{
-                        clearAllPreviousFragment();
-                        pushFragments(new ComparisonFragment(), false, true);
+                        pushFragments(new OldCarFragment(), false, true);
                         break;
                     }case 3:{
-                        clearAllPreviousFragment();
+                        pushFragments(new ComparisonFragment(), false, true);
+                        break;
+                    }case 4:{
                         Bundle bundle = new Bundle();
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_A1_TYPE);
                         pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
-                    }case 4:{
-                        clearAllPreviousFragment();
+                    }case 5:{
                         Bundle bundle = new Bundle();
                         bundle.putInt(ExamMenuFragment.AGR_KEY,ExamMenuFragment.ARG_EXAM_B2_TYPE);
                         pushFragments(new ExamMenuFragment(), bundle, false, true);
                         break;
-                    }/*case 5:{
+                    }case 6:{
                         clearAllPreviousFragment();
-                        pushFragments(new NewsFragment(), false, true);
+                        pushFragments(new IosDownLoadFragment(), false, true);
                         break;
-                    }*/
+                    }
                 }
             }
         });
@@ -196,22 +197,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case 0:{
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_moto_title));
                         break;
-                    }case 1:{
+                    }case 1: {
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_oto_title));
                         break;
                     }case 2:{
-                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_comparision));
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_old_oto_title));
                         break;
                     }case 3:{
-                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_a1_title));
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_comparision));
                         break;
                     }case 4:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_a1_title));
+                        break;
+                    }case 5:{
                         getSupportActionBar().setTitle(getResources().getString(R.string.cmn_b2_title));
                         break;
-                    }/*case 5:{
-                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_news));
+                    }case 6:{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.cmn_ios_version));
                         break;
-                    }*/
+                    }
                 }
 
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
@@ -227,6 +231,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mApplication = (SCApplication) getApplication();
         mLoadingDialog = new DialogLoading(MainActivity.this);
         mLoadingDialog.setCancelable(false);
+
+        pDialog = new SpotsDialog.Builder().
+                setContext(this).build();
     }
 
     private void initFragmentStackManager() {
@@ -339,13 +346,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     };
 
+    public void showLoading(final String message) {
+        try {
+            this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        pDialog.show();
+                        pDialog.setMessage(message);
+                    } catch (Exception error) {
+                        error.printStackTrace();
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void showLoading() {
         try {
             this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        mLoadingDialog.show();
+                        //mLoadingDialog.show();
+                        pDialog.show();
+                        pDialog.setMessage(getString(R.string.cmn_loading));
                     } catch (Exception error) {
                         error.printStackTrace();
                     }
@@ -367,8 +394,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void run() {
                 try {
-                    if (mLoadingDialog != null) {
-                        mLoadingDialog.hide();
+//                    if (mLoadingDialog != null) {
+//                        mLoadingDialog.hide();
+//                    }
+                    if (pDialog != null) {
+                        pDialog.dismiss();
                     }
                 } catch (Exception error) {
                     error.printStackTrace();
@@ -399,6 +429,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (searchItem != null) {
             searchView = (SearchView) searchItem.getActionView();
         }
+
         if (searchView != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
@@ -514,7 +545,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     void openApp(String applicationId) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=".concat(applicationId)));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=".concat(applicationId)));
         startActivity(myIntent);
     }
 
@@ -522,5 +554,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_unit_id));
         mInterstitialAd.loadAd(adRequest);
+    }
+
+    public void setEnableSearchView(String text){
+        searchView.setIconifiedByDefault(true);
+        searchView.setFocusable(true);
+        searchView.setIconified(false);
+        searchView.requestFocusFromTouch();
+
+        searchView.setQuery(text,false);
+
+        //searchView.setIconified(false);
+        searchView.clearFocus();
+
+        searchView.notify();
     }
 }

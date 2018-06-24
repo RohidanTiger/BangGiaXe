@@ -12,4 +12,11 @@
         <attr name="ratio" format="float"/>
         <attr name="suffix_length" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="Dialog">
+        <attr name="DialogTitleAppearance" format="reference" />
+        <attr name="DialogTitleText" format="reference|string" />
+        <attr name="DialogSpotColor" format="reference|color"/>
+        <attr name="DialogSpotCount" format="integer"/>
+    </declare-styleable>
 </resources>

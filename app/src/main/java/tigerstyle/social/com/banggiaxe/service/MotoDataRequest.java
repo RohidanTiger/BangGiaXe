@@ -38,7 +38,7 @@ public class MotoDataRequest extends AsyncTaskLoader<List<MotobikeBrand>>{
     public void onStartLoading() {
         if (takeContentChanged()) {
             forceLoad();
-            mContext.showLoading();
+            //mContext.showLoading();
         }
     }
 

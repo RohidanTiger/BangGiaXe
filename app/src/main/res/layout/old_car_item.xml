@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.andexert.library.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    rv_centered="true"
+    android:id="@+id/ripple"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/list_row_selector">
+
+        <ImageView
+            android:id="@+id/imgVehical"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/bg_captcha"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            style="@style/Text.FillWidth"
+            android:layout_alignTop="@+id/imgVehical"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtBrandTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:text="Phiên bản"
+            android:textSize="@dimen/text_normal" />
+
+        <TextView
+            android:id="@+id/txt_version"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtName"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/txtBrandTitle"
+            android:textSize="@dimen/text_normal" />
+
+        <tigerstyle.social.com.banggiaxe.customize.SuffixTextView
+            android:id="@+id/txtPriceTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtBrandTitle"
+            android:layout_marginTop="1dip"
+            android:text="Giá (triệu)"
+            android:layout_toRightOf="@+id/imgVehical"
+            android:textSize="@dimen/text_normal"
+            app:ratio="0.8"
+            app:suffix_length="7"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtPriceTitle"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/txtPriceTitle"
+            android:textColor="@color/cmn_price1"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"/>
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/txtDeviationPrice"
+            android:background="@color/list_divider" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view_divider"
+        android:layout_below="@id/layout_content"
+        android:visibility="gone">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/list_divider" />
+    </RelativeLayout>
+</com.andexert.library.RippleView>

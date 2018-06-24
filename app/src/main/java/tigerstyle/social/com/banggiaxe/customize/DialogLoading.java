@@ -15,7 +15,7 @@ public class DialogLoading extends Dialog {
 
     public DialogLoading(Context context) {
         super(context);
-        setCancelable(false);
+        setCancelable(true);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setBackgroundDrawableResource(android.R.color.transparent);
     }

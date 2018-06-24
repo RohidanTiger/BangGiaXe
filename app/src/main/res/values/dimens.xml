@@ -39,4 +39,9 @@
     <dimen name="padding_bigger">25dp</dimen>
     <dimen name="padding_huge">30dp</dimen>
 
+    <dimen name="spot_size">6dp</dimen>
+    <dimen name="title_margin">10dp</dimen>
+    <dimen name="progress_margin">24dp</dimen>
+    <dimen name="progress_width">250dp</dimen>
+
 </resources>

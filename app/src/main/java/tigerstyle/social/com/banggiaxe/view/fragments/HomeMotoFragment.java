@@ -47,7 +47,8 @@ import tigerstyle.social.com.banggiaxe.view.adapters.HomeMotoAdapter;
 /**
  * Created by nextophn on 8/8/15.
  */
-public class HomeMotoFragment extends BaseFragment implements SearchingListener,LoaderManager.LoaderCallbacks<List<MotobikeBrand>>,
+public class HomeMotoFragment extends BaseFragment implements SearchingListener,
+        LoaderManager.LoaderCallbacks<List<MotobikeBrand>>,
         ConnectivityReceiver.ConnectivityReceiverListener{
     RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
@@ -68,6 +69,7 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
     private List<String> listPrice;
     private TextView mTxtResult;
     private long mLastClickTime = 0;
+    private int show_ad = 0;
 
     public static String ARG_OBJ_KEY = "arg-brand-obj";
 
@@ -104,7 +106,11 @@ public class HomeMotoFragment extends BaseFragment implements SearchingListener,
                 if (context.mInterstitialAd.isLoaded()) {
                     context.mInterstitialAd.show();
                 } else {
-                    context.requestNewInterstitial();
+                    if(show_ad < 2) show_ad++;
+                    else {
+                        show_ad = 0;
+                        context.requestNewInterstitial();
+                    }
                 }
             }
         });

@@ -12,7 +12,7 @@ public class Contants {
     public static final String FACEBOOK_APP_ID = "121907328163542";
     public static final String URL_XE_MAY = "http://vnexpress.net/interactive/2016/bang-gia-xe-may#all;all";
     public static final String URL_OTO = "http://vnexpress.net/interactive/2016/bang-gia-xe#all;all";
-    public static final String IMAGE_URL = "http://img.f29.vnecdn.net/";
+    public static final String IMAGE_URL = "https://i-vnexpress.vnecdn.net/";
     public static final String SHARE_URL = "http://vnexpress.net";
 
     public static String NAME_IMAGE_CAPTURE = "tempPhoto";

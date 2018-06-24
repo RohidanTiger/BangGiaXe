@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_min"
+        android:paddingBottom="0dp"
+        android:weightSum="2">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_moto_comparison"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_menu_click"
+                android:gravity="center"
+                android:textColor="@color/cmn_white"
+                android:text="So sánh xe máy"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_title" />
+
+            <View
+                android:id="@+id/view_moto"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:background="@color/color_dark" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_oto_comparison"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_menu_normal"
+                android:gravity="center"
+                android:text="So sánh ô tô"
+                android:textAllCaps="false"
+                android:textColor="@color/cmn_black"
+                android:textSize="@dimen/text_title" />
+
+            <View
+                android:id="@+id/view_oto"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:visibility="invisible"
+                android:background="@color/color_dark" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_agency"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

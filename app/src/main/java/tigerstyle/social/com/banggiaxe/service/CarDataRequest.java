@@ -35,7 +35,7 @@ public class CarDataRequest extends AsyncTaskLoader<List<CarBrand>> {
     public void onStartLoading() {
         if (takeContentChanged()) {
             forceLoad();
-            mContext.showLoading();
+            //mContext.showLoading();
         }
     }
 

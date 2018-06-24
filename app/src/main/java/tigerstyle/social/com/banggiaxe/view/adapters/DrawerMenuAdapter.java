@@ -1,6 +1,5 @@
 package tigerstyle.social.com.banggiaxe.view.adapters;
 
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import tigerstyle.social.com.banggiaxe.MainActivity;
 import tigerstyle.social.com.banggiaxe.R;
-import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 
 /**
  * Created by billymobile on 12/27/16.
@@ -25,10 +23,10 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
 
     public DrawerMenuAdapter(MainActivity context){
         this.mContext = context;
-        mTitle = new int[]{R.string.cmn_moto_title,R.string.cmn_oto_title, R.string.cmn_comparision,R.string.cmn_a1_certificate,
-                R.string.cmn_b2_certificate};
-        mImage = new int[]{R.drawable.ic_moto, R.drawable.ic_sportcar,
-                R.drawable.ic_comparison,R.drawable.ic_a1, R.drawable.ic_b2};
+        mTitle = new int[]{R.string.cmn_moto_title,R.string.cmn_oto_title,R.string.cmn_old_oto_title, R.string.cmn_comparision,R.string.cmn_a1_certificate,
+                R.string.cmn_b2_certificate,R.string.cmn_ios_version};
+        mImage = new int[]{R.drawable.ic_moto, R.drawable.ic_sportcar, R.drawable.ic_sportcar,
+                R.drawable.ic_comparison,R.drawable.ic_a1, R.drawable.ic_b2, R.drawable.ic_ios};
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -49,10 +47,10 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        if(mImage[position] != 0){
-            ((DrawerMenuAdapter.ViewHolder) holder).imgVehical.setImageResource(mImage[position]);
-        }else{
+        if(mImage[position] == 0){
             ((DrawerMenuAdapter.ViewHolder) holder).imgVehical.setVisibility(View.INVISIBLE);
+        }else{
+            ((DrawerMenuAdapter.ViewHolder) holder).imgVehical.setImageResource(mImage[position]);
         }
 
         if (position == mSelectedIndex) {

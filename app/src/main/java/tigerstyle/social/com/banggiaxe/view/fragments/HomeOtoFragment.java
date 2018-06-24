@@ -29,6 +29,7 @@ import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
 import tigerstyle.social.com.banggiaxe.listener.SearchingListener;
 import tigerstyle.social.com.banggiaxe.model.CarBrand;
 import tigerstyle.social.com.banggiaxe.service.CarDataRequest;
+import tigerstyle.social.com.banggiaxe.service.OldCarDataRequest;
 import tigerstyle.social.com.banggiaxe.utils.ConnectivityReceiver;
 import tigerstyle.social.com.banggiaxe.view.adapters.HomeCarAdapter;
 
@@ -56,7 +57,7 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
     private List<String> listBrand;
     private List<String> listCarTpe;
     public static String ARG_OBJ_KEY = "arg-brand-obj";
-
+    private int show_ad = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,7 +87,11 @@ public class HomeOtoFragment extends BaseFragment implements LoaderManager.Loade
                 if (context.mInterstitialAd.isLoaded()) {
                     context.mInterstitialAd.show();
                 } else {
-                    context.requestNewInterstitial();
+                    if(show_ad < 2) show_ad++;
+                    else {
+                        show_ad = 0;
+                        context.requestNewInterstitial();
+                    }
                 }
 //                context.mInterstitialAd.setAdListener(new AdListener() {
 //                    @Override

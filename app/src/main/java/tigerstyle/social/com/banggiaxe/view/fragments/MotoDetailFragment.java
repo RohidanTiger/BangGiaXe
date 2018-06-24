@@ -2,6 +2,7 @@ package tigerstyle.social.com.banggiaxe.view.fragments;
 
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -12,15 +13,22 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import tigerstyle.social.com.banggiaxe.BaseFragment;
 import tigerstyle.social.com.banggiaxe.R;
+import tigerstyle.social.com.banggiaxe.SCApplication;
+import tigerstyle.social.com.banggiaxe.customize.CarouselPageTransformer;
 import tigerstyle.social.com.banggiaxe.customize.CustomSpinner;
+import tigerstyle.social.com.banggiaxe.customize.PagerContainer;
 import tigerstyle.social.com.banggiaxe.customize.SuffixTextView;
+import tigerstyle.social.com.banggiaxe.customize.TransformableViewPager;
 import tigerstyle.social.com.banggiaxe.model.MotobikeBrand;
 import tigerstyle.social.com.banggiaxe.utils.NumberFormater;
 import tigerstyle.social.com.banggiaxe.utils.PicassoLoader;
+import tigerstyle.social.com.banggiaxe.view.adapters.MotoCompetitorAdapter;
 import tigerstyle.social.com.banggiaxe.view.dialog.AreaInforDialog;
 
 import static tigerstyle.social.com.banggiaxe.config.Contants.IMAGE_URL;
@@ -67,6 +75,10 @@ public class MotoDetailFragment extends BaseFragment{
     private double deviationPrice;
     private AdView mAdView;
 
+    private List<MotobikeBrand> listPompetitor = new ArrayList<>();
+    PagerContainer mContainer;
+    TransformableViewPager pager;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -98,9 +110,13 @@ public class MotoDetailFragment extends BaseFragment{
         mTxtInsurance = (TextView) rootView.findViewById(R.id.txt_insurance_value);
         mTxtTotalPrice = (SuffixTextView) rootView.findViewById(R.id.txt_total_cost_value);
 
+        mContainer = (PagerContainer) rootView.findViewById(R.id.pager_container);
+        pager = mContainer.getViewPager();
+
         motobikeBrand = (MotobikeBrand) getArguments().getSerializable(HomeMotoFragment.ARG_OBJ_KEY);
         deviationPrice = Double.parseDouble(motobikeBrand.getCarPriceDeviation());
         fillData();
+        updateListPompetitors();
         calculateTotalCost();
         mAdView = (AdView) rootView.findViewById(R.id.adView);
         mAdView.loadAd(context.adRequest);
@@ -200,5 +216,31 @@ public class MotoDetailFragment extends BaseFragment{
         context.setHideActionBarSearchItem(false);
         context.getSupportActionBar().setTitle(context.getResources().getString(R.string.cmn_detail_information));
         setHasOptionsMenu(true);
+    }
+
+    private void updateListPompetitors(){
+        float price = Float.parseFloat(motobikeBrand.getCarPriceDeviation());
+        float range = price / 20;
+
+        for(MotobikeBrand moto : context.getListMoto()){
+            float price2 = Float.parseFloat(moto.getCarPriceDeviation());
+            if(!moto.getCarID().equals(motobikeBrand.getCarID())&&
+                    Math.abs(price - price2) <= range) listPompetitor.add(moto);
+        }
+        pager.setOffscreenPageLimit(10);
+        pager.setPageTransformer(true, new CarouselPageTransformer());
+
+        //If hardware acceleration is enabled, you should also remove
+        // clipping on the pager for its children.
+        pager.setClipChildren(false);
+        pager.setPageMargin(0);
+        MotoCompetitorAdapter adapter = new MotoCompetitorAdapter(context,listPompetitor);
+        pager.setAdapter(adapter);
+        adapter.setOnItemClickListener(new MotoCompetitorAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(MotobikeBrand brand) {
+
+            }
+        });
     }
 }

@@ -103,8 +103,8 @@ public class HomeCarAdapter extends RecyclerView.Adapter {
             textViewBrand = (TextView) v.findViewById(R.id.txtBrand);
             textViewPrice = (TextView) v.findViewById(R.id.txtPrice);
             textViewDeviationPrice = (TextView) v.findViewById(R.id.txtDeviationPrice);
-            layoutAd = (RelativeLayout) v.findViewById(R.id.layout_ad);
             mAdView = (AdView) v.findViewById(R.id.adView);
+            layoutAd = (RelativeLayout) v.findViewById(R.id.layout_ad);
         }
     }
 
